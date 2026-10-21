@@ -44,9 +44,15 @@ Thumbs.db
 # Streamlit
 .streamlit/secrets.toml
 
-# Heavy Model Weights & Local Artifacts (keep dir with .gitkeep)
-models/*
-!models/.gitkeep
+# Heavy Model Weights & Local Checkpoints (keep notebooks and reports)
+models/*.pt
+models/*.pth
+models/*.bin
+models/*.onnx
+models/*.joblib
+models/*.pkl
+models/*.h5
+models/**/checkpoint-*/
 
 # Temporary or local runs
 reports/figures/*.png

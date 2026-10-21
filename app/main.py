@@ -72,7 +72,7 @@ with tab_table:
                 "Review Status": req.review_status.value,
                 "Reviewer Label": req.reviewer_label.value if req.reviewer_label else "-",
             })
-        st.dataframe(table_data, use_container_width=True)
+        st.dataframe(table_data, width="stretch")
     else:
         st.info("No requirements analyzed yet. Use the 'Ingestion & Input' tab to run analysis.")
 
