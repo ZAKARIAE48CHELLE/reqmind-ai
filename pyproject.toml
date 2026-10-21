@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reqmind"
+version = "0.1.0"
+description = "Intelligent Software Requirements Analyzer using NLP"
+authors = [{ name = "ReqMind AI Team" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.5.0",
+    "numpy>=1.26.0",
+    "pandas>=2.1.0",
+    "openpyxl>=3.1.2",
+    "scikit-learn>=1.3.0",
+    "joblib>=1.3.2",
+    "streamlit>=1.30.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --import-mode=importlib"
+testpaths = ["tests"]
+pythonpath = ["src"]

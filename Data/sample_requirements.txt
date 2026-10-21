@@ -1,0 +1,17 @@
+# ReqMind AI — Phase 0 Sample Benchmark Requirements
+# Format: 5 concrete examples demonstrating core and edge cases
+
+# REQ-001: Standard Functional Requirement (User Authentication)
+The system shall authenticate registered users using their username and password.
+
+# REQ-002: Security NFR with Critical Negation (Must NOT remove 'not')
+The system shall not store unencrypted customer credit card details in the persistent database.
+
+# REQ-003: Performance / Usability NFR with Multiple Ambiguities
+The system must be fast, highly available, and provide an intuitive, user-friendly interface during peak hours.
+
+# REQ-004: Semantic Duplicate Candidate (Paraphrase of REQ-001)
+The application shall authenticate users using username and password upon login.
+
+# REQ-005: Similar-but-Distinct Statement (Hard Negative for REQ-001 / REQ-004)
+The system shall allow users to reset their forgotten passwords via a verified email link.
