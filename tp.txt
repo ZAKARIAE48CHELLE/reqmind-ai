@@ -1,0 +1,270 @@
+pages: 7
+==================== PAGE 1 ====================
+Développement d’applications intelligentes — TP
+Prof. BAKKALI YEDRI OTHMAN  |  Page 1
+TRAVAUX PRATIQUES
+Concevoir une application
+intelligente
+Assistant intelligent pour une bibliothèque universitaire
+Développement d’applications intelligentes
+TP guidé — Analyse • Architecture • API • IA/RAG • Qualité
+Professeur : BAKKALI YEDRI OTHMAN
+Objectifs du TP
+• Analyser un besoin et identifier les fonctionnalités nécessitant l’IA.
+• Concevoir une architecture en couches : interface, logique métier, intelligence et données.
+• Définir une API REST cohérente pour le frontend et les services applicatifs.
+• Intégrer un pipeline RAG : embedding → recherche documentaire → contexte → LLM.
+• Évaluer une application intelligente sur la performance, la pertinence, les erreurs, les hallucinations et la
+sécurité.
+Durée indicative : 4 à 6 heures    |    Travail : individuel ou binôme
+
+==================== PAGE 2 ====================
+Développement d’applications intelligentes — TP
+Prof. BAKKALI YEDRI OTHMAN  |  Page 2
+1. Présentation du projet
+Contexte : une bibliothèque universitaire dispose d’un catalogue de livres et de documents numériques.
+L’objectif est de développer un assistant capable d’aider l’étudiant à rechercher des ressources, poser
+des questions en langage naturel, résumer des documents et recevoir des recommandations.
+L’application doit combiner des fonctionnalités classiques avec des fonctionnalités intelligentes. L’IA ne
+remplace pas la logique métier : elle constitue une couche spécialisée intégrée à l’architecture.
+Fonctionnalités attendues
+• Recherche de livres : recherche classique dans le catalogue.
+• Question en langage naturel : l’étudiant interroge l’assistant.
+• Résumé de document : génération d’un résumé à partir d’un document.
+• Recommandation : proposition de documents pertinents.
+• Historique : consultation des questions et interactions précédentes.
+2. Architecture cible
+L’architecture de référence proposée est la suivante :
+Étudiant
+↓
+Interface Web
+React / HTML-CSS-JavaScript
+↓
+REST API
+Backend / services
+↙
+↘
+Logique métier
+Règles • validation • orchestration
+AI Service
+LLM • RAG • embeddings
+↓
+↓
+PostgreSQL
+Catalogue • utilisateurs • historique
+Vector Database
+Chroma / PGVector / autre
+↓
+LLM
+Modèle local ou API
+Consigne : ne pas mélanger l’interface avec la logique métier ou le code spécifique à l’IA. Chaque
+couche doit avoir une responsabilité clairement définie.
+
+==================== PAGE 3 ====================
+Développement d’applications intelligentes — TP
+Prof. BAKKALI YEDRI OTHMAN  |  Page 3
+3. Étape 1 — Analyse du besoin
+Avant de coder, produire une analyse fonctionnelle courte et structurée.
+À identifier
+• Acteurs : étudiant, administrateur/bibliothécaire, services internes.
+• Besoins : rechercher, questionner, résumer, recommander, consulter l’historique.
+• Fonctionnalités : distinguer les traitements classiques des traitements IA.
+• Données : utilisateurs, livres, auteurs, catégories, documents, historique, embeddings, résultats IA.
+• Contraintes : sécurité, temps de réponse, qualité des réponses, disponibilité.
+Tableau à compléter
+Fonctionnalité
+Type
+Données nécessaires
+IA ?
+Rechercher un livre
+Classique
+Catalogue
+Non
+Poser une question
+Intelligente
+Question + documents
+Oui
+Résumer un document
+Intelligente
+Document
+Oui
+Recommander un document
+Intelligente
+Historique + catalogue
+Oui
+Consulter l’historique
+Classique
+Historique
+Non
+Travail étudiant : compléter ou corriger le tableau selon vos choix fonctionnels et justifier chaque
+fonctionnalité IA.
+4. Étape 2 — Conception de l’architecture
+Produire trois représentations complémentaires :
+• Diagramme de composants : Frontend, Backend/API, services métier, AI Service, base de données,
+Vector DB et LLM.
+• Architecture en couches : Interface → Logique métier → Intelligence → Données.
+• Flux de données : montrer comment une question circule depuis l’utilisateur jusqu’à la réponse.
+Questions de conception
+• Pourquoi la logique métier ne doit-elle pas dépendre directement de l’interface ?
+• Pourquoi utiliser une base vectorielle pour le RAG ?
+• Quelles données doivent rester dans PostgreSQL ?
+• Quel composant peut être remplacé sans modifier toute l’application ?
+
+==================== PAGE 4 ====================
+Développement d’applications intelligentes — TP
+Prof. BAKKALI YEDRI OTHMAN  |  Page 4
+5. Étape 3 — Choix technologique
+Choisir les technologies et justifier les décisions. Une réponse sans justification ne sera pas considérée
+comme complète.
+Composant
+Choix possible
+Justification attendue
+Frontend
+React / Angular / Vue
+UX, composants, appels REST, maintenabilité
+Backend
+FastAPI / Spring Boot / Node.jsAPI REST, modularité, intégration IA
+Base de données
+PostgreSQL
+Données structurées, utilisateurs, catalogue, historique
+Vector DB
+Chroma / PGVector
+Recherche sémantique et stockage d’embeddings
+Modèle IA
+LLM local ou API
+Qualité, coût, latence, confidentialité
+Livrable : une fiche d’architecture technologique d’une page maximum.
+6. Étape 4 — Conception de l’API REST
+Créer au minimum les endpoints suivants :
+POST /api/questions
+GET   /api/books
+GET   /api/history
+POST /api/summarize
+Exemple de requête
+POST /api/questions
+{
+  "question": "Quels livres parlent de cybersécurité ?",
+  "user_id": 15
+}
+Exemple de réponse
+{
+  "answer": "Voici les documents pertinents...",
+  "sources": ["doc_12", "doc_31"],
+  "processing_time_ms": 1850
+}
+À prévoir également : validation des entrées, codes HTTP cohérents, authentification, gestion des
+erreurs et journalisation.
+7. Étape 5 — Intégration de l’IA et du RAG
+Le module RAG doit permettre au LLM de répondre à partir des documents de la bibliothèque plutôt que
+de dépendre uniquement de ses connaissances générales.
+Pipeline demandé
+Question
+↓
+Embedding
+↓
+Recherche documentaire / vectorielle
+↓
+Documents pertinents
+↓
+
+==================== PAGE 5 ====================
+Développement d’applications intelligentes — TP
+Prof. BAKKALI YEDRI OTHMAN  |  Page 5
+Contexte
+↓
+Prompt enrichi
+↓
+LLM
+↓
+Réponse
+Travail demandé
+• Préparer un petit corpus de documents universitaires ou de démonstration.
+• Découper les documents en passages pertinents.
+• Créer les embeddings et les stocker dans une Vector Database.
+• Transformer la question utilisateur en embedding.
+• Récupérer les passages les plus similaires.
+• Construire un prompt avec la question et le contexte récupéré.
+• Générer la réponse avec le LLM.
+• Afficher, si possible, les sources utilisées.
+
+==================== PAGE 6 ====================
+Développement d’applications intelligentes — TP
+Prof. BAKKALI YEDRI OTHMAN  |  Page 6
+8. Étape 6 — Tests et évaluation
+Une application intelligente doit être évaluée sur deux dimensions : le fonctionnement logiciel et la
+qualité de l’intelligence.
+Critère
+Question à vérifier
+Exemple de mesure
+Temps de réponse
+La réponse arrive-t-elle rapidement ?
+ms / secondes
+Erreurs
+L’API gère-t-elle les cas invalides ?
+taux d’erreurs
+Pertinence
+Les documents récupérés répondent-ils à la question ?
+évaluation humaine
+Hallucinations
+Le modèle invente-t-il des informations ?
+nombre de réponses incorrectes
+Sécurité
+Les accès et données sont-ils protégés ?
+tests d’accès / injection
+Jeu de tests minimal
+• Question dont la réponse se trouve clairement dans un document.
+• Question dont aucun document ne contient la réponse.
+• Question ambiguë ou incomplète.
+• Document très court et document long.
+• Utilisateur non authentifié.
+• Entrée malveillante ou tentative de prompt injection.
+Tableau de résultats
+Test
+Résultat attendu
+Résultat obtenu
+Observation
+T1
+Réponse correcte + source
+T2
+Le système indique l’absence d’information
+T3
+Demande de clarification
+T4
+Résumé fidèle
+T5
+Accès refusé si nécessaire
+T6
+Entrée malveillante maîtrisée
+9. Livrables attendus
+• Analyse fonctionnelle du besoin.
+• Diagramme d’architecture et architecture en couches.
+• Choix technologiques justifiés.
+• Documentation des endpoints REST.
+• Prototype fonctionnel de l’application.
+• Pipeline RAG fonctionnel ou prototype démontrable.
+• Jeu de tests et tableau d’évaluation.
+• Courte conclusion : limites rencontrées et améliorations possibles.
+10. Critères d’évaluation proposés
+Élément
+Pondération
+
+==================== PAGE 7 ====================
+Développement d’applications intelligentes — TP
+Prof. BAKKALI YEDRI OTHMAN  |  Page 7
+Analyse du besoin et identification des fonctionnalités IA
+15 %
+Architecture et séparation des couches
+20 %
+Choix technologiques et justification
+15 %
+API REST et qualité du backend
+15 %
+Intégration IA / RAG
+20 %
+Tests, sécurité et évaluation
+10 %
+Présentation et documentation
+5 %
+Conclusion du TP : l’objectif n’est pas seulement de faire fonctionner un LLM, mais de concevoir une
+véritable application intelligente où l’interface, la logique métier, l’intelligence et les données sont
+séparées, testables et maintenables.
