@@ -62,8 +62,31 @@ reqmind-ai/
 
 ## 🚀 Quickstart & Setup
 
-### 1. Create and Activate Virtual Environment
+### Option A: Using One-Click Scripts (Recommended)
 
+**On Windows:**
+```cmd
+:: Install environment & dependencies
+install.bat
+:: Or in PowerShell: .\install.ps1
+
+:: Launch the Streamlit application
+run.bat
+:: Or in PowerShell: .\run.ps1
+```
+
+**On Linux / macOS:**
+```bash
+chmod +x install.sh run.sh
+./install.sh
+./run.sh
+```
+
+---
+
+### Option B: Manual Setup
+
+1. **Create and Activate Virtual Environment:**
 ```bash
 python -m venv .venv
 # On Windows (PowerShell):
@@ -72,21 +95,18 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-### 2. Install Dependencies
-
+2. **Install Dependencies:**
 ```bash
 pip install -r requirements.txt
 pip install -e .
 ```
 
-### 3. Run Automated Tests
-
+3. **Run Automated Tests:**
 ```bash
 pytest tests/
 ```
 
-### 4. Launch the Streamlit Application
-
+4. **Launch the Streamlit Application:**
 ```bash
 streamlit run app/main.py
 ```
