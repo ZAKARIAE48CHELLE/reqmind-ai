@@ -1,0 +1,147 @@
+req_id,ProjectID,RequirementText,_class_,binary_label,split
+REQ-0556,12,The product shall comply with City of Chicago Application Development Guide Framework.Application Development Framework will provide structured Graphical User Interface.,LF,NFR,test
+REQ-0932,46,The system shall enable user to enter the payment information.,F,FR,test
+REQ-0728,32,It must only update the parts that have changed when connecting to the server.,O,NFR,test
+REQ-0057,2,The product shall prevent its data from incorrect data being introduced.,SE,NFR,test
+REQ-0481,9,The leads washing functionality will compile both contact and academic scoring information for a total score.,F,FR,test
+REQ-0906,46,The system shall display detailed invoice for current order once it is confirmed.,F,FR,test
+REQ-0700,29,Responses to view information shall take no longer than 5 seconds to appear on the screen.,PE,NFR,test
+REQ-0589,13,The WCS system shall have the ability to include data for regions outside the United States and be accessed by users outside of the United States if approved by CCR management.,SC,NFR,test
+REQ-0891,46,The system shall authenticate user credentials to view the profile.,F,FR,test
+REQ-0189,4,The Disputes System must provide a confirmation to the user upon the creation of ticket retrieval request that contains the following information; the dispute case number  the type of retrieval requested (copy  original or portfolio)  and the date that the merchant response is due.,F,FR,test
+REQ-0412,8,The same hardware supporting the current website will be used to support the new system.,O,NFR,test
+REQ-0132,3,The system shall be able to display a printable summary for individual clinical sites  which will include information on labs being held at that site for the given quarter (Clinical site  general information on labs held at that location  dates and times of all labs held there).,F,FR,test
+REQ-0364,7,Product formula substitutionary ingredients shall be entered automatically by the PFE subsystem.,F,FR,test
+REQ-0737,32,All information must be viewable on the website.,F,FR,test
+REQ-0474,9,Vendor will submit a credit validation record to be applied to the enterprise billing system.,F,FR,test
+REQ-0022,1,The system shall offer a display of all the Events in the exercise.,F,FR,test
+REQ-0436,8,All customer information will be stored on a secure database  accessible only to authorized personnel.,SE,NFR,test
+REQ-0103,3,Program Administrators and Nursing Staff Members shall be able to add a listing of students to a cohort.,F,FR,test
+REQ-0133,3,The system shall be able to display a printable summary for individual clinical labs  which will include (but not be limited to) class name  class number  lab section  listing of students enrolled  instructor  day(s)  time  and location.,F,FR,test
+REQ-0567,12,The product shall be robust with fault tolerance.The product shall have fault tolerance by using recovery technique compensatory transaction and routing around failures.,FT,NFR,test
+REQ-0639,17,The system shall validate the amount is a multiple of $20.,F,FR,test
+REQ-0904,46,The system shall maintain customer email information as a required part of customer profile.,F,FR,test
+REQ-0803,38,Responsible for informing administrator when any product item's stock goes under the minimum level.,F,FR,test
+REQ-0124,3,A clinical lab section shall include the clinical site name  the class  instructor  day and time of the lab.,F,FR,test
+REQ-0293,6,Aside from server failure  the software product shall achieve 99.99% up time.,A,NFR,test
+REQ-0777,36,All source code shall adhere to an agreed upon and well-defined set of coding standards for each development language used.,MN,NFR,test
+REQ-0362,7,Product formulas shall allow use of semi-products  which have own formulas.,F,FR,test
+REQ-0266,5,The audit report shall be displayed to the user.,F,FR,test
+REQ-0636,17,The system shall query the user for the amount of money.,F,FR,test
+REQ-0122,3,Clinical site information shall include (but not be limited to) the name of the site  contact person  and contact information.,F,FR,test
+REQ-0961,48,The user interface of the system should be very user friendly.,US,NFR,test
+REQ-0487,9,Prior to submitting the lead to the enterprise system the leads washing functionality will assign the lead to an admissions rep.,F,FR,test
+REQ-0640,17,The system shall debit the user's account upon withdrawal of funds.,F,FR,test
+REQ-0794,38,Can purchase any product through valid credit card.,F,FR,test
+REQ-0174,4,The Disputes application must conform to the legal requirements as specified by Regulation E and Regulation Z that govern credit card disputes processing.,L,NFR,test
+REQ-0877,46,The system shall display all the available components of the product to configure.,F,FR,test
+REQ-0029,2,The look and feel of the system shall conform to the user interface standards of the smart device.,LF,NFR,test
+REQ-0966,49,Registered User must be able to maintain his/her session information for at least 60 minutes of inactive session before the system prompts him to log out of the system. The registered user must be provided with all the options of the E-store regardless of the time when he/she logs in.,F,FR,test
+REQ-0036,2,The product shall use symbols and words that are naturally understandable by the realtor community.,US,NFR,test
+REQ-0882,46,The system shall provide browsing options to see product details.,F,FR,test
+REQ-0208,5,The product shall comply with corporate User Interface Guidelines,LF,NFR,test
+REQ-0367,7,PME Subsystem shall allow building product menus based on the list of products kept in the accounting system.,F,FR,test
+REQ-0466,9,No lead evaluation will complete in a time period longer than 25 seconds for 97% of all leads processed.,PE,NFR,test
+REQ-0801,38,Responsible for properly allocating the selected product according to the customer's choice and delivering product to the customer.,F,FR,test
+REQ-0352,7,The System shall utilize currently owned computer equipment.,O,NFR,test
+REQ-0544,11,The system shall be responsive. At the DePaul TeleServices Center  when a supervisor uses the system to view a callers schedule  the system response time must be no more than 2 seconds 90% of the time and no more than 5 seconds the rest of the time.,PE,NFR,test
+REQ-0635,17,The system shall provide an option to withdraw money.,F,FR,test
+REQ-0346,6,The product shall be able to send meeting notifications via different kinds of end-user specified methods.,F,FR,test
+REQ-0105,3,Students added to a cohort shall be eligible for the cohort\92s Program of Study.,F,FR,test
+REQ-0486,9,The leads washing functionality will store any potential lead duplicates returned by the enterprise system.,F,FR,test
+REQ-0052,2,The product shall be installed by an untrained realtor without recourse to separately-printed instructions.,US,NFR,test
+REQ-0602,14,Users shall be able to reach the \91add\92  \91drop\92  and \91trade player\92 pages with one click from the team owner\92s page.,US,NFR,test
+REQ-0125,3,Program Administrators and Nursing Staff Members shall be able to add a student who has registered for a clinical class to a clinical lab section for that class.,F,FR,test
+REQ-0546,11,On a 112k connection or faster  the system response time for all operations must be no more than 3 seconds 90% of the time.,PE,NFR,test
+REQ-0686,27,The system should use the company colors and logos.,LF,NFR,test
+REQ-0017,1,The bottom 3/4 of the table will hold events that occur according to its relevance to current time.,F,FR,test
+REQ-0327,6,The product will record meeting acknowledgements.,F,FR,test
+REQ-0688,27,The system shall be able to display a menu at all times to facilitate manual order taking should the need arise.,LF,NFR,test
+REQ-0938,46,The system shall provide a contractual agreement with an internet service provider for T3 access with 99.9999% availability.,A,NFR,test
+REQ-0203,5,The product must support Internet Explorer 5.5 and above.,O,NFR,test
+REQ-0824,42,Navigation to each selected tab.,F,FR,test
+REQ-0519,10,When both players have positioned their 5 ships on their defensive grids  the product shall define the status of each player for the first turn.,F,FR,test
+REQ-0049,2,The product shall be able to support multiple remote users,SC,NFR,test
+REQ-0212,5,The product shall increase productivity of Collision Estimators. 80% of the Collision Estimators shall agree their productivity has increase within 1 month of using the product.,US,NFR,test
+REQ-0531,10,When the hit results in sinking a ship  the product shall mark the ship as sunk on the offensive grid of the offensive player.,F,FR,test
+REQ-0605,14,The application shall be able to complete every user transaction within one fourth of a second of receiving the request over the network.,PE,NFR,test
+REQ-0628,16,The system shall support the ability to perform a send only operation.,F,FR,test
+REQ-0120,3,Classes for a given cohort shall not conflict with regards to the time and day that they are offered.,F,FR,test
+REQ-0114,3,A clinical class shall specify the course name  lecture room requirements  clinical site needs  lecture instructor needs  and clinical lab instructor needs.,F,FR,test
+REQ-0783,38,The system shall accommodate high number of items and users without any fault.,FT,NFR,test
+REQ-0021,1,The system shall allow modification of the display.,F,FR,test
+REQ-0612,15,The RFS system should be available 24/7  especially during the budgeting period. The RFS system shall be available 90% of the time all year  and 98% during the budgeting period. 2% of the time  the system will become available within 1 hour of the time that the situation is reported.,A,NFR,test
+REQ-0506,10,Once a game has been initiated  the product shall make the players assigned to the game unavailable for selection from the list of players.,F,FR,test
+REQ-0583,13,Reports must be easy to generate. Reports must be generated within one button click and exported within one button click (after selecting the report),US,NFR,test
+REQ-0606,14,The application shall have a downtime of at most 10 minutes per year.,A,NFR,test
+REQ-0440,8,The website shall not be offensive to religious or ethnic groups.,LF,NFR,test
+REQ-0354,7,The System shall maintain consistent security.  Any changes in user passwords and/or permissions should take affect in all parts of the System.,SE,NFR,test
+REQ-0697,27,A tablet shall require a user to log in using a username and password.,SE,NFR,test
+REQ-0559,12,The product shall provide Portals.The product shall help System Administrators to analyze the transactions with ad-hoc reporting and KPIs (Key Performance Indicators),US,NFR,test
+REQ-0210,5,The appearance of the product shall appear professional,LF,NFR,test
+REQ-0005,1,If projected  the data must be understandable. On a 10x10 projection screen  90% of viewers must be able to determine that Events or Activities are occuring in current time from a viewing distance of 100,US,NFR,test
+REQ-0937,46,The system shall provide multi language support.,US,NFR,test
+REQ-0645,18,The meeting scheduler shall be accessed from the Web.,O,NFR,test
+REQ-0010,1,The system shall display Events in a vertical table by time.,F,FR,test
+REQ-0702,29,System will use secured database.,SE,NFR,test
+REQ-0724,32,Information recorded must include an optional field for context.,F,FR,test
+REQ-0456,8,System shall automatically update the main page of the website every Friday  and show the 4 latest movies that have been added to the website.,F,FR,test
+REQ-0617,15,New branches/complexes/districts/regions and revenue/expense accounts added to the BDW  must be reflected in the RFS system. 100% of the entities (mentioned above) available as of October month-end  will be loaded into the RFS system  prior to the budget start process.,MN,NFR,test
+REQ-0834,43,All login attempts shall be done so in a secure manner.,SE,NFR,test
+REQ-0869,45,The system shall utilize HTTPS communication to ensure data confidentiality.,SE,NFR,test
+REQ-0581,13,The system must use a point and click interface. 100% of all selection and navigation functionality must be able to be activated/selected by either a mouse or a keyboard,US,NFR,test
+REQ-0950,46,The system's back-end servers shall never display a customer's password.  The customer's password may be reset but never shown.,SE,NFR,test
+REQ-0502,10,The product shall provide players no access to information that might reveal the identity of another player,SE,NFR,test
+REQ-0761,34,The system provides storage of all databases on redundant computers with automatic switchover.,O,NFR,test
+REQ-0023,1,The system shall filter data by: Venues and Key Events.,F,FR,test
+REQ-0769,35,The Web interface should be compatible with standards in order to be usable via all major Web browsers in a wide variety of environments.,PO,NFR,test
+REQ-0936,46,The system shall provide handicap access.,US,NFR,test
+REQ-0599,14,Each page shall contain a similar format with action items in one location and navigation buttons in a different location.,LF,NFR,test
+REQ-0749,33,The system should take the customer name.,F,FR,test
+REQ-0540,10,When a game is ended  the product shall allow each player to identify himself or herself as an available player in the list of players.,F,FR,test
+REQ-0616,15,Changes to revenue and expense formulae must be applied to the RFS system  every year  prior to the budgeting process start. Revenue and expense formulae will be updated within one week of their receipt  after which 2 weeks will be allotted to testing of the budget calculations  to be conducted jointly by the project development team and PCG Finance.,MN,NFR,test
+REQ-0465,9,Total lead cycle time must be completed in 5 minutes for 90% of lead volume between the business hours of 8AM CST to 8PM CST; then 3 minutes for 99% of lead volume during off business hours.,PE,NFR,test
+REQ-0851,45,The system shall notify the user of any schedule changes.,F,FR,test
+REQ-0694,27,A waiter that attempts to log into a second tablet while already logged into another tablet shall be rejected and notified through both tablets.,SE,NFR,test
+REQ-0323,6,The product shall record meeting entries.,F,FR,test
+REQ-0238,5,The product shall comply with the estimatics laws relating to recycled parts usage.,L,NFR,test
+REQ-0271,5,The user shall enter new ratings based on the audit report,F,FR,test
+REQ-0754,33,The system should have to keep the location where the doughnut will be send.,O,NFR,test
+REQ-0836,45,The system shall allow the administrator to remove equipment.,F,FR,test
+REQ-0742,32,A user must be logged on to be able to view or edit any medical information.,F,FR,test
+REQ-0007,1,The product shall be intuitive and self-explanatory. 90% of new users shall be able to start the display of Events or Activities within 90 minutes of using the product.,US,NFR,test
+REQ-0121,3,Program Administrators and Nursing Staff Members shall be able to add a new clinical site into the system.,F,FR,test
+REQ-0397,8,When purchasing a streaming movie or pre-paid card via credit card  the processing time should have a maximum response time of 15 seconds.,PE,NFR,test
+REQ-0058,2,The system shall allow a real estate agent to query MLS information,F,FR,test
+REQ-0647,18,"The meeting scheduler system may provide the ""meeting initiator"" a summary of the scan of ""potential meeting participants"" showing available ""time slots"" and schedule conflicts as a means of informing the ""meeting initiator"" of the overall results of the system.",F,FR,test
+REQ-0170,4,The Disputes application shall manipulate and view business data. Users will not have direct access to data files or databases.,SE,NFR,test
+REQ-0400,8,All credit card information will be secured on the server  and only accessible by authorized Izogn administrators.  Information will be encrypted in the database.,SE,NFR,test
+REQ-0154,4,The maximum wait time for a user navigating from one screen to another within the Disputes application shall be no more than 5 seconds.,PE,NFR,test
+REQ-0398,8,When streaming a movie  the buffering time should take no longer than 10 seconds (plus any latency on the user\92s connection.),PE,NFR,test
+REQ-0205,5,The product shall interface with the Choice Parts System.  This provides the feed of recycled parts data.,O,NFR,test
+REQ-0646,18,The meeting scheduler system may (optionally) automatically propose another meeting if current meeting is canceled by an important participant.,F,FR,test
+REQ-0430,8,The website shall prevent its data from being corrupted when incorrect data is entered in.,SE,NFR,test
+REQ-0607,14,The application shall run on a web application server.,O,NFR,test
+REQ-0272,5,The ratings shall be from a scale of 1-10,F,FR,test
+REQ-0874,45,The system shall be compatible with IIS6.0 and above or  Apache 2.0 and above.,PO,NFR,test
+REQ-0959,48,The MTBF (if any) should not be less than 2 months.,A,NFR,test
+REQ-0781,37,Every user of the software is provided a unique login ID and a password which is stored in the database hashed by SHA2 algorithm.,SE,NFR,test
+REQ-0074,3,2 out of 3 Program Administrators/Nursing Staff Members shall successfully be able to use the system to manage the scheduling of classes and clinicals.,US,NFR,test
+REQ-0692,27,A waiter password used for tablet login must be changed every three months.,SE,NFR,test
+REQ-0758,34,The system should not leave any cookies on the customer's computer containing the user's password.,SE,NFR,test
+REQ-0530,10,When the hit results in sinking a ship  the product shall indicate the type of ship sunk on the defensive grid of the defensive player.,F,FR,test
+REQ-0371,7,The System shall generate Inventory Quantity Adjustment document based on product daily sales data and product formulas.,F,FR,test
+REQ-0092,3,Only authorized users shall have access to clinical site information.,SE,NFR,test
+REQ-0159,4,The Disputes applications shall interface with the Merchant Information Database. The Merchant Information Database provides detailed information with regard to the merchant. All merchant detail information shall be obtained from the Merchant Information Database.,O,NFR,test
+REQ-0831,42,New and Delete buttons will allow the physician/pharmacist to add a notation to the patient's file.,F,FR,test
+REQ-0300,6,The product must be able to interface with various database management systems. The product shall communicate successfully with the database management system on 100% of all transactions.,O,NFR,test
+REQ-0931,46,The system shall allow user to confirm the purchase.,F,FR,test
+REQ-0843,45,The system shall allow the mediator to negotiate a location / equipment.,F,FR,test
+REQ-0720,31,The IP addresses where the transaction was made from will be logged.,SE,NFR,test
+REQ-0942,46,The performance shall depend upon hardware components of the client/customer.,PE,NFR,test
+REQ-0006,1,The product shall ensure that it can only be accessed by authorized users.  The product will be able to distinguish between authorized and unauthorized users in all access attempts,SE,NFR,test
+REQ-0223,5,The average number of recycled parts records per day shall be 50 000.,SC,NFR,test
+REQ-0341,6,The product shall display conference rooms according to search parameters.,F,FR,test
+REQ-0123,3,Program Administrators and Nursing Staff Members shall be able to add a new clinical lab section for an existing clinical class into the System.,F,FR,test
+REQ-0684,26,It should generate a report about registered complaint to the admin and response report to the user who has submitted his queries.,F,FR,test
+REQ-0298,6,The product shall be used in office environments.,O,NFR,test

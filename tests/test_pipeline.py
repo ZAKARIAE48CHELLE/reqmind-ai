@@ -2,6 +2,7 @@
 
 import json
 from pathlib import Path
+from reqmind.classification import HeuristicBaselineClassifier
 from reqmind.pipeline import ReqMindPipeline
 from reqmind.review import update_requirement_review, dismiss_ambiguity_span
 from reqmind.schemas import RequirementLabel, ReviewStatus
@@ -16,7 +17,7 @@ def test_pipeline_on_sample_requirements(tmp_path: Path):
     with open(sample_file, "r", encoding="utf-8") as f:
         text = f.read()
         
-    pipeline = ReqMindPipeline()
+    pipeline = ReqMindPipeline(classifier=HeuristicBaselineClassifier())
     doc = pipeline.process_text(text, document_id="doc_sample_bench")
     
     # 1. Verification of segmentation

@@ -1,0 +1,69 @@
+{
+  "n_test": 146,
+  "results": {
+    "majority": {
+      "accuracy": 0.5411,
+      "macro_f1": 0.3511,
+      "f1_FR": 0.0,
+      "f1_NFR": 0.7022,
+      "confusion_matrix[FR,NFR]": [
+        [
+          0,
+          67
+        ],
+        [
+          0,
+          79
+        ]
+      ]
+    },
+    "tfidf_logreg": {
+      "accuracy": 0.9178,
+      "macro_f1": 0.9168,
+      "f1_FR": 0.9077,
+      "f1_NFR": 0.9259,
+      "confusion_matrix[FR,NFR]": [
+        [
+          59,
+          8
+        ],
+        [
+          4,
+          75
+        ]
+      ]
+    },
+    "tfidf_svm": {
+      "accuracy": 0.9178,
+      "macro_f1": 0.9168,
+      "f1_FR": 0.9077,
+      "f1_NFR": 0.9259,
+      "confusion_matrix[FR,NFR]": [
+        [
+          59,
+          8
+        ],
+        [
+          4,
+          75
+        ]
+      ]
+    },
+    "embed_logreg": {
+      "accuracy": 0.8562,
+      "macro_f1": 0.8558,
+      "f1_FR": 0.8489,
+      "f1_NFR": 0.8627,
+      "confusion_matrix[FR,NFR]": [
+        [
+          59,
+          8
+        ],
+        [
+          13,
+          66
+        ]
+      ]
+    }
+  }
+}

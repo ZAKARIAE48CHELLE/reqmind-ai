@@ -1,0 +1,38 @@
+{
+  "protocol": "GroupKFold(5) by ProjectID, hyperparameters fixed from validation",
+  "results": {
+    "tfidf_logreg": {
+      "macro_f1_mean": 0.7016,
+      "macro_f1_std": 0.0283,
+      "folds": [
+        0.6938,
+        0.7271,
+        0.7413,
+        0.6664,
+        0.6796
+      ]
+    },
+    "tfidf_svm": {
+      "macro_f1_mean": 0.7026,
+      "macro_f1_std": 0.0135,
+      "folds": [
+        0.6909,
+        0.7173,
+        0.7206,
+        0.6895,
+        0.6949
+      ]
+    },
+    "embed_logreg": {
+      "macro_f1_mean": 0.7879,
+      "macro_f1_std": 0.0712,
+      "folds": [
+        0.6611,
+        0.8686,
+        0.8354,
+        0.8033,
+        0.7709
+      ]
+    }
+  }
+}

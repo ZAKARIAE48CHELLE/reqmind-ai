@@ -1,0 +1,60 @@
+{
+  "model_name": "SetFit(all-MiniLM-L6-v2)",
+  "train_time_seconds": 1550.66,
+  "validation_metrics": {
+    "accuracy": 0.9172,
+    "macro_f1": 0.9163,
+    "f1_FR": 0.9077,
+    "f1_NFR": 0.925,
+    "confusion_matrix[FR,NFR]": [
+      [
+        59,
+        7
+      ],
+      [
+        5,
+        74
+      ]
+    ]
+  },
+  "test_metrics": {
+    "accuracy": 0.9247,
+    "macro_f1": 0.9242,
+    "f1_FR": 0.9185,
+    "f1_NFR": 0.9299,
+    "confusion_matrix[FR,NFR]": [
+      [
+        62,
+        5
+      ],
+      [
+        6,
+        73
+      ]
+    ]
+  },
+  "cross_project_groupkfold": {
+    "macro_f1_mean": 0.8068,
+    "macro_f1_std": 0.0683,
+    "folds": [
+      0.7346,
+      0.8967,
+      0.8696,
+      0.7287,
+      0.8045
+    ]
+  },
+  "comparison_with_phase3_baselines": {
+    "test_macro_f1": {
+      "majority": 0.3511,
+      "embed_frozen_logreg": 0.8558,
+      "tfidf_logreg": 0.9168,
+      "setfit_finetuned": 0.9242
+    },
+    "cross_project_macro_f1": {
+      "tfidf_logreg": 0.7016,
+      "embed_frozen_logreg": 0.7879,
+      "setfit_finetuned": 0.8068
+    }
+  }
+}

@@ -8,7 +8,7 @@ from typing import Optional
 from reqmind.schemas import DocumentRecord
 from reqmind.ingestion import ingest_text
 from reqmind.segmentation import segment_document
-from reqmind.classification import BaseRequirementClassifier, HeuristicBaselineClassifier
+from reqmind.classification import BaseRequirementClassifier, load_default_classifier
 from reqmind.ambiguity import analyze_requirement_ambiguities
 from reqmind.similarity import find_duplicate_candidates
 
@@ -17,7 +17,7 @@ class ReqMindPipeline:
     """Orchestrator for requirement analysis pipeline."""
 
     def __init__(self, classifier: Optional[BaseRequirementClassifier] = None):
-        self.classifier = classifier or HeuristicBaselineClassifier()
+        self.classifier = classifier or load_default_classifier()
         self.pipeline_version = "0.1.0"
 
     def process_text(self, text: str, document_id: Optional[str] = None, filename: Optional[str] = None) -> DocumentRecord:
@@ -28,7 +28,9 @@ class ReqMindPipeline:
         requirements = segment_document(doc)
         
         # 2. Classification
-        requirements = self.classifier.classify_requirements(requirements, model_version="heuristic-baseline-v1")
+        requirements = self.classifier.classify_requirements(
+            requirements, model_version=getattr(self.classifier, "model_version", "unknown")
+        )
         
         # 3. Ambiguity Detection
         requirements = analyze_requirement_ambiguities(requirements)

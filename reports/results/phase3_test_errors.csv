@@ -1,0 +1,46 @@
+model,req_id,fine_class,true,pred,text
+tfidf_logreg,REQ-0737,F,FR,NFR,All information must be viewable on the website.
+tfidf_logreg,REQ-0803,F,FR,NFR,Responsible for informing administrator when any product item's stock goes under the minimum level.
+tfidf_logreg,REQ-0794,F,FR,NFR,Can purchase any product through valid credit card.
+tfidf_logreg,REQ-0966,F,FR,NFR,Registered User must be able to maintain his/her session information for at least 60 minutes of inactive session before the system prompts him to log out of the system. The registered user must be provided with all the options of the E-store regardless of the time when he/she logs in.
+tfidf_logreg,REQ-0352,O,NFR,FR,The System shall utilize currently owned computer equipment.
+tfidf_logreg,REQ-0120,F,FR,NFR,Classes for a given cohort shall not conflict with regards to the time and day that they are offered.
+tfidf_logreg,REQ-0645,O,NFR,FR,The meeting scheduler shall be accessed from the Web.
+tfidf_logreg,REQ-0456,F,FR,NFR,System shall automatically update the main page of the website every Friday  and show the 4 latest movies that have been added to the website.
+tfidf_logreg,REQ-0749,F,FR,NFR,The system should take the customer name.
+tfidf_logreg,REQ-0754,O,NFR,FR,The system should have to keep the location where the doughnut will be send.
+tfidf_logreg,REQ-0272,F,FR,NFR,The ratings shall be from a scale of 1-10
+tfidf_logreg,REQ-0720,SE,NFR,FR,The IP addresses where the transaction was made from will be logged.
+tfidf_svm,REQ-0737,F,FR,NFR,All information must be viewable on the website.
+tfidf_svm,REQ-0803,F,FR,NFR,Responsible for informing administrator when any product item's stock goes under the minimum level.
+tfidf_svm,REQ-0794,F,FR,NFR,Can purchase any product through valid credit card.
+tfidf_svm,REQ-0966,F,FR,NFR,Registered User must be able to maintain his/her session information for at least 60 minutes of inactive session before the system prompts him to log out of the system. The registered user must be provided with all the options of the E-store regardless of the time when he/she logs in.
+tfidf_svm,REQ-0352,O,NFR,FR,The System shall utilize currently owned computer equipment.
+tfidf_svm,REQ-0824,F,FR,NFR,Navigation to each selected tab.
+tfidf_svm,REQ-0645,O,NFR,FR,The meeting scheduler shall be accessed from the Web.
+tfidf_svm,REQ-0456,F,FR,NFR,System shall automatically update the main page of the website every Friday  and show the 4 latest movies that have been added to the website.
+tfidf_svm,REQ-0749,F,FR,NFR,The system should take the customer name.
+tfidf_svm,REQ-0754,O,NFR,FR,The system should have to keep the location where the doughnut will be send.
+tfidf_svm,REQ-0272,F,FR,NFR,The ratings shall be from a scale of 1-10
+tfidf_svm,REQ-0720,SE,NFR,FR,The IP addresses where the transaction was made from will be logged.
+embed_logreg,REQ-0057,SE,NFR,FR,The product shall prevent its data from incorrect data being introduced.
+embed_logreg,REQ-0362,F,FR,NFR,Product formulas shall allow use of semi-products  which have own formulas.
+embed_logreg,REQ-0794,F,FR,NFR,Can purchase any product through valid credit card.
+embed_logreg,REQ-0966,F,FR,NFR,Registered User must be able to maintain his/her session information for at least 60 minutes of inactive session before the system prompts him to log out of the system. The registered user must be provided with all the options of the E-store regardless of the time when he/she logs in.
+embed_logreg,REQ-0602,US,NFR,FR,Users shall be able to reach the \91add\92  \91drop\92  and \91trade player\92 pages with one click from the team owner\92s page.
+embed_logreg,REQ-0688,LF,NFR,FR,The system shall be able to display a menu at all times to facilitate manual order taking should the need arise.
+embed_logreg,REQ-0824,F,FR,NFR,Navigation to each selected tab.
+embed_logreg,REQ-0628,F,FR,NFR,The system shall support the ability to perform a send only operation.
+embed_logreg,REQ-0120,F,FR,NFR,Classes for a given cohort shall not conflict with regards to the time and day that they are offered.
+embed_logreg,REQ-0645,O,NFR,FR,The meeting scheduler shall be accessed from the Web.
+embed_logreg,REQ-0456,F,FR,NFR,System shall automatically update the main page of the website every Friday  and show the 4 latest movies that have been added to the website.
+embed_logreg,REQ-0617,MN,NFR,FR,New branches/complexes/districts/regions and revenue/expense accounts added to the BDW  must be reflected in the RFS system. 100% of the entities (mentioned above) available as of October month-end  will be loaded into the RFS system  prior to the budget start process.
+embed_logreg,REQ-0502,SE,NFR,FR,The product shall provide players no access to information that might reveal the identity of another player
+embed_logreg,REQ-0936,US,NFR,FR,The system shall provide handicap access.
+embed_logreg,REQ-0616,MN,NFR,FR,Changes to revenue and expense formulae must be applied to the RFS system  every year  prior to the budgeting process start. Revenue and expense formulae will be updated within one week of their receipt  after which 2 weeks will be allotted to testing of the budget calculations  to be conducted jointly by the project development team and PCG Finance.
+embed_logreg,REQ-0238,L,NFR,FR,The product shall comply with the estimatics laws relating to recycled parts usage.
+embed_logreg,REQ-0754,O,NFR,FR,The system should have to keep the location where the doughnut will be send.
+embed_logreg,REQ-0205,O,NFR,FR,The product shall interface with the Choice Parts System.  This provides the feed of recycled parts data.
+embed_logreg,REQ-0272,F,FR,NFR,The ratings shall be from a scale of 1-10
+embed_logreg,REQ-0074,US,NFR,FR,2 out of 3 Program Administrators/Nursing Staff Members shall successfully be able to use the system to manage the scheduling of classes and clinicals.
+embed_logreg,REQ-0720,SE,NFR,FR,The IP addresses where the transaction was made from will be logged.

@@ -1,0 +1,12 @@
+req_id,fine_class,true_label,predicted,text
+REQ-0362,F,FR,NFR,Product formulas shall allow use of semi-products  which have own formulas.
+REQ-0966,F,FR,NFR,Registered User must be able to maintain his/her session information for at least 60 minutes of inactive session before the system prompts him to log out of the system. The registered user must be provided with all the options of the E-store regardless of the time when he/she logs in.
+REQ-0346,F,FR,NFR,The product shall be able to send meeting notifications via different kinds of end-user specified methods.
+REQ-0686,LF,NFR,FR,The system should use the company colors and logos.
+REQ-0645,O,NFR,FR,The meeting scheduler shall be accessed from the Web.
+REQ-0456,F,FR,NFR,System shall automatically update the main page of the website every Friday  and show the 4 latest movies that have been added to the website.
+REQ-0502,SE,NFR,FR,The product shall provide players no access to information that might reveal the identity of another player
+REQ-0936,US,NFR,FR,The system shall provide handicap access.
+REQ-0754,O,NFR,FR,The system should have to keep the location where the doughnut will be send.
+REQ-0742,F,FR,NFR,A user must be logged on to be able to view or edit any medical information.
+REQ-0720,SE,NFR,FR,The IP addresses where the transaction was made from will be logged.

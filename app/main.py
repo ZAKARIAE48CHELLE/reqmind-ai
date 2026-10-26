@@ -18,16 +18,22 @@ st.set_page_config(
 st.title("🧠 ReqMind AI")
 st.caption("Intelligent Software Requirements Analyzer using NLP (Decision-Support MVP)")
 
+@st.cache_resource
+def get_pipeline() -> ReqMindPipeline:
+    return ReqMindPipeline()
+
+
+pipeline = get_pipeline()
+
 # Sidebar Configuration
 st.sidebar.header("Configuration & Provenance")
 st.sidebar.markdown("**Pipeline Version:** `0.1.0`")
-st.sidebar.markdown("**Classification:** `Baseline / Heuristic v1`")
+st.sidebar.markdown(f"**Classification:** `{getattr(pipeline.classifier, 'model_version', 'unknown')}`")
+st.sidebar.caption("Model scores are uncalibrated. See reports/phases/phase_3.md for metrics.")
 st.sidebar.info("Academic Notice: Decision-support tool. Not an automatic requirements auditor.")
 
 if "document" not in st.session_state:
     st.session_state.document = None
-
-pipeline = ReqMindPipeline()
 
 # Tabs
 tab_input, tab_table, tab_ambiguity, tab_duplicates, tab_review, tab_export = st.tabs([

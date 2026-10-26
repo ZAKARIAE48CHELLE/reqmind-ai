@@ -52,8 +52,14 @@ models/*.onnx
 models/*.joblib
 models/*.pkl
 models/*.h5
+models/*.safetensors
 models/**/checkpoint-*/
+models/setfit_minilm/
 
 # Temporary or local runs
 reports/figures/*.png
 !reports/figures/.gitkeep
+scratch/
+fill_compte_rendu.py
+Base docs/*TEMPLATE_BACKUP*
+

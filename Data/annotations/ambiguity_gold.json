@@ -1,0 +1,1067 @@
+[
+  {
+    "id": "AMB-001",
+    "text": "The system shall respond fast under heavy network load.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 25,
+        "end": 29,
+        "phrase": "fast",
+        "rule_id": "VAGUE_ADVERB",
+        "explanation": "Subjective latency expectation without maximum response time in milliseconds.",
+        "suggested_metric": "< 200 ms for 95th percentile"
+      }
+    ]
+  },
+  {
+    "id": "AMB-002",
+    "text": "The application shall process user requests quickly during peak hours.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 44,
+        "end": 51,
+        "phrase": "quickly",
+        "rule_id": "VAGUE_ADVERB",
+        "explanation": "Non-quantifiable processing time.",
+        "suggested_metric": "< 500 ms"
+      }
+    ]
+  },
+  {
+    "id": "AMB-003",
+    "text": "Search queries must return results in a reasonable time.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 40,
+        "end": 55,
+        "phrase": "reasonable time",
+        "rule_id": "VAGUE_TEMPORAL",
+        "explanation": "Reasonable time is non-verifiable without an explicit timeout SLA.",
+        "suggested_metric": "< 1.5 seconds"
+      }
+    ]
+  },
+  {
+    "id": "AMB-004",
+    "text": "The database synchronization shall happen rapidly after data ingestion.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 42,
+        "end": 49,
+        "phrase": "rapidly",
+        "rule_id": "VAGUE_ADVERB",
+        "explanation": "Vague synchronization frequency.",
+        "suggested_metric": "within 5 seconds"
+      }
+    ]
+  },
+  {
+    "id": "AMB-005",
+    "text": "The service shall boot instantaneously upon container initialization.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 23,
+        "end": 38,
+        "phrase": "instantaneously",
+        "rule_id": "VAGUE_ADVERB",
+        "explanation": "Physically impossible expectation; specify cold-start deadline.",
+        "suggested_metric": "< 3000 ms"
+      }
+    ]
+  },
+  {
+    "id": "AMB-006",
+    "text": "The interface must be user-friendly and appealing to non-technical users.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 22,
+        "end": 35,
+        "phrase": "user-friendly",
+        "rule_id": "VAGUE_USABILITY",
+        "explanation": "Subjective UX attribute; specify task success rate or SUS score.",
+        "suggested_metric": "SUS score >= 80"
+      }
+    ]
+  },
+  {
+    "id": "AMB-007",
+    "text": "The checkout workflow must be easy to use for elderly customers.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 30,
+        "end": 41,
+        "phrase": "easy to use",
+        "rule_id": "VAGUE_USABILITY",
+        "explanation": "Non-verifiable usability target.",
+        "suggested_metric": ">= 90% first-attempt completion without operator assistance"
+      }
+    ]
+  },
+  {
+    "id": "AMB-008",
+    "text": "The mobile app navigation shall be intuitive across all screen sizes.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 35,
+        "end": 44,
+        "phrase": "intuitive",
+        "rule_id": "VAGUE_USABILITY",
+        "explanation": "Intuitive is unmeasurable without usability test criteria.",
+        "suggested_metric": "< 3 clicks to reach primary features"
+      }
+    ]
+  },
+  {
+    "id": "AMB-009",
+    "text": "The reporting portal must present a simple dashboard for executive review.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 36,
+        "end": 42,
+        "phrase": "simple",
+        "rule_id": "VAGUE_USABILITY",
+        "explanation": "Simple lacks precise structural requirements.",
+        "suggested_metric": "Displaying max 5 key performance widgets"
+      }
+    ]
+  },
+  {
+    "id": "AMB-010",
+    "text": "The software shall provide convenient shortcuts for power users.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 27,
+        "end": 37,
+        "phrase": "convenient",
+        "rule_id": "VAGUE_USABILITY",
+        "explanation": "Convenient is subjective.",
+        "suggested_metric": "Support customizable single-key bindings"
+      }
+    ]
+  },
+  {
+    "id": "AMB-011",
+    "text": "The system shall guarantee high availability throughout the fiscal year.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 27,
+        "end": 44,
+        "phrase": "high availability",
+        "rule_id": "VAGUE_AVAILABILITY",
+        "explanation": "High availability requires explicit uptime percentage (e.g. 99.9%).",
+        "suggested_metric": ">= 99.95% uptime excluding planned maintenance"
+      }
+    ]
+  },
+  {
+    "id": "AMB-012",
+    "text": "The cluster must ensure maximum uptime during Black Friday events.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 24,
+        "end": 38,
+        "phrase": "maximum uptime",
+        "rule_id": "VAGUE_AVAILABILITY",
+        "explanation": "Maximum uptime is ambiguous.",
+        "suggested_metric": "Zero unplanned downtime during 72-hour window"
+      }
+    ]
+  },
+  {
+    "id": "AMB-013",
+    "text": "The backend shall operate in an efficient manner under heavy concurrency.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 32,
+        "end": 41,
+        "phrase": "efficient",
+        "rule_id": "VAGUE_PERFORMANCE",
+        "explanation": "Efficiency requires CPU/memory consumption bounds.",
+        "suggested_metric": "< 70% CPU utilization at 10,000 req/sec"
+      }
+    ]
+  },
+  {
+    "id": "AMB-014",
+    "text": "The notification engine must be robust against intermittent network failures.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 32,
+        "end": 38,
+        "phrase": "robust",
+        "rule_id": "VAGUE_QUALITY",
+        "explanation": "Robustness requires explicit retry and circuit-breaking parameters.",
+        "suggested_metric": "3 retries with exponential backoff before dead-letter queue"
+      }
+    ]
+  },
+  {
+    "id": "AMB-015",
+    "text": "The system shall provide optimal caching to accelerate page rendering.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 25,
+        "end": 32,
+        "phrase": "optimal",
+        "rule_id": "VAGUE_QUALITY",
+        "explanation": "Optimal is subjective and mathematically undefined.",
+        "suggested_metric": ">= 85% cache hit ratio"
+      }
+    ]
+  },
+  {
+    "id": "AMB-016",
+    "text": "The system shall archive stale audit logs as appropriate.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 42,
+        "end": 56,
+        "phrase": "as appropriate",
+        "rule_id": "DISCRETIONARY_CLAUSE",
+        "explanation": "Leaves archival triggers completely at developer discretion.",
+        "suggested_metric": "Logs older than 365 days"
+      }
+    ]
+  },
+  {
+    "id": "AMB-017",
+    "text": "The user profile should include secondary contact numbers if possible.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 58,
+        "end": 69,
+        "phrase": "if possible",
+        "rule_id": "DISCRETIONARY_CLAUSE",
+        "explanation": "Weak requirement without clear validation rules.",
+        "suggested_metric": "Optional field with E.164 regex validation"
+      }
+    ]
+  },
+  {
+    "id": "AMB-018",
+    "text": "The application shall compress uploaded attachments as needed.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 52,
+        "end": 61,
+        "phrase": "as needed",
+        "rule_id": "DISCRETIONARY_CLAUSE",
+        "explanation": "Condition for compression is undefined.",
+        "suggested_metric": "Attachments exceeding 5 MB"
+      }
+    ]
+  },
+  {
+    "id": "AMB-019",
+    "text": "The service shall encrypt outgoing emails where suitable.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 42,
+        "end": 56,
+        "phrase": "where suitable",
+        "rule_id": "DISCRETIONARY_CLAUSE",
+        "explanation": "Security measures cannot be discretionary.",
+        "suggested_metric": "Mandatory TLS 1.3 for all outgoing connections"
+      }
+    ]
+  },
+  {
+    "id": "AMB-020",
+    "text": "The exporter will format timestamps according to local conventions if feasible.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 67,
+        "end": 78,
+        "phrase": "if feasible",
+        "rule_id": "DISCRETIONARY_CLAUSE",
+        "explanation": "Discretionary phrasing.",
+        "suggested_metric": "ISO-8601 UTC format by default, user-selected IANA timezone"
+      }
+    ]
+  },
+  {
+    "id": "AMB-021",
+    "text": "The platform must be fast, highly available, and provide an intuitive interface.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 21,
+        "end": 25,
+        "phrase": "fast",
+        "rule_id": "VAGUE_ADVERB",
+        "explanation": "Latency target omitted.",
+        "suggested_metric": "< 250 ms"
+      },
+      {
+        "start": 27,
+        "end": 43,
+        "phrase": "highly available",
+        "rule_id": "VAGUE_AVAILABILITY",
+        "explanation": "Uptime SLA omitted.",
+        "suggested_metric": "99.99%"
+      },
+      {
+        "start": 60,
+        "end": 69,
+        "phrase": "intuitive",
+        "rule_id": "VAGUE_USABILITY",
+        "explanation": "Usability standard omitted.",
+        "suggested_metric": "First-time user test score >= 85%"
+      }
+    ]
+  },
+  {
+    "id": "AMB-022",
+    "text": "The API must respond quickly and be user-friendly for third-party developers.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 21,
+        "end": 28,
+        "phrase": "quickly",
+        "rule_id": "VAGUE_ADVERB",
+        "explanation": "Latency target omitted.",
+        "suggested_metric": "< 100 ms"
+      },
+      {
+        "start": 36,
+        "end": 49,
+        "phrase": "user-friendly",
+        "rule_id": "VAGUE_USABILITY",
+        "explanation": "API developer UX requires OpenAPI 3.0 specs and SDK.",
+        "suggested_metric": "OpenAPI specification compliant"
+      }
+    ]
+  },
+  {
+    "id": "AMB-023",
+    "text": "The system shall authenticate users within 300 milliseconds of credential submission.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-024",
+    "text": "The platform shall maintain 99.95% uptime measured on a monthly basis.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-025",
+    "text": "The search engine shall return up to 20 results in less than 500 milliseconds.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-026",
+    "text": "The system shall not store unencrypted credit card numbers in the database.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-027",
+    "text": "The batch processing job shall complete within 4 hours for datasets up to 10 GB.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-028",
+    "text": "Password reset tokens shall expire exactly 15 minutes after generation.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-029",
+    "text": "The API shall rate limit unauthenticated requests to 60 calls per IP per minute.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-030",
+    "text": "The application shall support concurrent sessions for up to 5,000 active users.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-031",
+    "text": "The software shall ensure that component 31 operates high availability under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 70,
+        "phrase": "high availability",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: high availability.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-032",
+    "text": "The software shall ensure that component 32 operates intuitive under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 62,
+        "phrase": "intuitive",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: intuitive.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-033",
+    "text": "Component 33 shall complete transaction execution in under 430 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-034",
+    "text": "The software shall ensure that component 34 operates efficient under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 62,
+        "phrase": "efficient",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: efficient.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-035",
+    "text": "The software shall ensure that component 35 operates if possible under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 64,
+        "phrase": "if possible",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: if possible.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-036",
+    "text": "Component 36 shall complete transaction execution in under 460 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-037",
+    "text": "The software shall ensure that component 37 operates user-friendly under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 66,
+        "phrase": "user-friendly",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: user-friendly.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-038",
+    "text": "The software shall ensure that component 38 operates fast under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 57,
+        "phrase": "fast",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: fast.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-039",
+    "text": "Component 39 shall complete transaction execution in under 490 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-040",
+    "text": "The software shall ensure that component 40 operates high availability under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 70,
+        "phrase": "high availability",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: high availability.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-041",
+    "text": "The software shall ensure that component 41 operates intuitive under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 62,
+        "phrase": "intuitive",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: intuitive.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-042",
+    "text": "Component 42 shall complete transaction execution in under 520 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-043",
+    "text": "The software shall ensure that component 43 operates efficient under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 62,
+        "phrase": "efficient",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: efficient.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-044",
+    "text": "The software shall ensure that component 44 operates if possible under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 64,
+        "phrase": "if possible",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: if possible.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-045",
+    "text": "Component 45 shall complete transaction execution in under 550 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-046",
+    "text": "The software shall ensure that component 46 operates user-friendly under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 66,
+        "phrase": "user-friendly",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: user-friendly.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-047",
+    "text": "The software shall ensure that component 47 operates fast under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 57,
+        "phrase": "fast",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: fast.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-048",
+    "text": "Component 48 shall complete transaction execution in under 580 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-049",
+    "text": "The software shall ensure that component 49 operates high availability under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 70,
+        "phrase": "high availability",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: high availability.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-050",
+    "text": "The software shall ensure that component 50 operates intuitive under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 62,
+        "phrase": "intuitive",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: intuitive.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-051",
+    "text": "Component 51 shall complete transaction execution in under 610 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-052",
+    "text": "The software shall ensure that component 52 operates efficient under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 62,
+        "phrase": "efficient",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: efficient.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-053",
+    "text": "The software shall ensure that component 53 operates if possible under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 64,
+        "phrase": "if possible",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: if possible.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-054",
+    "text": "Component 54 shall complete transaction execution in under 640 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-055",
+    "text": "The software shall ensure that component 55 operates user-friendly under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 66,
+        "phrase": "user-friendly",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: user-friendly.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-056",
+    "text": "The software shall ensure that component 56 operates fast under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 57,
+        "phrase": "fast",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: fast.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-057",
+    "text": "Component 57 shall complete transaction execution in under 670 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-058",
+    "text": "The software shall ensure that component 58 operates high availability under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 70,
+        "phrase": "high availability",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: high availability.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-059",
+    "text": "The software shall ensure that component 59 operates intuitive under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 62,
+        "phrase": "intuitive",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: intuitive.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-060",
+    "text": "Component 60 shall complete transaction execution in under 700 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-061",
+    "text": "The software shall ensure that component 61 operates efficient under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 62,
+        "phrase": "efficient",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: efficient.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-062",
+    "text": "The software shall ensure that component 62 operates if possible under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 64,
+        "phrase": "if possible",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: if possible.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-063",
+    "text": "Component 63 shall complete transaction execution in under 730 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-064",
+    "text": "The software shall ensure that component 64 operates user-friendly under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 66,
+        "phrase": "user-friendly",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: user-friendly.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-065",
+    "text": "The software shall ensure that component 65 operates fast under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 57,
+        "phrase": "fast",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: fast.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-066",
+    "text": "Component 66 shall complete transaction execution in under 760 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-067",
+    "text": "The software shall ensure that component 67 operates high availability under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 70,
+        "phrase": "high availability",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: high availability.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-068",
+    "text": "The software shall ensure that component 68 operates intuitive under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 62,
+        "phrase": "intuitive",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: intuitive.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-069",
+    "text": "Component 69 shall complete transaction execution in under 790 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-070",
+    "text": "The software shall ensure that component 70 operates efficient under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 62,
+        "phrase": "efficient",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: efficient.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-071",
+    "text": "The software shall ensure that component 71 operates if possible under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 64,
+        "phrase": "if possible",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: if possible.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-072",
+    "text": "Component 72 shall complete transaction execution in under 820 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-073",
+    "text": "The software shall ensure that component 73 operates user-friendly under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 66,
+        "phrase": "user-friendly",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: user-friendly.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-074",
+    "text": "The software shall ensure that component 74 operates fast under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 57,
+        "phrase": "fast",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: fast.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-075",
+    "text": "Component 75 shall complete transaction execution in under 850 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-076",
+    "text": "The software shall ensure that component 76 operates high availability under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 70,
+        "phrase": "high availability",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: high availability.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-077",
+    "text": "The software shall ensure that component 77 operates intuitive under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 62,
+        "phrase": "intuitive",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: intuitive.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-078",
+    "text": "Component 78 shall complete transaction execution in under 880 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-079",
+    "text": "The software shall ensure that component 79 operates efficient under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 62,
+        "phrase": "efficient",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: efficient.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-080",
+    "text": "The software shall ensure that component 80 operates if possible under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 64,
+        "phrase": "if possible",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: if possible.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-081",
+    "text": "Component 81 shall complete transaction execution in under 910 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-082",
+    "text": "The software shall ensure that component 82 operates user-friendly under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 66,
+        "phrase": "user-friendly",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: user-friendly.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-083",
+    "text": "The software shall ensure that component 83 operates fast under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 57,
+        "phrase": "fast",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: fast.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  },
+  {
+    "id": "AMB-084",
+    "text": "Component 84 shall complete transaction execution in under 940 milliseconds with 99.9% reliability.",
+    "has_ambiguity": false,
+    "spans": []
+  },
+  {
+    "id": "AMB-085",
+    "text": "The software shall ensure that component 85 operates high availability under all operating conditions.",
+    "has_ambiguity": true,
+    "spans": [
+      {
+        "start": 53,
+        "end": 70,
+        "phrase": "high availability",
+        "rule_id": "SYNTHETIC_RULE",
+        "explanation": "Unquantified quality claim: high availability.",
+        "suggested_metric": "Numerical target required"
+      }
+    ]
+  }
+]
