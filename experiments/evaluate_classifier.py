@@ -38,6 +38,12 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from reqmind.data_loader import load_splits  # noqa: E402
+from reqmind.tracking import (  # noqa: E402
+    log_run_artifact,
+    log_run_metrics,
+    log_run_params,
+    track_run,
+)
 
 MODELS_DIR = ROOT / "models"
 RESULTS_DIR = ROOT / "reports" / "results"
@@ -104,16 +110,35 @@ def main() -> None:
         y_pred = predict(name, model, X_te)
         test_results[name] = metrics(y_te, y_pred)
         plot_cm(test_results[name]["confusion_matrix[FR,NFR]"], name)
+        cm_fig_path = FIG_DIR / f"phase3_confusion_{name}.png"
         print(f"  TEST {name:<14} acc={test_results[name]['accuracy']:.4f} macroF1={test_results[name]['macro_f1']:.4f}")
+        
+        with track_run(f"test_{name}", tags={"stage": "test_evaluation", "model": name}):
+            log_run_params({"model_name": name, "n_test": len(X_te)})
+            log_run_metrics({
+                "test_accuracy": test_results[name]["accuracy"],
+                "test_macro_f1": test_results[name]["macro_f1"],
+                "f1_FR": test_results[name]["f1_FR"],
+                "f1_NFR": test_results[name]["f1_NFR"],
+            })
+            log_run_artifact(cm_fig_path)
+
         if name != "majority":
             for i in np.where(y_pred != y_te)[0]:
                 r = test_df.iloc[i]
                 errors.append({"model": name, "req_id": r.req_id, "fine_class": r._class_,
                                "true": r.binary_label, "pred": y_pred[i], "text": r.RequirementText})
 
-    (RESULTS_DIR / "phase3_test.json").write_text(
+    test_json_path = RESULTS_DIR / "phase3_test.json"
+    test_json_path.write_text(
         json.dumps({"n_test": len(X_te), "results": test_results}, indent=2), encoding="utf-8")
-    pd.DataFrame(errors).to_csv(RESULTS_DIR / "phase3_test_errors.csv", index=False)
+    
+    error_csv_path = RESULTS_DIR / "phase3_test_errors.csv"
+    pd.DataFrame(errors).to_csv(error_csv_path, index=False)
+
+    with track_run("phase3_test_summary", tags={"stage": "test_summary"}):
+        log_run_artifact(test_json_path)
+        log_run_artifact(error_csv_path)
 
     # ---- Secondary: cross-project generalization (GroupKFold on all splits, fixed hyperparams) ----
     full = pd.concat([train_df, val_df, test_df], ignore_index=True)

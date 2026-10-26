@@ -17,6 +17,9 @@ sentence-transformers>=2.2.2
 transformers>=4.35.0
 torch>=2.1.0
 
+# MLOps & Experiment Tracking
+mlflow>=2.10.0
+
 # UI
 streamlit>=1.30.0
 

@@ -60,6 +60,7 @@ models/setfit_minilm/
 reports/figures/*.png
 !reports/figures/.gitkeep
 scratch/
-fill_compte_rendu.py
-Base docs/*TEMPLATE_BACKUP*
-
+# MLflow Tracking & Artifacts
+mlruns/
+.trash/
+mlflow.db

@@ -111,6 +111,28 @@ pytest tests/
 streamlit run app/main.py
 ```
 
+5. **Launch MLflow Experiment Tracking Dashboard:**
+```bash
+# On Windows:
+mlflow_ui.bat
+# Or in PowerShell:
+.\mlflow_ui.ps1
+# On Linux/macOS:
+./mlflow_ui.sh
+```
+Open [http://localhost:5000](http://localhost:5000) to inspect all model runs, parameters, metrics, confusion matrices, and artifacts.
+
+---
+
+## 🔬 MLOps & Experiment Tracking (MLflow)
+
+ReqMind AI integrates **MLflow** for reproducible experiment tracking, hyperparameter tuning logs, and model governance:
+- **Experiment Name:** `reqmind-classification`
+- **Backend Storage:** Local SQLite database (`sqlite:///mlflow.db`) with artifacts in `mlruns/` (no external server required).
+- **Tracked Parameters:** Model type, regularizer `C`, n-gram ranges, vectorizer configs, random seeds, split sizes.
+- **Tracked Metrics:** `val_accuracy`, `val_macro_f1`, `test_accuracy`, `test_macro_f1`, per-class `f1_FR`, `f1_NFR`.
+- **Tracked Artifacts:** Serialized `.joblib` model bundles, confusion matrix PNGs, error analysis CSVs (`phase3_test_errors.csv`), and validation summaries.
+
 ---
 
 ## 📋 Academic Constraints & Principles

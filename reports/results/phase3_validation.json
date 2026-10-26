@@ -113,9 +113,9 @@
     }
   },
   "environment": {
-    "python": "3.13.12",
-    "sklearn": "1.7.2",
-    "numpy": "2.3.4",
-    "platform": "Windows-11-10.0.26200-SP0"
+    "python": "3.13.7",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.4",
+    "platform": "Windows-11-10.0.26300-SP0"
   }
 }
