@@ -1,7 +1,7 @@
 # ReqMind AI — Architecture & Data Flow Specification
 
-**Version:** 1.0
-**Status:** Phase 0 Baseline
+**Version:** 1.3
+**Status:** Phase 3 Complete (SetFit Transformer & Benchmark)
 
 ---
 
@@ -27,9 +27,11 @@
 |   FR / NFR        |           |   Ambiguity       |           |   Semantic        |
 |   Classification  |           |   Detection       |           |   Similarity      |
 |                   |           |                   |           |                   |
-| Baseline & SVM /  |           | Exact character   |           | Pairwise cosine   |
-| Dense Embeddings  |           | spans, rules, and |           | similarity & rank |
-| (predicted_label, |           | explanations      |           | top-k candidates  |
+| SetFit Transformer|           | Exact character   |           | Pairwise cosine   |
+| (all-MiniLM-L6-v2)|           | spans, rules, and |           | similarity & rank |
+| + Fallbacks TF-IDF|           | explanations      |           | top-k candidates  |
+| & Heuristics      |           |                   |           |                   |
+| (predicted_label, |           |                   |           |                   |
 |  model_score)     |           |                   |           |                   |
 +-------------------+           +-------------------+           +-------------------+
         |                                |                                |
