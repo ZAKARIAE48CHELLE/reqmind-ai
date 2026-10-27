@@ -14,10 +14,11 @@ if not exist ".venv\Scripts\mlflow.exe" (
     exit /b 1
 )
 
-echo [*] Starting MLflow UI at http://localhost:5000 ...
+set MLFLOW_ALLOW_FILE_STORE=true
+echo [*] Starting MLflow UI at http://127.0.0.1:5000 ...
 echo [*] Press Ctrl+C in this terminal to stop the server.
 echo.
 
-.venv\Scripts\mlflow.exe ui --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns --port 5000
+.venv\Scripts\mlflow.exe ui --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns --host 127.0.0.1 --port 5000 --workers 1
 
 pause

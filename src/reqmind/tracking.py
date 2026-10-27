@@ -57,6 +57,10 @@ def setup_tracking(
         )
     else:
         exp_id = experiment.experiment_id
+        if getattr(experiment, "lifecycle_stage", None) == "deleted":
+            from mlflow.tracking import MlflowClient
+            MlflowClient().restore_experiment(exp_id)
+            logger.info(f"Restored deleted MLflow experiment '{experiment_name}' (ID: {exp_id})")
 
     mlflow.set_experiment(experiment_name)
     return exp_id

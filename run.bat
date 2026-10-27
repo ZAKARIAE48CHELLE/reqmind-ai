@@ -2,23 +2,25 @@
 setlocal
 
 echo =======================================================
-echo          ReqMind AI - Application Runner
+echo          ReqMind AI - Application & MLflow Runner
 echo =======================================================
 echo.
 
-:: Check if virtual environment exists
 if not exist ".venv\Scripts\streamlit.exe" (
-    echo [ERROR] Virtual environment or Streamlit not found in .venv.
-    echo Please run 'install.bat' first to set up the environment.
-    echo.
+    echo [ERROR] Virtual environment not ready. Run install.bat first.
     pause
     exit /b 1
 )
 
-echo [*] Launching ReqMind AI Streamlit Dashboard...
-echo [*] Press Ctrl+C in this terminal to stop the application.
-echo.
+set MLFLOW_ALLOW_FILE_STORE=true
 
+echo [*] Starting MLflow UI (http://127.0.0.1:5000)...
+start "ReqMind-MLflow" ".venv\Scripts\mlflow.exe" ui --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns --host 127.0.0.1 --port 5000 --workers 1
+
+timeout /t 3 /nobreak >nul
+
+echo [*] Launching Streamlit Dashboard (http://localhost:8501)...
+echo.
 .venv\Scripts\streamlit.exe run app\main.py
 
 pause

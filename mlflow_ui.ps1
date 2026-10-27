@@ -9,13 +9,16 @@ Write-Host ""
 $venvMlflow = Join-Path $PSScriptRoot ".venv\Scripts\mlflow.exe"
 
 if (-not (Test-Path $venvMlflow)) {
-    Write-Host "[ERROR] MLflow not found in .venv." -ForegroundColor Red
-    Write-Host "Please run '.\install.ps1' or 'install.bat' first." -ForegroundColor Yellow
+    Write-Host "[ERROR] MLflow not found in .venv. Please run .\install.ps1 first." -ForegroundColor Red
     exit 1
 }
 
-Write-Host "[*] Starting MLflow UI at http://localhost:5000 ..." -ForegroundColor Green
+$env:MLFLOW_ALLOW_FILE_STORE = "true"
+$dbPath = (Join-Path $PSScriptRoot "mlflow.db").Replace("\", "/")
+$artifactPath = Join-Path $PSScriptRoot "mlruns"
+
+Write-Host "[*] Starting MLflow UI at http://127.0.0.1:5000 ..." -ForegroundColor Green
 Write-Host "[*] Press Ctrl+C to stop the MLflow server." -ForegroundColor Yellow
 Write-Host ""
 
-& $venvMlflow ui --backend-store-uri "sqlite:///mlflow.db" --default-artifact-root (Join-Path $PSScriptRoot "mlruns") --port 5000
+& $venvMlflow ui --backend-store-uri "sqlite:///$dbPath" --default-artifact-root "$artifactPath" --host 127.0.0.1 --port 5000 --workers 1
