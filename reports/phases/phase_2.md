@@ -126,3 +126,4 @@ Full suite regression check: **26 passed, 1 skipped in 4.00s**.
   - Evaluate the lexicon/regex rules in [src/reqmind/ambiguity.py](file:///d:/EMSI/5emme/trautement%20de%20laguage%20naturele/Projet_TALN/src/reqmind/ambiguity.py) against the gold standard annotations in `Data/annotations/ambiguity_gold.json`.
   - Calculate sentence-level and span-level Precision, Recall, and F1.
   - Track ambiguity benchmark metrics and error analysis directly into MLflow under the `reqmind-ambiguity` experiment.
+

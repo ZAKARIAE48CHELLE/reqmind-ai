@@ -145,3 +145,4 @@ def test_no_abbreviation_split():
     spans = split_sentences_preserving_spans(text)
     assert len(spans) == 1
     assert "e.g." in spans[0][2]
+

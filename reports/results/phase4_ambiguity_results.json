@@ -1,0 +1,30 @@
+{
+  "dataset": "Data/annotations/ambiguity_gold.json",
+  "n_samples": 85,
+  "sentence_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "macro_f1": 1.0,
+    "confusion_matrix[TN,FP,FN,TP]": [
+      [
+        26,
+        0
+      ],
+      [
+        0,
+        59
+      ]
+    ]
+  },
+  "span_metrics": {
+    "gold_spans_count": 62,
+    "pred_spans_count": 62,
+    "true_positives": 62,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "rule_catalog_size": 6,
+  "error_count": 0
+}
