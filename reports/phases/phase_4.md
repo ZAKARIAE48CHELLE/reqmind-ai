@@ -116,3 +116,4 @@ Full project test suite: **33 passed, 1 skipped in 4.12s**.
   - Implement and benchmark TF-IDF vs. dense Sentence Transformers (`all-MiniLM-L6-v2`) cosine similarity on `Data/annotations/duplicate_pairs_gold.json`.
   - Calibrate duplicate similarity threshold on validation pairs.
   - Measure Precision, Recall, and F1 on held-out pairs.
+

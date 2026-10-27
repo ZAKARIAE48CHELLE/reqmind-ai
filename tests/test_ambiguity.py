@@ -81,3 +81,4 @@ def test_analyze_requirement_ambiguities_in_place():
     phrases = [a.phrase.lower() for a in req.ambiguities]
     assert "efficient" in phrases
     assert "simple" in phrases
+

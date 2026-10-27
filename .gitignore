@@ -40,6 +40,8 @@ htmlcov/
 Thumbs.db
 ~$*.xlsx
 ~$*.docx
+.agents/
+.claude/
 
 # Streamlit
 .streamlit/secrets.toml
