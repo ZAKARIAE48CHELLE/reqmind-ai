@@ -1,0 +1,51 @@
+raw_index,Requirement Text,Type,text_key
+600,The MultiMahjongServer will have a graphical user interface with which the administrator of the server can get log information and change game settings.,NFR,the multimahjongserver will have a graphical user interface with which the administrator of the server can get log information and change game settings.
+619,The MultiMahjongServer will have a graphical user interface with which the administrator of the server can get log information and change game settings.,FR,the multimahjongserver will have a graphical user interface with which the administrator of the server can get log information and change game settings.
+796,The BE shall verify the successful receipt of incoming data from the Correlator.,FR,the be shall verify the successful receipt of incoming data from the correlator.
+878,The BE shall verify the successful receipt of incoming data from the Correlator.,NFR,the be shall verify the successful receipt of incoming data from the correlator.
+1631,"User shall be able to change perspective and orientation through a touch scroll bar, serving as the central mechanic of the game.",FR,"user shall be able to change perspective and orientation through a touch scroll bar, serving as the central mechanic of the game."
+1632,"User shall be able to perform sudden movements upward from solid ground, as a necessary movement mechanic.",FR,"user shall be able to perform sudden movements upward from solid ground, as a necessary movement mechanic."
+1633,"System shall identify areas triggering the restart of the level, whether encompassing stage boundaries or spike-like traps.",FR,"system shall identify areas triggering the restart of the level, whether encompassing stage boundaries or spike-like traps."
+1634,"Upon starting up the application, the first viewable screen shall contain buttons for play game options.",FR,"upon starting up the application, the first viewable screen shall contain buttons for play game options."
+1635,"In-game option to halt gameplay shall be provided, allowing access to fields displayed on the title screen.",FR,"in-game option to halt gameplay shall be provided, allowing access to fields displayed on the title screen."
+1644,"User shall be able to change perspective and orientation through a touch scroll bar, serving as the central mechanic of the game.",NFR,"user shall be able to change perspective and orientation through a touch scroll bar, serving as the central mechanic of the game."
+1645,"User shall be able to perform sudden movements upward from solid ground, as a necessary movement mechanic.",NFR,"user shall be able to perform sudden movements upward from solid ground, as a necessary movement mechanic."
+1646,"System shall identify areas triggering the restart of the level, whether encompassing stage boundaries or spike-like traps.",NFR,"system shall identify areas triggering the restart of the level, whether encompassing stage boundaries or spike-like traps."
+1647,"Upon starting up the application, the first viewable screen shall contain buttons for play game options.",NFR,"upon starting up the application, the first viewable screen shall contain buttons for play game options."
+1648,"In-game option to halt gameplay shall be provided, allowing access to fields displayed on the title screen.",NFR,"in-game option to halt gameplay shall be provided, allowing access to fields displayed on the title screen."
+1915,User shall/will be able to request check book allotment.,FR,user shall/will be able to request check book allotment.
+1916,System shall be able to manage check book allotment requests.,FR,system shall be able to manage check book allotment requests.
+1927,User shall/will be able to request check book allotment.,NFR,user shall/will be able to request check book allotment.
+1928,System shall be able to manage check book allotment requests.,NFR,system shall be able to manage check book allotment requests.
+2077,User shall be able to update their information.,FR,user shall be able to update their information.
+2078,User shall have the ability to change their password.,FR,user shall have the ability to change their password.
+2079,"User shall be able to sign up as a student, admin, or company.",FR,"user shall be able to sign up as a student, admin, or company."
+2080,"User shall be able to log in as a student, admin, or company.",FR,"user shall be able to log in as a student, admin, or company."
+2081,Students shall be able to apply for jobs.,FR,students shall be able to apply for jobs.
+2082,Companies shall be able to post jobs and add job details.,FR,companies shall be able to post jobs and add job details.
+2083,Students shall have the ability to view the status of their job applications.,FR,students shall have the ability to view the status of their job applications.
+2084,Users shall be able to search for jobs.,FR,users shall be able to search for jobs.
+2085,Admin shall be able to manage students.,FR,admin shall be able to manage students.
+2086,Admin shall be able to manage companies.,FR,admin shall be able to manage companies.
+2087,Users shall be able to view student applications.,FR,users shall be able to view student applications.
+2088,User shall be able to update their information.,NFR,user shall be able to update their information.
+2089,User shall have the ability to change their password.,NFR,user shall have the ability to change their password.
+2090,"User shall be able to sign up as a student, admin, or company.",NFR,"user shall be able to sign up as a student, admin, or company."
+2091,"User shall be able to log in as a student, admin, or company.",NFR,"user shall be able to log in as a student, admin, or company."
+2092,Students shall be able to apply for jobs.,NFR,students shall be able to apply for jobs.
+2093,Companies shall be able to post jobs and add job details.,NFR,companies shall be able to post jobs and add job details.
+2094,Students shall have the ability to view the status of their job applications.,NFR,students shall have the ability to view the status of their job applications.
+2095,Users shall be able to search for jobs.,NFR,users shall be able to search for jobs.
+2096,Admin shall be able to manage students.,NFR,admin shall be able to manage students.
+2097,Admin shall be able to manage companies.,NFR,admin shall be able to manage companies.
+2098,Users shall be able to view student applications.,NFR,users shall be able to view student applications.
+3493,User shall be able to access coding problems across various difficulty levels and categories.,FR,user shall be able to access coding problems across various difficulty levels and categories.
+3495,User shall be able to submit their solutions to coding problems.,FR,user shall be able to submit their solutions to coding problems.
+3497,"User shall be able to participate in discussions related to coding problems by commenting, asking questions, and providing answers.",FR,"user shall be able to participate in discussions related to coding problems by commenting, asking questions, and providing answers."
+3499,User shall be able to view and edit their profile information.,FR,user shall be able to view and edit their profile information.
+3505,User shall be able to access coding problems across various difficulty levels and categories.,NFR,user shall be able to access coding problems across various difficulty levels and categories.
+3507,User shall be able to submit their solutions to coding problems.,NFR,user shall be able to submit their solutions to coding problems.
+3509,"User shall be able to participate in discussions related to coding problems by commenting, asking questions, and providing answers.",NFR,"user shall be able to participate in discussions related to coding problems by commenting, asking questions, and providing answers."
+3511,User shall be able to view and edit their profile information.,NFR,user shall be able to view and edit their profile information.
+3523,User shall receive feedback when entering an invalid zip code.,FR,user shall receive feedback when entering an invalid zip code.
+3553,User shall receive feedback when entering an invalid zip code.,NFR,user shall receive feedback when entering an invalid zip code.

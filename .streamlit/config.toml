@@ -10,3 +10,4 @@ level = "error"
 [client]
 toolbarMode = "minimal"
 showErrorDetails = "stacktrace"
+

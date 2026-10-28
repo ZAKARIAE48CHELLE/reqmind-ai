@@ -1,0 +1,189 @@
+{
+  "experiment": "Phase: Model Optimization (Step 2) - TF-IDF + Linear SVM",
+  "dataset": "D:\\EMSI\\5emme\\trautement de laguage naturele\\Projet_TALN\\Data\\FR_NFR_Dataset.xlsx",
+  "date": "2026-10-28 17:02:23",
+  "train_rows": 4748,
+  "test_rows_sealed": 1188,
+  "random_seed": 42,
+  "cv_folds": 5,
+  "baseline_comparison": {
+    "baseline_model": "TF-IDF (1,2) Word + LinearSVC (C=1.0)",
+    "baseline_accuracy": 0.8799,
+    "baseline_macro_f1": 0.8642,
+    "baseline_f1_fr": 0.9105,
+    "baseline_f1_nfr": 0.8179
+  },
+  "optimized_model": {
+    "model_name": "Optimized FeatureUnion (Word+Char) + LinearSVC (Platt Calibrated)",
+    "model_path": "D:\\EMSI\\5emme\\trautement de laguage naturele\\Projet_TALN\\models\\clf_optimized_svm.joblib",
+    "best_hyperparameters": {
+      "c": 1.0,
+      "class_weight": "balanced",
+      "word_ngrams": [
+        1,
+        2
+      ],
+      "char_ngrams": [
+        3,
+        5
+      ],
+      "char_min_df": 3
+    },
+    "cv_accuracy": 0.8774,
+    "cv_macro_f1": 0.8616,
+    "cv_f1_fr": 0.9084,
+    "cv_f1_nfr": 0.8148,
+    "delta_macro_f1": -0.0026,
+    "brier_score": 0.0884,
+    "expected_calibration_error": 0.021,
+    "recommended_uncertainty_threshold": 0.65,
+    "inference_latency_ms": 0.117,
+    "fit_time_seconds": 1.539
+  },
+  "hyperparameter_search_grid": [
+    {
+      "candidate": "SVM_Config_1",
+      "C": 0.2,
+      "class_weight": "None",
+      "word_ngrams": "(1, 2)",
+      "char_ngrams": "(3, 5)",
+      "accuracy": 0.8776,
+      "macro_f1": 0.8603,
+      "f1_fr": 0.9095,
+      "f1_nfr": 0.8112
+    },
+    {
+      "candidate": "SVM_Config_2",
+      "C": 0.5,
+      "class_weight": "None",
+      "word_ngrams": "(1, 2)",
+      "char_ngrams": "(3, 5)",
+      "accuracy": 0.8781,
+      "macro_f1": 0.862,
+      "f1_fr": 0.9091,
+      "f1_nfr": 0.8148
+    },
+    {
+      "candidate": "SVM_Config_3",
+      "C": 1.0,
+      "class_weight": "None",
+      "word_ngrams": "(1, 2)",
+      "char_ngrams": "(3, 5)",
+      "accuracy": 0.8778,
+      "macro_f1": 0.8624,
+      "f1_fr": 0.9085,
+      "f1_nfr": 0.8163
+    },
+    {
+      "candidate": "SVM_Config_4",
+      "C": 1.0,
+      "class_weight": "balanced",
+      "word_ngrams": "(1, 2)",
+      "char_ngrams": "(3, 5)",
+      "accuracy": 0.8791,
+      "macro_f1": 0.8658,
+      "f1_fr": 0.9081,
+      "f1_nfr": 0.8235
+    },
+    {
+      "candidate": "SVM_Config_5",
+      "C": 1.5,
+      "class_weight": "None",
+      "word_ngrams": "(1, 2)",
+      "char_ngrams": "(3, 5)",
+      "accuracy": 0.8751,
+      "macro_f1": 0.8595,
+      "f1_fr": 0.9063,
+      "f1_nfr": 0.8128
+    },
+    {
+      "candidate": "SVM_Config_6",
+      "C": 2.0,
+      "class_weight": "None",
+      "word_ngrams": "(1, 2)",
+      "char_ngrams": "(3, 5)",
+      "accuracy": 0.8728,
+      "macro_f1": 0.857,
+      "f1_fr": 0.9045,
+      "f1_nfr": 0.8096
+    },
+    {
+      "candidate": "SVM_Config_7",
+      "C": 1.0,
+      "class_weight": "None",
+      "word_ngrams": "(1, 3)",
+      "char_ngrams": "(3, 5)",
+      "accuracy": 0.8797,
+      "macro_f1": 0.8644,
+      "f1_fr": 0.91,
+      "f1_nfr": 0.8189
+    }
+  ],
+  "uncertainty_threshold_analysis": [
+    {
+      "threshold": 0.55,
+      "uncertain_samples_count": 172,
+      "uncertain_share_pct": 3.62,
+      "error_rate_in_uncertain_slice": 52.33,
+      "error_rate_in_confident_slice": 10.75
+    },
+    {
+      "threshold": 0.6,
+      "uncertain_samples_count": 347,
+      "uncertain_share_pct": 7.31,
+      "error_rate_in_uncertain_slice": 51.3,
+      "error_rate_in_confident_slice": 9.18
+    },
+    {
+      "threshold": 0.65,
+      "uncertain_samples_count": 525,
+      "uncertain_share_pct": 11.06,
+      "error_rate_in_uncertain_slice": 45.71,
+      "error_rate_in_confident_slice": 8.1
+    },
+    {
+      "threshold": 0.7,
+      "uncertain_samples_count": 719,
+      "uncertain_share_pct": 15.14,
+      "error_rate_in_uncertain_slice": 41.45,
+      "error_rate_in_confident_slice": 7.05
+    },
+    {
+      "threshold": 0.75,
+      "uncertain_samples_count": 942,
+      "uncertain_share_pct": 19.84,
+      "error_rate_in_uncertain_slice": 36.94,
+      "error_rate_in_confident_slice": 6.15
+    },
+    {
+      "threshold": 0.8,
+      "uncertain_samples_count": 1216,
+      "uncertain_share_pct": 25.61,
+      "error_rate_in_uncertain_slice": 32.65,
+      "error_rate_in_confident_slice": 5.24
+    }
+  ],
+  "confusion_matrix_cv": {
+    "labels": [
+      "FR",
+      "NFR"
+    ],
+    "matrix": [
+      [
+        2886,
+        233
+      ],
+      [
+        349,
+        1280
+      ]
+    ]
+  },
+  "artifacts_generated": [
+    "D:\\EMSI\\5emme\\trautement de laguage naturele\\Projet_TALN\\reports\\results\\excluded_conflicting_requirements.csv",
+    "D:\\EMSI\\5emme\\trautement de laguage naturele\\Projet_TALN\\models\\clf_optimized_svm.joblib",
+    "D:\\EMSI\\5emme\\trautement de laguage naturele\\Projet_TALN\\reports\\results\\optimized_svm_val_errors.csv",
+    "D:\\EMSI\\5emme\\trautement de laguage naturele\\Projet_TALN\\reports\\figures\\optimized_svm_cv_confusion_matrix.png",
+    "D:\\EMSI\\5emme\\trautement de laguage naturele\\Projet_TALN\\reports\\figures\\optimized_svm_cv_calibration_curve.png"
+  ]
+}

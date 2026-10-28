@@ -1,0 +1,584 @@
+sample_id,true_label,predicted_label,confidence_score,is_uncertain,requirement_text
+REQ-DS-05755,FR,NFR,0.9272,False,User shall experience continuous improvement in translation accuracy over time through machine learning algorithms analyzing user interactions and feedback.
+REQ-DS-03631,NFR,FR,0.8548,False,The user research plan shall test the user research plan.
+REQ-DS-00518,FR,NFR,0.8234,False,"System shall allow authorized personnel within the same department to update the database directly, adhering to established access controls."
+REQ-DS-04391,NFR,FR,0.8232,False,User shall be able to log defects or enhancement requests and track them.
+REQ-DS-01989,NFR,FR,0.9159,False,User shall utilize the screen recorder function with a facial tracker to capture live movements.
+REQ-DS-03450,NFR,FR,0.9881,False,User shall view the header information box showing the updated date and time.
+REQ-DS-03466,NFR,FR,0.7489,False,Broker user shall have updated error codes reflecting logic and providing sufficient information for fixing submissions for efficient troubleshooting.
+REQ-DS-05024,NFR,FR,0.658,False,The application shall operate on all modern web browsers with all its core functionalities.
+REQ-DS-04919,FR,NFR,0.5305,True,The software shall utilize pressure applied on the touch-screen to vary line weight during drawing.
+REQ-DS-05860,NFR,FR,0.5384,True,Manager passwords shall be linked to a secret question for password reset.
+REQ-DS-04926,FR,NFR,0.7422,False,The system shall respond to user input from drawing tools with high speed and responsiveness.
+REQ-DS-01844,NFR,FR,0.6239,True,System shall be able to connect to power through an electrical outlet and support network connections via Ethernet port and serial port jack.
+REQ-DS-04318,NFR,FR,0.673,False,System shall support a variety of media file and text-based formats.
+REQ-DS-01163,FR,NFR,0.9326,False,All letter requests must adhere to formatting guidelines specified by the Print Letter Utility system.
+REQ-DS-04897,FR,NFR,0.5863,True,The system shall highlight the currently playing notes during playback.
+REQ-DS-05290,FR,NFR,0.7097,False,The Khan Academy platform shall provide students with immediate feedback on their performance.
+REQ-DS-02095,FR,NFR,0.5115,True,"User shall be limited to 1000 calls per day, with total calls being the sum of all user accounts."
+REQ-DS-05029,FR,NFR,0.6879,False,The system shall require customer registration for making purchases.
+REQ-DS-05331,NFR,FR,0.7495,False,System shall allow only admins to update the database.
+REQ-DS-01492,NFR,FR,0.5181,True,Access controls shall be enforced to ensure that only authorized users can view and modify patient data.
+REQ-DS-01039,NFR,FR,0.8355,False,The product shall allow the user to view previously downloaded search results CMA reports and appointments.
+REQ-DS-00712,NFR,FR,0.8216,False,The TCS shall provide the necessary system capabilities required for payload control beyond line of sight via uplink command of two air vehicles of the same type using sequential communication techniques.
+REQ-DS-04861,NFR,FR,0.8327,False,New videos shall be uploaded daily.
+REQ-DS-04946,NFR,FR,0.5956,True,The user experience with Adobe Illustrator shall be enhanced by meeting the 64-bit requirements.
+REQ-DS-04433,FR,NFR,0.6179,True,Interface will be presented in a web browser.
+REQ-DS-04389,NFR,FR,0.5488,True,User shall be able to access detailed context-sensitive help material for all actions and scenarios.
+REQ-DS-02396,NFR,FR,0.6813,False,"The user shall access the application for installation, updates, and feedback via the Google Play Store."
+REQ-DS-04820,NFR,FR,0.8288,False,"System shall automatically inform the main branch of detected errors, including fault type and problem."
+REQ-DS-05831,NFR,FR,0.614,True,An instructor shall be permitted to view and edit absence information in the database for only his/her classes.
+REQ-DS-02035,FR,NFR,0.6963,False,A batch program shall periodically predict diseases based on consultation requests using a machine learning algorithm and prioritize the requests.
+REQ-DS-02046,NFR,FR,0.946,False,"User shall/will be able to register themselves by filling out a patient profile, generating a unique ID."
+REQ-DS-01956,FR,NFR,0.7867,False,"The system shall be designed to be user-friendly, particularly for novice users."
+REQ-DS-05241,FR,NFR,0.5254,True,The system shall provide information about new government schemes related to LPG.
+REQ-DS-04781,FR,NFR,0.807,False,ATM power supply shall have a 10/220 V AC manual switch.
+REQ-DS-00896,FR,NFR,0.732,False,The system shall identify potentially faulty sensor data based on a sensor-specific number of consecutive missed readings due to communication issues.
+REQ-DS-00063,NFR,FR,0.9234,False,The system shall allow users to create unverified (anonymous) avatars or aliases.
+REQ-DS-04192,NFR,FR,0.6127,True,"System shall integrate with Primo for unified search functionality across books, articles, and datasets."
+REQ-DS-04205,NFR,FR,0.5518,True,System shall include records for externally held data to maintain a complete record of the University's data holdings.
+REQ-DS-05515,NFR,FR,0.6578,False,The upsconline.nic.in site shall be available 24/7 for access.
+REQ-DS-05260,NFR,FR,0.6059,True,System shall authenticate logins and signups for users with accounts.
+REQ-DS-04018,NFR,FR,0.8596,False,"System shall provide a customizable ""my schedule"" feature."
+REQ-DS-04189,NFR,FR,0.8801,False,System shall allow users to examine deposited files and metadata to assess usefulness without downloading entire datasets.
+REQ-DS-02637,NFR,FR,0.8906,False,"Access to editing booking, billing, and car information shall be limited to authorized personnel."
+REQ-DS-03368,FR,NFR,0.5206,True,User shall be able to log in to their LeetCode account using their email and password.
+REQ-DS-03961,FR,NFR,0.595,True,"User shall be able to email all the trainers at once from the website for info and updates, so that it is easier to use."
+REQ-DS-02450,FR,NFR,0.9923,False,"Under normal conditions, 95% of transactions shall be processed in less than 5 seconds."
+REQ-DS-01623,NFR,FR,0.5041,True,"User shall be able to process data, with reloading if necessary, and accurately handle attributes for recommendations."
+REQ-DS-05386,FR,NFR,0.9724,False,Bank shall provide security only for its own computer and software.
+REQ-DS-01865,FR,NFR,0.6525,False,User shall/will be able to access the system via web browsers and mobile applications.
+REQ-DS-04727,FR,NFR,0.9139,False,"The system shall support the following operating systems - Windows 10/11 (32-bit or 64-bit) and Windows Server 2022, Windows Server 2019, Windows Server 2016, or Windows Server 2012 (including R2)"
+REQ-DS-02625,NFR,FR,0.8028,False,"System shall display the customer homepage for online car booking, showcasing available cars and enabling selection for specific time spans."
+REQ-DS-01478,FR,NFR,0.6829,False,The system shall support real-time messaging and notifications for instant communication.
+REQ-DS-01903,FR,NFR,0.8598,False,The LMS shall support 500 patrons and handle 1000 requests per minute simultaneously.
+REQ-DS-03437,FR,NFR,0.5868,True,Data user shall access two additional fields from the FPDS data pull.
+REQ-DS-05114,FR,NFR,0.8558,False,"The system shall include measures of service quality, such as ease of booking, hassle-free check-in, efficient ticketing staff, regular announcements during flight delays, on-time performance, in-flight experience, baggage handling, and value for money."
+REQ-DS-01091,NFR,FR,0.6922,False,The system shall have basic data integrity checking to reduce the possibility of incorrect or invalid data being introduced.
+REQ-DS-00437,FR,NFR,0.633,True,"The system shall be able to send alerts (e.g., email, SMS) to users upon their request whenever an action is taken on their defect or enhancement request."
+REQ-DS-04053,NFR,FR,0.5674,True,System shall ensure easy access to the registration form from the menu.
+REQ-DS-00011,NFR,FR,0.5342,True,News will be restricted to what is available in the feeds on the list of news RSS-feeds.
+REQ-DS-04083,FR,NFR,0.783,False,System shall generate reports on sensitive data classifications for access by designated personnel.
+REQ-DS-05143,FR,NFR,0.7859,False,System shall only provide security for the computer and devices belonging to the user.
+REQ-DS-05798,NFR,FR,0.5469,True,"Only the administrator shall have the authority to make changes to the database, including addition, updating, and deletion of data."
+REQ-DS-00745,NFR,FR,0.718,False,The APAF ground data system shall have built-in error handling.
+REQ-DS-05003,FR,NFR,0.9746,False,The system shall be available 24/7.
+REQ-DS-04786,FR,NFR,0.8277,False,Screen resolution shall be at least 800x600 for complete viewing.
+REQ-DS-02401,NFR,FR,0.5149,True,"The system shall support language agnostic operation for portability, including English, Turkish, Finnish, and Italian for the identified replication partners."
+REQ-DS-05183,FR,NFR,0.5439,True,System shall authenticate the user before launching the application using the saved username.
+REQ-DS-01016,NFR,FR,0.7376,False,The system shall ensure that projected Event/Activity data is readable by 90% of viewers on a 10x10 projection screen from a 30-foot viewing distance.
+REQ-DS-03170,FR,NFR,0.6225,True,"The system shall comply with relevant data privacy regulations based on usage (e.g., GDPR, HIPAA)."
+REQ-DS-05192,NFR,FR,0.5875,True,User shall receive a message when network coverage is low.
+REQ-DS-03768,FR,NFR,0.6129,True,The system shall show all estimates simultaneously after everyone submits.
+REQ-DS-02667,NFR,FR,0.5362,True,User shall provide hardware specifications and limitations.
+REQ-DS-00709,NFR,FR,0.5687,True,The TCS shall be capable of being interoperable with the installed payloads across the 5 levels of UAV interaction.
+REQ-DS-02974,FR,NFR,0.54,True,The system shall provide a login form for users to access the system.
+REQ-DS-03099,FR,NFR,0.8917,False,The system shall restrict the user's operation within its user role.
+REQ-DS-05644,FR,NFR,0.6418,True,System shall utilize user cookies to study the buying pattern of the user.
+REQ-DS-04912,FR,NFR,0.5223,True,Adobe Illustrator shall be compatible with a minimum processor of Intel Pentium 4 or AMD Athlon 64.
+REQ-DS-01575,NFR,FR,0.925,False,"User shall be able to load the game within 1 minute on subsequent visits, benefiting from cache optimization."
+REQ-DS-01577,NFR,FR,0.5862,True,System shall be able to provide a visual response to user input within 100 milliseconds.
+REQ-DS-04715,FR,NFR,0.8757,False,VS Code shall require less than 500 MB of disk space after installation.
+REQ-DS-04821,NFR,FR,0.7187,False,"Administrator shall have authority to set rules, regulations, and policies."
+REQ-DS-00624,FR,NFR,0.6805,False,The MultiMahjongClient will play sound effects associated with certain game actions.
+REQ-DS-03430,FR,NFR,0.6373,True,Developer shall provide FABS groups that function under the FREC paradigm.
+REQ-DS-03421,NFR,FR,0.9591,False,Admin shall be able to block specific users based on IP address to prevent spamming.
+REQ-DS-05926,NFR,FR,0.5791,True,"The system shall provide emergency communication options, including an emergency phone inside and outside the cabin."
+REQ-DS-05438,FR,NFR,0.8188,False,The system assumes that each user will have only one role assigned at a time.
+REQ-DS-01796,FR,NFR,0.7396,False,System shall inform the user of failed login attempts due to incorrect credentials.
+REQ-DS-05521,NFR,FR,0.9027,False,The web server used shall provide services like session management to maintain application sessions.
+REQ-DS-04729,NFR,FR,0.6521,False,The system shall offer a mobile app for computers and mobile devices for accessing OneDrive.
+REQ-DS-02290,NFR,FR,0.5927,True,The system shall be accessible on mobile browsers as well.
+REQ-DS-02796,FR,NFR,0.9924,False,System shall ensure data security and privacy by encrypting emails and implementing robust authentication mechanisms.
+REQ-DS-04012,NFR,FR,0.6978,False,System shall enable trainers to edit their training nodes independently.
+REQ-DS-05859,NFR,FR,0.9654,False,User account names shall be associated with passwords chosen by the user.
+REQ-DS-02645,NFR,FR,0.5843,True,User shall be able to interact with the text-based command-line interface of the system.
+REQ-DS-05090,FR,NFR,0.8997,False,"In case of a network connection error, the system shall handle the error and prevent transaction processing."
+REQ-DS-05215,FR,NFR,0.9831,False,System shall not function without an internet connection.
+REQ-DS-03926,FR,NFR,0.5909,True,"User shall have ALFRED installed on all their computers, tablets, and phones."
+REQ-DS-00591,NFR,FR,0.6036,True,The system shall be able to display its graphical user interface (GUI) within an 800 x 600 pixel resolution.
+REQ-DS-05288,FR,NFR,0.5563,True,The Khan Academy platform shall offer instructional resources in mathematics.
+REQ-DS-03061,FR,NFR,0.8999,False,The system will limit access to authorized users.
+REQ-DS-05589,NFR,FR,0.5548,True,User shall restrict communication when validating the user or license using HTTPS for security.
+REQ-DS-00038,NFR,FR,0.5681,True,The overall accuracy is calculated by dividing total number of correct answers by the number of questions asked.
+REQ-DS-04928,FR,NFR,0.7441,False,The system shall render complex graphics and enable smooth on-screen navigation.
+REQ-DS-00714,NFR,FR,0.9468,False,The TCS shall permit the operator to control the payload using all methods supported by the payload installed in the selected AV
+REQ-DS-01487,FR,NFR,0.7808,False,The reports shall be accessible through a user-friendly interface and exportable in common formats.
+REQ-DS-04043,NFR,FR,0.7696,False,System shall enable users to view their signed-up summits for confirmation.
+REQ-DS-04162,FR,NFR,0.757,False,System shall support privileged access management to enable efficient collaboration among depositors and collaborators.
+REQ-DS-03818,FR,NFR,0.9526,False,The system shall ensure downloaded data is reliable and usable.
+REQ-DS-00503,NFR,FR,0.7085,False,"The system shall utilize help bubbles to assist managers, customers, and administrators"
+REQ-DS-05920,FR,NFR,0.9747,False,System shall be able to implement robust security measures for the central system and associated software to ensure security.
+REQ-DS-01879,NFR,FR,0.7713,False,"The system shall adhere to relevant banking and financial industry regulations, including Know Your Customer (KYC) and Anti-Money Laundering (AML) requirements."
+REQ-DS-03013,NFR,FR,0.7701,False,The program shall provide the user ease and functionality without any charge.
+REQ-DS-04176,FR,NFR,0.6476,True,System shall provide tracking mechanisms for downloads and citations of datasets to demonstrate impact.
+REQ-DS-00875,NFR,FR,0.5409,True,Each user shall have a set of system access properties that defines the users privileges within the system.
+REQ-DS-04538,FR,NFR,0.5548,True,System shall direct the user to respective account pages for login and terms acceptance.
+REQ-DS-02455,FR,NFR,0.5406,True,"All system functionality shall be accessible through touch sensitive surface  computers, tablets and displays via simple touch gestures."
+REQ-DS-04317,NFR,FR,0.9338,False,System shall allow browsing content by author or subject area.
+REQ-DS-00053,NFR,FR,0.6416,True,The system shall provide selection menus to minimize the need for manual typing of options.
+REQ-DS-04188,NFR,FR,0.5778,True,System shall ensure accessibility of the web interface in the user's native language to eliminate language barriers.
+REQ-DS-02040,FR,NFR,0.6147,True,"Quarterly, patient profiles without consultation requests for the last 3 years and consultation requests more than 3 years old shall be archived to improve performance."
+REQ-DS-04402,NFR,FR,0.5623,True,System shall allow users to limit access to cases to specified users or user groups.
+REQ-DS-01624,NFR,FR,0.7354,False,System shall be able to make predictions as top 5 recommendations relevant to the user's data.
+REQ-DS-02047,NFR,FR,0.6957,False,User shall/will be able to request one or more consultation requests linked back to a specialty.
+REQ-DS-04436,FR,NFR,0.7601,False,Interface will be compatible with major web browsers.
+REQ-DS-03378,NFR,FR,0.9038,False,System shall display the problem statement and coding environment based on the user's selection of problem category and difficulty level.
+REQ-DS-01822,NFR,FR,0.9148,False,"User shall/will be presented with a login screen featuring fields for username, password, and role selection (Administrator, Student, Teacher)."
+REQ-DS-03440,FR,NFR,0.7939,False,Developer shall quickly access Broker application data for investigation.
+REQ-DS-00508,NFR,FR,0.5418,True,"The system shall create logs of all changes, updates, or fixes that are done to the site."
+REQ-DS-01518,NFR,FR,0.56,True,Access to client details shall require Client ID for data protection.
+REQ-DS-03462,NFR,FR,0.5275,True,Broker user shall submit records for individual recipients without receiving a DUNS error for smooth data submission.
+REQ-DS-04960,NFR,FR,0.632,True,The system shall provide a high-quality display with accurate color reproduction and high resolution.
+REQ-DS-00545,NFR,FR,0.8474,False,Users shall be able to access functionalities based on their assigned roles.
+REQ-DS-01140,FR,NFR,0.5704,True,"User shall be able to access the Disputes System, which must be accessible to both internal and external users."
+REQ-DS-00303,FR,NFR,0.5589,True,The system shall be able to handle generic sentence failures by falling back to error handling in R4.4.2.1.
+REQ-DS-00967,NFR,FR,0.6981,False,The system shall guide users through an interface based on end user concepts.
+REQ-DS-00029,NFR,FR,0.6538,False,"The system will enforce unique usernames during user account creation, prompting users to choose a different username if their desired one is already taken."
+REQ-DS-03422,NFR,FR,0.5299,True,Admin shall have access to a dashboard monitoring all site statuses and user activities.
+REQ-DS-02233,FR,NFR,0.7708,False,Crafty kids corner shall include a rating system allowing users to rate projects based on their experience.
+REQ-DS-03062,FR,NFR,0.8113,False,The system shall enable securing data within spreadsheets using electronic signatures.
+REQ-DS-00544,NFR,FR,0.8751,False,Users shall authenticate using a username and password.
+REQ-DS-02393,NFR,FR,0.6738,False,The system shall respond to highest priority user input or external interrupt and resume previous state upon completion.
+REQ-DS-04948,NFR,FR,0.5313,True,Adobe Illustrator shall provide access to advanced features and functionality with 64-bit support.
+REQ-DS-01024,NFR,FR,0.6544,False,The system shall have a professional appearance.
+REQ-DS-05189,NFR,FR,0.9256,False,User shall receive a message for any successful or unsuccessful action performed.
+REQ-DS-00351,NFR,FR,0.7315,False,"User shall be able to access the Catalogue PDF, 360° videos, and contact a representative using the sub navigation icons."
+REQ-DS-04966,FR,NFR,0.8405,False,User shall be able to access secure authentication mechanisms for controlling access to databases.
+REQ-DS-04211,NFR,FR,0.8993,False,System shall store archived data directly on the HCP object store to leverage its features.
+REQ-DS-04826,NFR,FR,0.7211,False,Staff shall monitor all city ATMs for faults and correct any issues immediately.
+REQ-DS-03182,FR,NFR,0.5614,True,The system shall validate prescriptions against doctor's licenses and patient profiles.
+REQ-DS-04232,FR,NFR,0.5091,True,The system shall provide preservation managers with information for monitoring file integrity.
+REQ-DS-02279,NFR,FR,0.5064,True,The system shall utilize a database to store user information and data.
+REQ-DS-02836,FR,NFR,0.8407,False,"System shall ensure users can log out of their accounts securely, preventing unauthorized access."
+REQ-DS-01731,FR,NFR,0.5143,True,"The server shall host the Swiggy Clone App, providing system data processing and storage capability."
+REQ-DS-01198,NFR,FR,0.7181,False,"The system shall prevent malicious attacks, including denial of service."
+REQ-DS-00598,NFR,FR,0.8562,False,"This documentation will be available in electronic files, and, with the exception of source code, in hard copy format."
+REQ-DS-02192,FR,NFR,0.6639,False,Database backup and multiple admin setup with file access privileges shall be available.
+REQ-DS-03689,NFR,FR,0.5004,True,The system shall comply with relevant regulations and standards.
+REQ-DS-04787,FR,NFR,0.5067,True,"System shall use transaction management software (BMS version 2.0), card management software (CMS version 3.0), and Yamaha codecs."
+REQ-DS-02117,FR,NFR,0.607,True,Paid features such as making offers bold or highlighting shall be available.
+REQ-DS-04726,FR,NFR,0.5563,True,"The OneDrive website shall be accessible using the latest version of Microsoft Edge, Chrome, Firefox, or Safari."
+REQ-DS-04982,NFR,FR,0.6422,True,"User shall use MySQL subject to the terms of the GNU General Public License (GPL), with options for commercial licenses for additional features, support, and legal assurances."
+REQ-DS-02246,NFR,FR,0.8475,False,"Crafty kids corner shall provide ways for users to give feedback, such as ratings or comments, to improve the site's offerings."
+REQ-DS-02429,NFR,FR,0.9218,False,"The system shall allow users to report Snapchatters for irrelevant, inappropriate content, misbehavior, or anything uncomfortable and shall take strict action against reported individuals, posts, or spam."
+REQ-DS-00009,NFR,FR,0.8352,False,A new stylistic map must have the right dimensions.
+REQ-DS-01887,FR,NFR,0.6168,True,User shall have access to a log of previously visited websites.
+REQ-DS-05853,FR,NFR,0.8645,False,The system shall provide a basic help guide to aid in usability.
+REQ-DS-01109,FR,NFR,0.5308,True,A Program of Study shall consist of a program name and listing of required classes (both clinical and non-clinical) that must be completed.
+REQ-DS-01192,NFR,FR,0.9188,False,Only adjusters can request recycled parts audit reports.
+REQ-DS-02639,FR,NFR,0.7853,False,"System shall support multiple command-line interface modes such as Fastkramch, Bcturch, Muhturch, and ]madbtanam, offering different functionalities based on user requirements."
+REQ-DS-03017,NFR,FR,0.5992,True,System shall find diverse applications.
+REQ-DS-01625,NFR,FR,0.913,False,User shall be able to maintain data by implementing the latest model and regular updates for new titles.
+REQ-DS-03560,NFR,FR,0.7634,False,The system shall allow users to assign DOIs to datasets for citation purposes.
+REQ-DS-00414,FR,NFR,0.8033,False,System shall be able to operate without storing any personal user data.
+REQ-DS-05759,FR,NFR,0.5179,True,"User shall access a limited feature set for offline usage, prioritizing essential translation functionalities for usability and efficiency."
+REQ-DS-03418,NFR,FR,0.7193,False,Company accountant shall view all available activity fees online for easy billing.
+REQ-DS-05046,NFR,FR,0.5278,True,"The system shall deliver videos across various devices (mobiles, PCs, TVs) by employing different video encoding formats."
+REQ-DS-03974,FR,NFR,0.7227,False,"User shall have training options clearly marked with all necessary information listed, for easy browsing and selection."
+REQ-DS-02041,FR,NFR,0.9097,False,"Every night, a full backup of the system (database and code) shall be taken and sent to a remote site for safekeeping, with backups rotated every 30 days."
+REQ-DS-02711,NFR,FR,0.7839,False,User shall be able to save a document of similar size within 0.5 seconds.
+REQ-DS-00006,NFR,FR,0.7193,False,"The Facebook ""like"" interface shall be according to the Facebook Guidelines."
+REQ-DS-05838,NFR,FR,0.5229,True,"If no network connection can be established to receive roll information, the instructor shall be allowed to enter roll later."
+REQ-DS-03786,NFR,FR,0.5953,True,The system shall store estimation results anonymously for research purposes (Researcher).
+REQ-DS-04700,FR,NFR,0.5738,True,"The user connecting to the server shall have a supported shell (bash, dash, fish, csh, tcsh, ksh, or zsh)."
+REQ-DS-00713,NFR,FR,0.944,False,"The TCS shall receive, process, and present payload data to the operator so that the status of the payload can be determined."
+REQ-DS-05311,FR,NFR,0.6048,True,The system shall offer SEO recommendations for improving website and content search engine ranking.
+REQ-DS-02448,FR,NFR,0.6454,True,The software will support simultaneous user acces only if there are multiple terminals.
+REQ-DS-04443,NFR,FR,0.7022,False,System shall add products to the shopping cart within 2ms.
+REQ-DS-00578,NFR,FR,0.9001,False,User shall be able to play Mahjong with no prior knowledge of the rules.
+REQ-DS-03410,FR,NFR,0.5389,True,Recycling facility representative shall update facility information and accepted materials to avoid miscommunication.
+REQ-DS-03658,FR,NFR,0.7885,False,The system shall allow staff members to evaluate consistency with the comprehensive plan during application reviews.
+REQ-DS-01622,NFR,FR,0.928,False,System shall be able to retrieve the correct genre from the user's title or from a list of genres.
+REQ-DS-02049,NFR,FR,0.8807,False,User shall/will be able to view reports such as doctor-wise appointment files and revenue earned per month/quarter/year.
+REQ-DS-02197,NFR,FR,0.9617,False,"User shall be able to use the application in multiple languages, including English and French."
+REQ-DS-02713,NFR,FR,0.532,True,"System shall be able to efficiently write client-side data to the disk and retrieve database data on the server side, with a target time of approximately 0.5 seconds for each operation."
+REQ-DS-04408,NFR,FR,0.5981,True,System shall never include unauthorized records in search results.
+REQ-DS-01578,NFR,FR,0.6516,False,"User shall find the Gambler Agent application's client side very easy to use and enjoyable, with a simple interface allowing newcomers to quickly start playing."
+REQ-DS-03322,NFR,FR,0.582,True,User shall view pictures related to each product in the product details for better understanding.
+REQ-DS-03396,FR,NFR,0.9023,False,User shall experience a great UI and UX for a pleasant navigation experience.
+REQ-DS-02055,NFR,FR,0.5602,True,System shall comply with healthcare regulations as defined by the Government of India.
+REQ-DS-04868,NFR,FR,0.5852,True,Only maintainers are allowed to add new videos to the website.
+REQ-DS-00756,NFR,FR,0.7738,False,Science analysis software shall be integrated into the NASA approved data repository.
+REQ-DS-04134,NFR,FR,0.5675,True,System shall provide contextual help links accessible to authenticated users.
+REQ-DS-01620,FR,NFR,0.7123,False,System shall be able to provide general recommendations based on recent trends through administrative functions.
+REQ-DS-05518,NFR,FR,0.9301,False,Colleges shall be able to register for exams at any time.
+REQ-DS-01415,NFR,FR,0.5577,True,User shall be able to exchange data efficiently over the network.
+REQ-DS-04714,FR,NFR,0.6004,True,VS Code shall be downloadable as a file smaller than 200 MB.
+REQ-DS-04914,FR,NFR,0.6606,False,Adobe Illustrator shall function with a minimum of 8 GB of RAM.
+REQ-DS-02271,FR,NFR,0.6492,True,The system shall ensure that the changed user information is visible to all followers.
+REQ-DS-02421,NFR,FR,0.5249,True,Users shall customize their privacy settings to optimize their experience.
+REQ-DS-03376,NFR,FR,0.9678,False,User shall be able to log in to their LeetCode account using their email and password credentials.
+REQ-DS-01299,FR,NFR,0.9787,False,Voters shall not be aware of multiplicity in ideas.
+REQ-DS-02624,NFR,FR,0.9464,False,User shall be able to view the customer homepage after logging in.
+REQ-DS-01986,NFR,FR,0.6035,True,System shall offer a fast/slow motion editor for users to choose the best video speed.
+REQ-DS-03054,FR,NFR,0.542,True,The system shall restrict the field to accept only numeric data entry.
+REQ-DS-04969,FR,NFR,0.5761,True,System shall provide tools for database backup and restoration.
+REQ-DS-01949,NFR,FR,0.5484,True,Systems shall display password fields such that characters entered by the user are not visible.
+REQ-DS-01310,NFR,FR,0.8636,False,All Users will be able to view the next product by swiping left to right.
+REQ-DS-03359,NFR,FR,0.8919,False,User will need a device capable of playing a 144p resolution video.
+REQ-DS-04766,FR,NFR,0.5849,True,User shall be able to block system access for a user by entering their card number.
+REQ-DS-01864,FR,NFR,0.5843,True,System shall be able to securely process online bill payments for various utilities and loans.
+REQ-DS-04923,FR,NFR,0.5217,True,The graphics card shall support features utilizing GPU Performance (optional).
+REQ-DS-05827,NFR,FR,0.7308,False,Email messages to absent students shall be sent within one hour of the conclusion of a class.
+REQ-DS-02131,FR,NFR,0.5497,True,Quick employer registration shall be possible using email and password.
+REQ-DS-02199,NFR,FR,0.537,True,User shall experience smoother page transitions with AJAX-enabled asynchronous page postbacks.
+REQ-DS-00478,NFR,FR,0.7153,False,The application must be able to link up with the INTERNAL system in order for users to properly log in and be identified.
+REQ-DS-05235,NFR,FR,0.5033,True,"The application shall be available for download on the Google Play Store, allowing users to access it at any time."
+REQ-DS-01413,FR,NFR,0.5028,True,WhatsApp shall distinguish between Wi-Fi and mobile data networks for media download operations.
+REQ-DS-01311,NFR,FR,0.7038,False,All users shall be able to navigate to the Catalogue using the sub navigation icons.
+REQ-DS-04207,NFR,FR,0.8113,False,System shall segment view and download statistics by country and sector to demonstrate broader impact.
+REQ-DS-02792,FR,NFR,0.9043,False,System shall offer keyboard shortcuts for efficient navigation and operation within Gmail.
+REQ-DS-01082,NFR,FR,0.8946,False,The system shall interface with the faculty central server.
+REQ-DS-00973,NFR,FR,0.743,False,The system shall be able to establish and keep the dialog with the Members systems despite the various technical environments and technologies used on their sites
+REQ-DS-05075,FR,NFR,0.7801,False,The system shall communicate with the database through a wireless Ethernet system.
+REQ-DS-05151,NFR,FR,0.6438,True,User shall have a registered phone number for software registration.
+REQ-DS-05173,FR,NFR,0.5685,True,System shall process the user's input and perform the desired action in the application interface.
+REQ-DS-00465,NFR,FR,0.5573,True,"The user interface shall display clear error messages explaining the issue and suggesting solutions, all in the user's chosen language."
+REQ-DS-02693,FR,NFR,0.9125,False,User shall have access to online user documentation and help system.
+REQ-DS-05223,NFR,FR,0.6982,False,System shall deny access to admin accounts that attempt to log in with non-existing credentials and notify the admin of the log-in failure.
+REQ-DS-01141,FR,NFR,0.6175,True,System shall prevent users from accessing dispute cases that do not belong to their cardholder base.
+REQ-DS-02228,FR,NFR,0.6998,False,"Crafty kids corner shall incorporate educational elements into activities to promote learning in areas like fine motor skills, creativity, problem-solving, and cultural awareness."
+REQ-DS-01514,FR,NFR,0.5348,True,User shall utilize Client ID and Demat account number for quick data retrieval.
+REQ-DS-05267,NFR,FR,0.8899,False,System shall display new government notifications related to LPG.
+REQ-DS-01635,FR,NFR,0.5557,True,The system shall require users to enter correct credentials for authentication.
+REQ-DS-00462,NFR,FR,0.9813,False,The system shall allow users to skip the splash screen if one is present.
+REQ-DS-03554,NFR,FR,0.534,True,"The system shall provide a user-friendly interface for creating, editing, and managing Data Packages."
+REQ-DS-05301,FR,NFR,0.5911,True,"The system shall offer built-in analytics to track marketing activities, user sessions, engagement metrics, and campaign performance."
+REQ-DS-05591,NFR,FR,0.9169,False,User shall allow the user to reset all options and stored user variables to default settings for maintainability.
+REQ-DS-03188,FR,NFR,0.8636,False,The system shall ensure patient data privacy and comply with HIPAA regulations (if applicable).
+REQ-DS-02062,NFR,FR,0.5052,True,System shall ensure that prescriptions are mapped to one and only one chemist or lab based on the patient's pincode.
+REQ-DS-00890,NFR,FR,0.5913,True,The system shall restrict broadcast message transmission to authorized administrators only.
+REQ-DS-01522,NFR,FR,0.513,True,"Testing of Stock Master shall include traversing all forms, stress testing, and Authorization tests."
+REQ-DS-00840,NFR,FR,0.63,True,Each user shall have a set of system access properties that defines the user's privileges within the system.
+REQ-DS-04022,NFR,FR,0.9066,False,System shall generate dedicated pages for each training class.
+REQ-DS-03444,FR,NFR,0.8352,False,FABS user shall have read-only access to DABS.
+REQ-DS-04132,NFR,FR,0.5698,True,System shall provide error handling and logging to identify and communicate import errors effectively.
+REQ-DS-05326,NFR,FR,0.7987,False,System shall be able to store up to 300GB of data.
+REQ-DS-00102,FR,NFR,0.7176,False,The default language of insErtion will be English.
+REQ-DS-00842,NFR,FR,0.8744,False,The administrator shall have the ability to remove a user from the system.
+REQ-DS-03547,FR,NFR,0.6492,True,The system shall allow users to package reproducible steps for data acquisition.
+REQ-DS-01479,FR,NFR,0.7493,False,"Attachments and images shall be allowed in messages, subject to file size restrictions."
+REQ-DS-00808,FR,NFR,0.5213,True,The system shall utilize a memory buffer with backup disk storage to store all processed spectra.
+REQ-DS-01944,FR,NFR,0.6082,True,The application shall operate in offline or low data mode.
+REQ-DS-04829,NFR,FR,0.8176,False,"System shall generate logs of user bank account details, account updates with date, time, and changes, and fixed asset schedules."
+REQ-DS-05219,NFR,FR,0.5731,True,"System shall tolerate faults and inform the user if the connection to the internet, GPS device, or other inputs are disrupted."
+REQ-DS-01990,NFR,FR,0.6996,False,System shall enable users to export their stories to their gallery and share them directly to social media platforms with ease.
+REQ-DS-02621,NFR,FR,0.9052,False,System shall display a registration window containing text fields for customer information and a register button for deposit submission.
+REQ-DS-04294,FR,NFR,0.6681,False,System shall encrypt collection data and maintain checksums.
+REQ-DS-03335,NFR,FR,0.7506,False,Customer's credit card number shall only display the last 4 digits after retrieval from the database.
+REQ-DS-03267,FR,NFR,0.5619,True,System shall authenticate users using Django's authentication module and session-based authentication.
+REQ-DS-02097,FR,NFR,0.7033,False,User shall only have access to US cities and locations within the app.
+REQ-DS-03562,NFR,FR,0.8627,False,The system shall track user data preview statistics.
+REQ-DS-01883,NFR,FR,0.6175,True,The system shall be subject to load testing to ensure it can handle expected levels of usage.
+REQ-DS-02640,FR,NFR,0.7026,False,The system shall provide a structured experience for users to navigate through commands tailored to their needs.
+REQ-DS-00990,NFR,FR,0.7131,False,"Drexel staff's office locations, contact information, and positions will have accuracy greater than 70%."
+REQ-DS-03521,NFR,FR,0.989,False,A Data Publishing User shall be able to update their dataset automatically with source file changes.
+REQ-DS-02589,FR,NFR,0.5901,True,Admin shall have the authority to cancel any bus route or make it unavailable for any reason.
+REQ-DS-02202,NFR,FR,0.8238,False,"User shall have the option to connect their social media accounts like Facebook, Twitter, and LinkedIn."
+REQ-DS-00529,FR,NFR,0.5048,True,The system shall be able to handle requests for case information and actions from any authorized user.
+REQ-DS-01457,FR,NFR,0.7666,False,User shall toggle between English and Spanish languages using a switch located in the top right corner of every screen for enhanced accessibility.
+REQ-DS-04936,NFR,FR,0.5085,True,"For optimal performance, Adobe Illustrator shall recommend a minimum of 16 GB of RAM."
+REQ-DS-03183,FR,NFR,0.5754,True,The system shall perform drug interaction checks to ensure patient safety.
+REQ-DS-00072,NFR,FR,0.6378,True,Radford University students shall use their RU credentials to access automatic class schedule and assignment sharing.
+REQ-DS-00596,NFR,FR,0.5224,True,"An administrators manual, explaining how to install and operate the MultiMahjongServer, will be provided."
+REQ-DS-04025,NFR,FR,0.5998,True,System shall offer quick access to training options from the home page.
+REQ-DS-03964,FR,NFR,0.7111,False,"User shall be limited to one registration per day per authenticated user, to prevent duplicate spaces."
+REQ-DS-04947,NFR,FR,0.6097,True,Adobe Illustrator shall handle more complex projects when 64-bit support is implemented.
+REQ-DS-01195,NFR,FR,0.8138,False,Only valid data shall be entered into the system. No invalid data shall be entered into the system.
+REQ-DS-00467,NFR,FR,0.8716,False,Users shall be able to resize text using built-in functions or appropriate methods.
+REQ-DS-03464,NFR,FR,0.8541,False,Developer shall prevent duplicate transactions from being published and manage the time gap between validation and publishing decision for data integrity.
+REQ-DS-04136,NFR,FR,0.8134,False,System shall offer keyboard-based navigation for rearranging hierarchy elements in the frontend.
+REQ-DS-01526,FR,NFR,0.8583,False,Users shall set a secure password complying with password constraints.
+REQ-DS-03733,FR,NFR,0.5002,True,The system shall provide a way for parents to connect with staff in case of emergencies.
+REQ-DS-04922,FR,NFR,0.5483,True,The graphics card shall support OpenGL version 4.0 or higher (minimum requirement).
+REQ-DS-03011,NFR,FR,0.9625,False,The user shall be contactable by both electronic and paper mail.
+REQ-DS-03628,FR,NFR,0.5338,True,A Visual Designer shall create a moodboard to aid with visual design concepts for the nsf.gov website.
+REQ-DS-00757,NFR,FR,0.916,False,ASPERA-3 data shall be provided to NASA PDS no later than 6 months after acquisition.
+REQ-DS-01964,NFR,FR,0.5936,True,System shall provide versatility and adaptability to be used in different sectors where file transfer is crucial.
+REQ-DS-04150,FR,NFR,0.9021,False,System shall provide a user-friendly web interface for depositors to submit and manage datasets without requiring additional software installation.
+REQ-DS-00989,NFR,FR,0.5959,True,The overall accuracy will be calculated by dividing the total number of correct answers by the number of questions asked.
+REQ-DS-02058,NFR,FR,0.5983,True,System shall maintain data securely in a fireproof cabinet 25 km away from the hospital.
+REQ-DS-04405,NFR,FR,0.8697,False,Only admin-users shall set up user profiles and allocate users to groups.
+REQ-DS-00466,NFR,FR,0.749,False,"The system shall be able to handle user interfaces that accept and display information like currency, measurements, dates, and addresses in a way that is clear for users from various backgrounds."
+REQ-DS-05113,FR,NFR,0.934,False,"The system shall work on a client-server architecture and require an internet server capable of running PHP applications, supporting commonly used browsers like Internet Explorer."
+REQ-DS-03913,NFR,FR,0.5651,True,System shall provide efficient storage and retrieval mechanisms for large files and datasets.
+REQ-DS-01981,NFR,FR,0.5595,True,"User shall enjoy a versatile editing experience with various editing features including video collages, themes, music bank, and sound effects."
+REQ-DS-00047,NFR,FR,0.5841,True,Users should be able to easily understand and select results from the list with just a single click.
+REQ-DS-01528,FR,NFR,0.7863,False,System shall present users with a clear login interface requiring username/email and password inputs.
+REQ-DS-04743,FR,NFR,0.6235,True,User shall understand the effects of parameters on system operations.
+REQ-DS-05150,NFR,FR,0.9348,False,User shall have a registered email linked to the software.
+REQ-DS-05275,NFR,FR,0.6903,False,Users who give up subsidy will be displayed on the Scroll of Honor.
+REQ-DS-00052,NFR,FR,0.9161,False,Users shall be able to configure settings both locally on the device and remotely.
+REQ-DS-00888,NFR,FR,0.5367,True,The system shall encrypt messages but cannot guarantee confidentiality due to potential decryption by unauthorized parties.
+REQ-DS-01958,FR,NFR,0.9577,False,Different commands for different functions shall be implemented to ensure reliability.
+REQ-DS-01563,NFR,FR,0.5368,True,The system will offer defense against widespread online vulnerabilities like cross-site scripting (XSS) and SQL injection.
+REQ-DS-02056,NFR,FR,0.5434,True,System shall support emerging needs based on data analysis.
+REQ-DS-05394,NFR,FR,0.6139,True,"The cabin door must remain locked, opening only when a user swipes a valid ATM card in the slot."
+REQ-DS-00449,NFR,FR,0.9041,False,"The system shall be able to create a complete audit trail for all case access, activities, and related documents or data."
+REQ-DS-01033,NFR,FR,0.6674,False,The CMA report shall be returned no later 60 seconds after the user has entered the CMA report criteria.
+REQ-DS-01574,NFR,FR,0.7741,False,User shall be able to complete matchmaking in less than 3 minutes.
+REQ-DS-03887,FR,NFR,0.5741,True,User shall download attached files from experiments using a web browser or a network drive.
+REQ-DS-02404,FR,NFR,0.613,True,Snapchat shall utilize Bitmoji app to perform specified actions.
+REQ-DS-02506,NFR,FR,0.6171,True,A surface computer shall not require a user to log in.
+REQ-DS-05106,NFR,FR,0.6086,True,The system shall be available for use from the supermarket's opening time to its closing time.
+REQ-DS-01015,NFR,FR,0.8433,False,The application shall match the color of the schema set forth by Department of Homeland Security.
+REQ-DS-00434,NFR,FR,0.5824,True,The system shall be able to support a multilingual interface.
+REQ-DS-00030,NFR,FR,0.7966,False,"Restaurant owner account creation prioritizes security by enforcing unique usernames, requiring them to choose a different option if their desired name is unavailable."
+REQ-DS-02238,NFR,FR,0.8426,False,Crafty kids corner shall have a modular architecture to easily add new features or expand functionality as needed.
+REQ-DS-05186,FR,NFR,0.9171,False,System shall establish a safe connection between users over the network for optimal gaming experiences.
+REQ-DS-04260,FR,NFR,0.5007,True,The system shall display copyright status and clear citation information for files.
+REQ-DS-03426,FR,NFR,0.9412,False,Tester shall have access to test features in environments other than Staging.
+REQ-DS-00701,NFR,FR,0.8067,False,"As an objective, the TCS shall support an automatic launch and recovery system."
+REQ-DS-04497,NFR,FR,0.7526,False,"User authentication shall be done via username and password, with permissions assigned according to user roles."
+REQ-DS-01961,NFR,FR,0.5194,True,User shall not be able to view other users' details for privacy and security reasons.
+REQ-DS-00273,FR,NFR,0.5825,True,"The system shall ensure the information link is clearly visible, clickable in one action, and functions as a link."
+REQ-DS-04962,FR,NFR,0.8456,False,User shall be able to efficiently store and retrieve data in MySQL databases.
+REQ-DS-03102,FR,NFR,0.5092,True,"The system shall conform to HTML standards and therefore support different web browsers including, but not limited to Internet Explorer, Firefox, Opera and Safari."
+REQ-DS-03471,NFR,FR,0.8458,False,FABS user shall download the uploaded FABS file for record-keeping and review purposes.
+REQ-DS-05595,NFR,FR,0.7999,False,User shall integrate error prevention measures such as sanity checks and limiting free-text input for usability.
+REQ-DS-00500,NFR,FR,0.9805,False,The system shall validate email address existence.
+REQ-DS-04596,NFR,FR,0.5579,True,System shall keep error tracking logs to aid users.
+REQ-DS-03981,FR,NFR,0.6992,False,"User shall be able to identify and pay for a $350 company sponsorship, for easy sponsorship registration."
+REQ-DS-00862,NFR,FR,0.64,True,All messages passed between CMCS system layers shall have both UTC and wall clock time stamp information appropriate for the message type.
+REQ-DS-02460,FR,NFR,0.6872,False,A customer shall not be able to dismiss their engaged menu while there is a  non-empty pending order associated with the engaged menu.
+REQ-DS-04299,FR,NFR,0.5327,True,System shall expose descriptive records for external use.
+REQ-DS-05720,NFR,FR,0.5865,True,User shall have access to version control systems for tracking code changes and updates.
+REQ-DS-04152,FR,NFR,0.6306,True,System shall integrate with Pure to enable dataset deposition and management within the platform.
+REQ-DS-02441,FR,NFR,0.5564,True,There shall be no sound or animation used in the product.
+REQ-DS-01569,FR,NFR,0.7642,False,A stable internet connection shall be required for the player.
+REQ-DS-05866,NFR,FR,0.8583,False,Each method shall include a description of its function and additional information for future use.
+REQ-DS-02054,NFR,FR,0.6205,True,System shall securely manage user login credentials and patient data confidentiality.
+REQ-DS-03559,NFR,FR,0.9171,False,The system shall allow users to specify funding sources for datasets.
+REQ-DS-04434,FR,NFR,0.9889,False,Interface must be consistent and intuitive across different web browsers.
+REQ-DS-04734,NFR,FR,0.691,False,The system display shall support a minimum resolution of 1024 x 576 pixels.
+REQ-DS-00590,NFR,FR,0.9534,False,The MultiMahjongClient will have sound effects associated with the game actions.
+REQ-DS-00781,NFR,FR,0.6084,True,"The BE shall be able to handle lag sets up to a maximum size of 262,144 values"
+REQ-DS-00454,NFR,FR,0.7037,False,"The system shall allow users to customize interface elements (displayed columns, layout) and save these preferences in their profiles."
+REQ-DS-04934,NFR,FR,0.8863,False,Adobe Illustrator shall support Apple Silicon (M1 and M2) processors starting from Datylon for Illustrator R46 onwards.
+REQ-DS-02226,FR,NFR,0.6585,False,"Crafty kids corner shall include safety tips and guidelines for handling art supplies and performing crafting activities, emphasizing the importance of adult supervision."
+REQ-DS-00513,NFR,FR,0.6226,True,The system shall be able to process test credit card transactions.
+REQ-DS-02627,NFR,FR,0.8996,False,"System shall present the employee homepage for inputting duty slip information, calculating net bills, and updating car status and customer database."
+REQ-DS-02665,NFR,FR,0.8106,False,User shall be able to ensure compliance with established standards.
+REQ-DS-02196,NFR,FR,0.52,True,"User shall be able to make payments securely through integrated payment gateways like PayPal, InterSwitch, etc."
+REQ-DS-05182,FR,NFR,0.9605,False,System shall maintain a database to store user progress for a seamless gaming experience across sessions.
+REQ-DS-00007,NFR,FR,0.7993,False,The campus map shall cover the campus of the TU/e.
+REQ-DS-00905,NFR,FR,0.7404,False,Any and all errors associated with failures of the diagnostic algorithms shall be logged as described in subsequent specifications and selected errors shall be reported to the user.
+REQ-DS-03416,NFR,FR,0.5879,True,Company shall have an easy-to-use website for step-by-step uploading or deleting of content.
+REQ-DS-03995,FR,NFR,0.5013,True,"User shall be able to get detailed directions to the summit venue, for easy navigation."
+REQ-DS-00703,NFR,FR,0.9406,False,"TCS shall provide the capability to monitor specific telemetry elements real-time, and record all telemetry elements for future review and processing."
+REQ-DS-05287,FR,NFR,0.5895,True,The Khan Academy platform shall be accessible for use by participating schools.
+REQ-DS-03274,FR,NFR,0.5303,True,System shall utilize the Dropzone JavaScript library for drag-and-drop functionality.
+REQ-DS-03411,FR,NFR,0.5635,True,Recycling facility representative shall access user stats and schedules to adjust operations.
+REQ-DS-05705,FR,NFR,0.7462,False,JavaScript code includes error handling functionality to ensure a smooth user experience.
+REQ-DS-03374,NFR,FR,0.8176,False,"User shall be able to interact with the platform to create a LeetCode account, providing their email, username, and password."
+REQ-DS-04200,NFR,FR,0.6106,True,System shall require approval for scheduled data disposal to prevent accidental loss of required data.
+REQ-DS-01150,FR,NFR,0.5739,True,"System shall prevent external users from requesting original receipts, restricting this action to internal users."
+REQ-DS-05770,NFR,FR,0.5531,True,"User shall receive safety training materials and awareness campaigns within the app, promoting safe behaviors and fostering a culture of responsibility among users."
+REQ-DS-05152,NFR,FR,0.5513,True,User shall carefully select installation options during the software installation process.
+REQ-DS-00845,NFR,FR,0.5654,True,The system shall be able to handle non-real-time operations in a transparent fashion.
+REQ-DS-05341,NFR,FR,0.8524,False,Admin shall monitor the whole process.
+REQ-DS-02442,FR,NFR,0.8937,False,The hardware and operating system shall be capable of supporting a screen resolution no greater than 320 x 240 pixels due to the small form factor.
+REQ-DS-00806,NFR,FR,0.9657,False,"The system shall be able to fully reconstruct the raw, original input data from the processed output."
+REQ-DS-04390,NFR,FR,0.6983,False,System shall provide help material accessible in both offline and online modes.
+REQ-DS-02507,NFR,FR,0.7033,False,A tablet shall require a user to log in using a username and password.
+REQ-DS-02428,NFR,FR,0.7384,False,"The system shall provide a backup and automatic restore facility using an online cloud database to store all user data upon permission, with the ability to restore the information on any device."
+REQ-DS-04562,NFR,FR,0.752,False,User shall be able to transact securely with confidential customer information.
+REQ-DS-03630,NFR,FR,0.7234,False,A content designer shall demonstrate the value of user-centered content design.
+REQ-DS-04034,NFR,FR,0.9043,False,System shall enable sponsors to link attendees to their sponsorship page.
+REQ-DS-00481,FR,NFR,0.7355,False,The system shall be able to support a user interface in multiple languages.
+REQ-DS-04057,FR,NFR,0.8747,False,System shall be able to store metadata accurately and comprehensively.
+REQ-DS-02200,NFR,FR,0.5253,True,"User shall receive clear validation messages on both client and server sides, with failed fields highlighted and focus directed to them."
+REQ-DS-05837,NFR,FR,0.5362,True,The system shall be reusable for each new semester.
+REQ-DS-02135,FR,NFR,0.6676,False,Profile updates shall be allowed at any time.
+REQ-DS-03325,NFR,FR,0.7401,False,System shall replicate databases to off-site storage locations for backup.
+REQ-DS-00353,NFR,FR,0.5569,True,System shall be able to integrate with the internal system for user login and identification.
+REQ-DS-04721,NFR,FR,0.5315,True,VS Code shall require GLIBCXX version 3.4.25 or later.
+REQ-DS-00496,NFR,FR,0.5386,True,The system shall perform searches via Dijkstra's shortest path algorithm.
+REQ-DS-00013,NFR,FR,0.6873,False,Information about a certain person will be restricted to what is available on the employee pages of the TU/e Encyclopedia.
+REQ-DS-01863,FR,NFR,0.5677,True,"User shall/will be able to pay bills online, such as utility bills, credit card bills, and loan payments."
+REQ-DS-03156,NFR,FR,0.8774,False,The system shall be able to open and work with spreadsheets created in previous versions of Excel (with potential limitations).
+REQ-DS-03210,NFR,FR,0.6042,True,The system shall display information clearly and accurately.
+REQ-DS-04967,FR,NFR,0.9933,False,System shall encrypt sensitive data to prevent unauthorized access.
+REQ-DS-03504,FR,NFR,0.5024,True,A Platform Administrator shall have a view of all published datasets
+REQ-DS-03293,NFR,FR,0.8392,False,"POST requests shall be used for transferring sensitive information, such as authentication details and property data, through forms."
+REQ-DS-03221,NFR,FR,0.9885,False,The system shall generate reports on car information upon request.
+REQ-DS-03379,NFR,FR,0.7812,False,"System shall provide submission status (Accepted, Wrong Answer, Time Limit Exceeded, etc.) for the user's code solutions."
+REQ-DS-05861,NFR,FR,0.738,False,Worker password reset shall be managed by the manager.
+REQ-DS-03425,FR,NFR,0.7771,False,User shall receive a more helpful file-level error message when uploading a file with the wrong extension.
+REQ-DS-03363,NFR,FR,0.8214,False,The site will be available to users 24/7.
+REQ-DS-02799,FR,NFR,0.571,True,User shall be provided with a comprehensive help and support system to address any issues or queries related to Gmail usage.
+REQ-DS-04860,NFR,FR,0.9742,False,"The system shall display ""video not found"" if the requested video is not available."
+REQ-DS-01965,NFR,FR,0.6245,True,User shall authenticate themselves to access functionalities permitted to them.
+REQ-DS-04164,FR,NFR,0.7606,False,System shall accommodate deposits of arbitrarily large files without size restrictions.
+REQ-DS-00089,NFR,FR,0.6839,False,"The system will prioritize error-free expense splitting calculations while offering full app functionality offline, caching financial data until reconnected."
+REQ-DS-05795,NFR,FR,0.9288,False,"User shall have a maximum of three attempts to enter the password, after which an email notification will be sent if there's an additional attempt."
+REQ-DS-00903,NFR,FR,0.8842,False,The automated diagnostic tool shall detect and identify certain performance and operational faults in chiller and cooling tower subsystems of HVAC units following specified algorithms.
+REQ-DS-01377,NFR,FR,0.6749,False,The system shall be able to display a menu at all times to facilitate manual order taking should the need arise.
+REQ-DS-01600,NFR,FR,0.6751,False,User shall be informed about system failures through error messages displayed on the main screen.
+REQ-DS-03561,NFR,FR,0.7853,False,The system shall allow users to preview data within Data Packages before download.
+REQ-DS-04021,NFR,FR,0.5381,True,System shall support efficient filtering and management of trainee information for admins.
+REQ-DS-04956,NFR,FR,0.6622,False,"Adobe Creative Cloud shall provide users with access to other Adobe creative applications (e.g., Photoshop, Premiere) to enhance their creative workflow by enabling seamless integration."
+REQ-DS-04702,FR,NFR,0.7776,False,The $HOME environment variable shall be set correctly on the server.
+REQ-DS-01489,FR,NFR,0.8101,False,"The user interface shall be responsive, adapting to various devices and browsers."
+REQ-DS-03997,FR,NFR,0.5292,True,"User shall be able to see a list of attendees signed up for a specific summit, for communication purposes."
+REQ-DS-04994,FR,NFR,0.5024,True,"Administrator shall be able to generate reports, log files, and backup/recover data at any time."
+REQ-DS-04959,NFR,FR,0.6871,False,The system shall support a dedicated graphics card (GPU) for rendering complex graphics and smooth on-screen navigation.
+REQ-DS-00811,FR,NFR,0.8243,False,"The system shall produce failure reports indicating internal system component failures, including error number and time stamp."
+REQ-DS-04394,NFR,FR,0.7488,False,"System shall allow help-desk users to view reports on submitted defects or enhancement requests category-wise, status-wise, and age-wise."
+REQ-DS-03377,NFR,FR,0.7837,False,System shall grant access to the user's dashboard upon successful authentication.
+REQ-DS-03454,NFR,FR,0.649,True,FABS user shall access frontend URLs accurately reflecting the accessed page for clarity.
+REQ-DS-00317,FR,NFR,0.6296,True,"Data that is especially hard to extract, for whatever reason, will be manually extracted and added to the database by a developer."
+REQ-DS-00867,NFR,FR,0.6827,False,The system shall be able to sit at idle and resume operations with minimal (amount TBD) delay.
+REQ-DS-02650,NFR,FR,0.8964,False,The system shall authenticate users and authorize their access to specific functionalities based on their role and permissions.
+REQ-DS-05931,NFR,FR,0.6669,False,The system shall provide emergency communication options for residents both inside and outside the home.
+REQ-DS-02798,FR,NFR,0.9759,False,System shall regularly update and maintain the Gmail platform to ensure optimal performance and security.
+REQ-DS-03528,NFR,FR,0.6702,False,The platform shall allow translation of data type hierarchies for embedded viewers.
+REQ-DS-02620,NFR,FR,0.8723,False,User shall be able to interact with the registration window for entering customer details and registering new customers.
+REQ-DS-01065,NFR,FR,0.6244,True,The number of mistakes noted by the students shall be decreased by 50% in the first year.
+REQ-DS-04439,FR,NFR,0.6142,True,Plug-in API will be well-documented for plug-in developers.
+REQ-DS-02180,FR,NFR,0.6979,False,Fully customizable graphic elements and templates shall be editable.
+REQ-DS-05651,FR,NFR,0.7365,False,System shall list all sellers offering a common product and prioritize them based on the percentage of discount.
+REQ-DS-03868,NFR,FR,0.6519,False,System shall separate the interface from the implementation of a dataset type.
+REQ-DS-00436,FR,NFR,0.5243,True,The system shall be able to provide an interface for users to log and track defects and enhancement requests for the application.
+REQ-DS-03226,FR,NFR,0.5427,True,The system shall offer the option to erase data on the source phone after cloning (optional).
+REQ-DS-01626,NFR,FR,0.8862,False,System shall be able to provide general recommendations based on recent trends.
+REQ-DS-05274,NFR,FR,0.7791,False,User shall not be able to register multiple times on the system.
+REQ-DS-01619,FR,NFR,0.7245,False,User shall be able to maintain data by implementing the latest model and performing regular updates for new titles.
+REQ-DS-02962,NFR,FR,0.7833,False,New features can be added to the passport management system.
+REQ-DS-00974,NFR,FR,0.6147,True,The system will be designed so that background tasks can continue while the user performs foreground tasks.
+REQ-DS-02653,NFR,FR,0.5315,True,User shall be able to set performance expectations for the system.
+REQ-DS-02609,FR,NFR,0.5056,True,System shall display all available cars with hourly and per kilometer charges.
+REQ-DS-03458,NFR,FR,0.8969,False,Agency user shall receive File F in the correct format to prevent data formatting issues.
+REQ-DS-04208,NFR,FR,0.9406,False,System shall link datasets with project metadata for reporting on project-related data deposits.
+REQ-DS-04459,NFR,FR,0.6153,True,System shall automatically compress large image files.
+REQ-DS-04097,NFR,FR,0.7576,False,System shall provide notification and reminders for DMP updates and reviews.
+REQ-DS-04392,NFR,FR,0.9717,False,"System shall send alerts (e.g., email, SMS) to users regarding actions taken on alerts upon user request."
+REQ-DS-04813,NFR,FR,0.5074,True,"Passwords can include digits, hyphens, and underscores."
+REQ-DS-00445,NFR,FR,0.5659,True,The System must allow a user to stipulate which other users or groups can access cases.
+REQ-DS-01194,NFR,FR,0.666,False,Only collision estimators shall search for recycled parts. Users without the collision estimator role shall not have access to the search for recycled parts.
+REQ-DS-02447,FR,NFR,0.9835,False,The software shall be designed for the smart card reader-writer terminal and shall not run on a standalone desktop PC.
+REQ-DS-03478,NFR,FR,0.6844,False,FABS user shall see correct status labels on the Submission Dashboard for quick submission history overview for better tracking and monitoring.
+REQ-DS-04760,FR,NFR,0.7321,False,User shall be able to use a user-friendly interface with optional interactive help for each service.
+REQ-DS-04115,FR,NFR,0.6843,False,System shall support EAD import functionality accessible from the frontend.
+REQ-DS-00067,NFR,FR,0.6873,False,The system shall allow qualified programmers to extend functionality through adding sub-apps and launchers.
+REQ-DS-04808,NFR,FR,0.6574,False,No inconsistency shall be introduced in the account during transactions affected by abnormal shutdowns.
+REQ-DS-04859,NFR,FR,0.8842,False,The subscription will end if the user does not respond to the subscription package within the allotted time frame.
+REQ-DS-04382,FR,NFR,0.9363,False,System shall respond to citizen inquiries with minimal turnaround time.
+REQ-DS-04216,NFR,FR,0.5298,True,System shall harvest metadata on funded research outputs for analysis and strategy refinement.
+REQ-DS-03553,NFR,FR,0.5064,True,The system shall allow for quick import and export of Data Packages into various platforms.
+REQ-DS-04215,NFR,FR,0.5401,True,System shall reassure funding bodies of robust archival plans for funded research data to justify investments.
+REQ-DS-03874,NFR,FR,0.8119,False,System shall tolerate existing datasets if their properties are different but compatible when creating a dataset as part of app deployment.
+REQ-DS-03967,FR,NFR,0.5594,True,"User must accept the cancellation terms with a checkbox, to be accountable."
+REQ-DS-04048,NFR,FR,0.6228,True,System shall display available seats for summits for user convenience.
+REQ-DS-02103,NFR,FR,0.6996,False,The database of Webble shall reliably support up to 20 user accounts and associated data.
+REQ-DS-02830,FR,NFR,0.5889,True,"System shall provide functionalities to generate comprehensive reports on stock availability, orders, and deliveries."
+REQ-DS-04908,FR,NFR,0.9531,False,The system shall be compatible with a supported operating system (Windows or macOS) and meet the minimum hardware specifications for Adobe Illustrator to function properly.
+REQ-DS-03101,FR,NFR,0.8624,False,The system shall be compatible with IIS6.0 and above or Apache 2.0 and above.
+REQ-DS-02193,NFR,FR,0.9917,False,"User shall be able to access the control panel based on their role as administrator, employer, or job seeker."
+REQ-DS-02229,FR,NFR,0.9633,False,"Crafty kids corner shall implement measures to ensure the safety and privacy of users, particularly children, by adhering to relevant regulations and guidelines regarding online data protection."
+REQ-DS-02655,NFR,FR,0.8124,False,User shall be able to input data without experiencing delays.
+REQ-DS-05370,FR,NFR,0.7695,False,System shall retain a cash card if entered more than three times with incorrect passwords and prompt the user to contact the bank.
+REQ-DS-04915,FR,NFR,0.8323,False,The system shall have at least 2 GB of available hard-disk space to install Adobe Illustrator.
+REQ-DS-00514,NFR,FR,0.5269,True,The system shall be able to process test shipping orders.
+REQ-DS-01558,NFR,FR,0.7724,False,"Stockify shall seamlessly integrate with various external news sources, stock exchanges, and other financial APIs."
+REQ-DS-02394,NFR,FR,0.8882,False,"The user shall be able to navigate the app intuitively, without requiring external instructions."
+REQ-DS-03911,NFR,FR,0.8144,False,System shall provide robust search functionality for retrieving experimental protocols and files.
+REQ-DS-01058,FR,NFR,0.5959,True,The realtor shall be notified of new client appointments after automatic synchronization with office system.
+REQ-DS-01473,FR,NFR,0.5987,True,The system shall support the integration of external systems for importing and exporting EHR data.
+REQ-DS-00458,NFR,FR,0.5233,True,The system shall provide textual descriptions or alternative functionalities for all non-text media like images and videos.
+REQ-DS-01551,FR,NFR,0.6423,True,Past data up to the present date shall be available for context.
+REQ-DS-01011,FR,NFR,0.6647,False,The system shall offer the ability to pause and resume the refresh of data.
+REQ-DS-02232,FR,NFR,0.6268,True,Crafty kids corner shall include interactive features where users can comment on projects and engage in discussions.
+REQ-DS-05226,FR,NFR,0.5554,True,"System shall facilitate connections between agricultural product wholesalers and retailers, and farmers and other customers, allowing users to be redirected to the admin dashboard with a success message."
+REQ-DS-05758,FR,NFR,0.7831,False,"User shall perform on-device translation locally without internet reliance, delivering responsive and reliable translation experiences."
+REQ-DS-04965,FR,NFR,0.607,True,"System shall include schema definition, data manipulation, transaction management, concurrency control, indexing, query optimization, backup and recovery, monitoring, and maintenance."
+REQ-DS-01067,NFR,FR,0.8293,False,2 out of 3 Program Administrators/Nursing Staff Members shall successfully be able to use the system to manage the scheduling of classes and clinicals.
+REQ-DS-04105,FR,NFR,0.7817,False,System shall support LDAP authentication for user login.
+REQ-DS-01985,NFR,FR,0.6505,False,"User shall apply video editing effects such as background blur, video speed adjustment, fade in and out, and animated texts and fonts."
+REQ-DS-03010,NFR,FR,0.8847,False,"For copyright safety, all files shall include at least the copyright line."
+REQ-DS-02430,NFR,FR,0.9292,False,"The system shall allow users to provide written feedback, rate the app, and share their thoughts after installation."
+REQ-DS-00461,NFR,FR,0.8336,False,The system shall minimize splash screens and only display them if they provide valuable information to the user.
+REQ-DS-05528,FR,NFR,0.9815,False,System shall ensure consistent security for users through the use of passwords.
+REQ-DS-05269,NFR,FR,0.5851,True,System shall showcase the latest safety tips and tools for LPG usage.
+REQ-DS-00866,NFR,FR,0.7833,False,The system shall be able to continue processing of all correlator configuration/control events until the queues of parameters are exhausted and external communications are restored
+REQ-DS-04404,NFR,FR,0.8096,False,System shall allow a user to be a member of more than one group.
+REQ-DS-00068,NFR,FR,0.8526,False,The system shall allow authorized users to delete sub-apps and their launchers within the main application.
+REQ-DS-02952,NFR,FR,0.9105,False,User shall be able to perform tasks even if thousands of applicants are applying simultaneously.
+REQ-DS-03194,NFR,FR,0.7837,False,"The system shall encrypt sensitive data (patient information, prescriptions) at rest and in transit."
+REQ-DS-02443,FR,NFR,0.7785,False,"While sound is not essential, it can be considered for future versions of the system. In these future variants, the user shall be greeted by their name upon swiping their card against the reader-writer terminal."
+REQ-DS-05268,NFR,FR,0.9826,False,System shall allow users to participate in online discussions about LPG.
+REQ-DS-01898,NFR,FR,0.6286,True,Normal users will have read-only access to information except for their personal and some other specified information.
+REQ-DS-04913,FR,NFR,0.6478,True,Adobe Illustrator shall require a 64-bit version of the operating system.
+REQ-DS-01699,FR,NFR,0.7534,False,System shall allow user registration without any preconditions.
+REQ-DS-00079,NFR,FR,0.5526,True,The overall accuracy shall be calculated by dividing total number of correct answers by the number of questions asked.
+REQ-DS-00300,FR,NFR,0.7408,False,"The system shall return a user-friendly message like Sorry, I didn't understand that when it encounters an error parsing the input."
+REQ-DS-02800,FR,NFR,0.8282,False,"System shall offer integration with other Google services such as Google Drive, Google Calendar, and Google Contacts for enhanced productivity."
+REQ-DS-04789,FR,NFR,0.9624,False,System shall employ dial-up POS with central server using TCP/IP communication protocol.
+REQ-DS-04461,NFR,FR,0.9681,False,System shall validate email address existence.
+REQ-DS-02449,FR,NFR,0.9882,False,Only textual information will be handled by the software.
+REQ-DS-01704,FR,NFR,0.8046,False,System shall allow user login without any preconditions.
+REQ-DS-02572,NFR,FR,0.5367,True,System shall impose access constraints based on user types.
+REQ-DS-03529,FR,NFR,0.5903,True,"The system shall allow users to import Data Packages into various platforms like Node.js, Julia, R, Excel, SPSS, STATA, LibreOffice/OpenOffice, Python, Clojure, C++."
+REQ-DS-04490,FR,NFR,0.8685,False,"Authentication shall be done by username and password for all users, with administrative levels accessing administration computers."
+REQ-DS-02638,FR,NFR,0.7022,False,"User shall be able to interact with the text-based command-line interface of the system, which is provided as a method of interaction for users and administrators."
+REQ-DS-04161,FR,NFR,0.6061,True,User shall be able to grant privileged access to collaborators for efficient collaboration.
+REQ-DS-04742,FR,NFR,0.7448,False,System shall handle abnormal situations by providing error handling and recovery.
+REQ-DS-02073,FR,NFR,0.5671,True,"User shall have a secure login mechanism with role-based access control, ensuring that employees can only access functions relevant to their roles."
+REQ-DS-00636,FR,NFR,0.52,True,The CO must play moves according to the Chinese rules of Mahjong.
+REQ-DS-02247,NFR,FR,0.7392,False,Crafty kids corner shall incorporate interactive elements to keep children interested and entertained.
+REQ-DS-04927,FR,NFR,0.8392,False,The system shall handle complex projects and large files without lag or slowdown.
+REQ-DS-03404,FR,NFR,0.617,True,Admin shall onboard recycling centers on the platform to increase information accuracy.
+REQ-DS-03435,FR,NFR,0.6008,True,Broker user shall have updated error codes that accurately reflect logic and provide enough information.
+REQ-DS-02194,NFR,FR,0.954,False,"User shall be able to subscribe to different membership tiers, such as Silver, Gold, and Diamond, offering varying limits on resume downloads."
+REQ-DS-02195,NFR,FR,0.9845,False,User shall be able to respond to a limited number of profiles per day as a general job seeker.
+REQ-DS-00297,FR,NFR,0.5389,True,"The system shall return a JSON response containing either successful data or error messages, but not both."
+REQ-DS-03403,FR,NFR,0.5619,True,Admin shall view user error logs to address issues faced by users.
+REQ-DS-00548,NFR,FR,0.5217,True,The system shall be able to perform periodic backups.
+REQ-DS-00061,NFR,FR,0.5204,True,The system shall anonymize and aggregate route information to enable safe sharing without compromising user privacy.
+REQ-DS-04157,FR,NFR,0.882,False,User shall be able to place data under embargo to protect rights of first use and confidentiality responsibilities.
+REQ-DS-00066,NFR,FR,0.7722,False,The system shall support the display of all user interface text elements in both English and Dutch.
+REQ-DS-04963,FR,NFR,0.5814,True,System shall support SQL for querying and manipulating data.
+REQ-DS-04016,NFR,FR,0.9644,False,System shall include a checkbox for users to accept cancellation terms.
+REQ-DS-00680,FR,NFR,0.5766,True,"The TCS shall be capable of being interoperable with Predator and Outrider UAVs across the 5 levels of
+UAV interaction."
+REQ-DS-00583,NFR,FR,0.9125,False,The system shall be able to allow continued gameplay upon encountering a non-fatal error.
+REQ-DS-02221,NFR,FR,0.5717,True,User shall have their meal planner tailored to accommodate their allergies and food choices for safety and dietary preferences.
+REQ-DS-04071,FR,NFR,0.6506,False,System shall facilitate access to persistent identifiers for datasets referenced in the DMP.
+REQ-DS-03375,NFR,FR,0.8818,False,System shall display a confirmation message upon successful registration of the LeetCode account.
+REQ-DS-00064,NFR,FR,0.931,False,"The system shall empower end-users to manage their private data, including the option to delete their personal repository."
+REQ-DS-04807,NFR,FR,0.6893,False,ATM shall be manually restarted by maintenance personnel after an abnormal shutdown.
+REQ-DS-04180,FR,NFR,0.7543,False,System shall facilitate linking datasets with associated project DMPs to demonstrate compliance with data management requirements.
+REQ-DS-05821,FR,NFR,0.7744,False,System shall enforce access control based on assigned user roles and permissions.
+REQ-DS-04193,NFR,FR,0.8132,False,System shall display different versions of datasets clearly to aid users in selecting the appropriate version.
+REQ-DS-05840,NFR,FR,0.6298,True,"The system shall allow for addition or deletion of instructors, students, and classes while incorporating new semesters."
+REQ-DS-05296,NFR,FR,0.6598,False,The Khan Academy platform shall be engaging for students.
+REQ-DS-03298,NFR,FR,0.556,True,Comments shall be included in the codebase to aid new programmers and developers in making modifications.
+REQ-DS-00822,NFR,FR,0.7389,False,All data processing functions shall be chainable (outputs pipeable to inputs) and repeatable in the processing pipeline in cases where this makes computational sense.
+REQ-DS-05767,NFR,FR,0.6989,False,"User shall experience evenly distributed translation requests across multiple servers through load balancing strategies, optimizing resource allocation and scalability."
+REQ-DS-00051,NFR,FR,0.9085,False,The user shall be able to enter data using a cell phone keypad layout.
+REQ-DS-04911,FR,NFR,0.5144,True,Adobe Illustrator shall support both Intel and AMD processors.
+REQ-DS-03050,FR,NFR,0.6465,True,The system shall outline the step-by-step process for completing tasks within the system.
+REQ-DS-01825,NFR,FR,0.6633,False,System shall connect to power through an electrical outlet.
+REQ-DS-05162,FR,NFR,0.5223,True,User shall connect the device to a network to use the application.
+REQ-DS-04206,NFR,FR,0.5106,True,System shall track citation counts for datasets to demonstrate academic impact.
+REQ-DS-05444,NFR,FR,0.5861,True,The system requires end users to provide their symptoms accurately to avoid false predictions.
+REQ-DS-01070,NFR,FR,0.975,False,Staff members shall be able to complete a set of tasks in a timely manner.
+REQ-DS-04278,NFR,FR,0.504,True,"The system shall be user-friendly for various user roles (archivists, researchers, donors)."
+REQ-DS-02802,NFR,FR,0.6785,False,The system shall support content delivery networks (CDNs) to distribute content efficiently across different geographic locations.
+REQ-DS-03016,NFR,FR,0.7393,False,"It shall be usable by professionals, the unemployed, and students."
+REQ-DS-02656,NFR,FR,0.6602,False,System shall provide timely responses to user inputs.
+REQ-DS-03975,FR,NFR,0.578,True,"User shall have a training landing page with an intro section and a list of all training offerings, to easily shop for training."
+REQ-DS-01081,NFR,FR,0.7934,False,The system shall interface with CampusConnect’s central server.
+REQ-DS-01481,FR,NFR,0.871,False,The system shall securely process online payments using standard payment gateways.
+REQ-DS-04971,FR,NFR,0.8427,False,System shall enable point-in-time recovery to restore databases to specific states.
+REQ-DS-03023,NFR,FR,0.533,True,Guest accounts shall not be allowed.
+REQ-DS-04698,FR,NFR,0.6207,True,"The server shall have at least 4 vCPUs, either x86_64 or arm64 architecture."
+REQ-DS-05295,NFR,FR,0.8455,False,The Khan Academy platform shall provide data and reports to help teachers monitor student progress.
+REQ-DS-02010,NFR,FR,0.5817,True,"Once a company selects a candidate, they shall not be allowed to reject them; otherwise, the company will be blacklisted."
+REQ-DS-02622,NFR,FR,0.8292,False,User shall be able to access the login window for entering username and password.
+REQ-DS-01444,NFR,FR,0.8546,False,The system shall allow the use of unverified (anonymous) avatars or aliases.
+REQ-DS-05191,NFR,FR,0.8075,False,System shall update user stats in real time after every achievement or completed action for an enhanced gaming experience.
+REQ-DS-00576,NFR,FR,0.5335,True,"The system shall be usable by users with basic PC, Macintosh, or Unix operating system knowledge."
+REQ-DS-02201,NFR,FR,0.9375,False,User shall be prompted to verify their email upon registration for added security.
+REQ-DS-02657,NFR,FR,0.5541,True,User shall be able to report errors encountered during system use.
