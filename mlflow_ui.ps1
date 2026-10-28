@@ -14,11 +14,10 @@ if (-not (Test-Path $venvMlflow)) {
 }
 
 $env:MLFLOW_ALLOW_FILE_STORE = "true"
-$dbPath = (Join-Path $PSScriptRoot "mlflow.db").Replace("\", "/")
-$artifactPath = Join-Path $PSScriptRoot "mlruns"
+Set-Location $PSScriptRoot
 
 Write-Host "[*] Starting MLflow UI at http://127.0.0.1:5000 ..." -ForegroundColor Green
 Write-Host "[*] Press Ctrl+C to stop the MLflow server." -ForegroundColor Yellow
 Write-Host ""
 
-& $venvMlflow ui --backend-store-uri "sqlite:///$dbPath" --default-artifact-root "$artifactPath" --host 127.0.0.1 --port 5000 --workers 1
+& $venvMlflow ui --backend-store-uri "sqlite:///mlflow.db" --default-artifact-root "./mlruns" --host 127.0.0.1 --port 5000 --workers 1

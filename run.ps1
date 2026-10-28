@@ -17,11 +17,8 @@ if (-not (Test-Path $venvStreamlit)) {
 # 1. Launch MLflow with --workers 1 (avoids Windows socket WinError 10022 bug)
 Write-Host "[*] Launching MLflow UI (http://127.0.0.1:5000) with single worker..." -ForegroundColor Green
 
-$dbPath = (Join-Path $PSScriptRoot "mlflow.db").Replace("\", "/")
-$artifactPath = Join-Path $PSScriptRoot "mlruns"
-
 Start-Process powershell -ArgumentList "-NoExit", "-Command", `
-    "`$env:MLFLOW_ALLOW_FILE_STORE='true'; & '$venvMlflow' ui --backend-store-uri sqlite:///$dbPath --default-artifact-root '$artifactPath' --host 127.0.0.1 --port 5000 --workers 1"
+    "`$env:MLFLOW_ALLOW_FILE_STORE='true'; Set-Location '$PSScriptRoot'; & '$venvMlflow' ui --backend-store-uri 'sqlite:///mlflow.db' --default-artifact-root './mlruns' --host 127.0.0.1 --port 5000 --workers 1"
 
 Start-Sleep -Seconds 3
 
@@ -29,7 +26,5 @@ Start-Sleep -Seconds 3
 Write-Host "[*] Launching Streamlit Dashboard (http://localhost:8501)..." -ForegroundColor Green
 Write-Host "[*] Press Ctrl+C in this terminal to stop Streamlit." -ForegroundColor Yellow
 Write-Host ""
-
-& $venvStreamlit run (Join-Path $PSScriptRoot "app\main.py")
 
 & $venvStreamlit run (Join-Path $PSScriptRoot "app\main.py")
