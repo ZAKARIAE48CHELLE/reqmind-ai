@@ -22,8 +22,10 @@ from reqmind.review import (
 from reqmind.export import (
     export_to_json,
     export_to_csv,
+    export_duplicate_pairs_to_csv,
     export_summary_markdown,
 )
+from reqmind.classification import is_prediction_uncertain, format_confidence_display, DEFAULT_UNCERTAINTY_THRESHOLD
 
 # -----------------------------------------------------------------------------
 # Streamlit Page Configuration
@@ -73,6 +75,12 @@ DEMO_SCENARIOS = {
         "6. The platform shall retain telemetry records for 24 hours before archiving.\n"
         "7. The system shall not expose protected health information (PHI) over unencrypted connections."
     ),
+    "Scenario 4: Usability & Functional Evaluation (Accessibility & Roles Contrast)": (
+        "The user interface shall support screen readers.\n"
+        "The interface shall remain responsive on mobile screens.\n"
+        "Administrators shall be able to assign roles to employees.\n"
+        "Users shall be able to upload PDF documents."
+    ),
 }
 
 # -----------------------------------------------------------------------------
@@ -83,6 +91,9 @@ if "document" not in st.session_state:
 
 if "similarity_threshold" not in st.session_state:
     st.session_state.similarity_threshold = 0.60
+
+if "uncertainty_threshold" not in st.session_state:
+    st.session_state.uncertainty_threshold = DEFAULT_UNCERTAINTY_THRESHOLD
 
 if "apply_guards" not in st.session_state:
     st.session_state.apply_guards = True
@@ -99,7 +110,7 @@ with st.sidebar:
         "Classification Engine",
         options=["auto", "tfidf_logreg", "tfidf_svm", "embedding_logreg"],
         index=0,
-        help="Selects the classifier artifact trained in Phase 3.",
+        help="Selects the classifier artifact trained in Phase 3 / 6k dataset benchmark.",
     )
     pipeline = get_pipeline(classifier_name=classifier_choice)
 
@@ -107,15 +118,28 @@ with st.sidebar:
         "Duplicate Similarity Threshold",
         min_value=0.40,
         max_value=0.95,
-        value=0.60,
+        value=st.session_state.similarity_threshold,
         step=0.05,
         help="Cosine similarity threshold for ranking duplicate candidates.",
     )
+    st.session_state.similarity_threshold = sim_threshold
+
+    uncertainty_threshold = st.slider(
+        "Prediction Uncertainty Threshold",
+        min_value=0.50,
+        max_value=0.90,
+        value=st.session_state.uncertainty_threshold,
+        step=0.05,
+        help="Uncalibrated model score threshold. Predictions with confidence below this value are flagged as uncertain to prompt manual verification.",
+    )
+    st.session_state.uncertainty_threshold = uncertainty_threshold
+
     apply_guards = st.toggle(
         "Linguistic Hard-Negative Guards",
-        value=True,
+        value=st.session_state.apply_guards,
         help="Prevents opposing negations (shall vs shall not) and conflicting SLAs from being flagged as duplicates.",
     )
+    st.session_state.apply_guards = apply_guards
 
     st.divider()
     st.markdown("### Provenance & Auditing")
@@ -125,9 +149,10 @@ with st.sidebar:
     st.markdown("- **Scope:** Decision support (no destructive automated edits)")
 
     st.info(
-        "Academic Notice: This is a decision-support tool. It assists requirements engineers "
-        "by highlighting potential quality issues and semantic duplicates without automatic modification.",
-        title="Human-in-the-Loop",
+        "Notice on Model Scores: Confidence scores represent raw, uncalibrated model decision margins, "
+        "not guaranteed posterior probabilities. Scores near the threshold (< "
+        f"{uncertainty_threshold:.2f}) warrant human review.",
+        title="Uncalibrated Scores",
     )
 
 # -----------------------------------------------------------------------------
@@ -150,7 +175,10 @@ tab_input, tab_table, tab_ambiguity, tab_duplicates, tab_review, tab_export, tab
 # =============================================================================
 with tab_input:
     st.subheader("Input Requirements Specification")
-    st.markdown("Load a predefined scenario, upload a specification file, or paste raw requirements text.")
+    st.markdown(
+        "Paste requirement specifications on separate lines, numbered (`1.`, `2.`, `[REQ-01]`) or unnumbered. "
+        "Accidental numbering will be cleaned while preserving meaningful technical values, units, and negations."
+    )
 
     col_scenario, col_file = st.columns([3, 2])
     with col_scenario:
@@ -181,7 +209,7 @@ with tab_input:
         "Requirements Specification (English text):",
         value=initial_text,
         height=220,
-        help="Hierarchical numbering (1., 1.1), bullets (-, *), or tagged brackets ([REQ-01]) are preserved.",
+        help="Hierarchical numbering, bullets, or tagged brackets are automatically parsed into discrete requirements.",
     )
 
     col_btn, col_info = st.columns([1, 3], vertical_alignment="bottom")
@@ -200,10 +228,9 @@ with tab_input:
                         filename=filename,
                         similarity_threshold=sim_threshold,
                         use_guards=apply_guards,
+                        uncertainty_threshold=uncertainty_threshold,
                     )
                     st.session_state.document = doc
-                    st.session_state.similarity_threshold = sim_threshold
-                    st.session_state.apply_guards = apply_guards
                     st.success(
                         f"Analysis complete! Segmented {len(doc.requirements)} requirements from document `{doc.document_id}`.",
                         title="Analysis Complete",
@@ -220,25 +247,26 @@ with tab_table:
     st.subheader("Segmented Requirements & Classification Overview")
 
     if doc and doc.requirements:
-        # Top KPI Metrics Row
         reqs = doc.requirements
         total_count = len(reqs)
         fr_count = sum(1 for r in reqs if (r.reviewer_label or r.predicted_label) == RequirementLabel.FR)
         nfr_count = sum(1 for r in reqs if (r.reviewer_label or r.predicted_label) == RequirementLabel.NFR)
+        uncertain_count = sum(1 for r in reqs if is_prediction_uncertain(r.model_score, uncertainty_threshold))
         amb_count = sum(1 for r in reqs if len(r.ambiguities) > 0)
         dup_count = sum(1 for r in reqs if len(r.duplicate_candidates) > 0)
 
-        m1, m2, m3, m4, m5 = st.columns(5)
-        m1.metric("Total Requirements", total_count)
-        m2.metric("Functional (FR)", fr_count)
-        m3.metric("Non-Functional (NFR)", nfr_count)
-        m4.metric("With Ambiguities", amb_count)
-        m5.metric("With Duplicate Candidates", dup_count)
+        m1, m2, m3, m4, m5, m6 = st.columns(6)
+        m1.metric("Total", total_count)
+        m2.metric("FR", fr_count)
+        m3.metric("NFR", nfr_count)
+        m4.metric("Uncertain (⚠️)", uncertain_count)
+        m5.metric("Ambiguous", amb_count)
+        m6.metric("With Duplicates", dup_count)
 
         st.divider()
 
         # Filter controls
-        f_col1, f_col2 = st.columns([2, 2])
+        f_col1, f_col2, f_col3 = st.columns([2, 2, 2])
         with f_col1:
             filter_type = st.segmented_control(
                 "Filter by Type",
@@ -246,24 +274,31 @@ with tab_table:
                 default="All",
             )
         with f_col2:
-            filter_issues = st.checkbox("Show only requirements with issues (ambiguities or duplicates)", value=False)
+            filter_uncertain = st.checkbox("Show only uncertain predictions (needs review)", value=False)
+        with f_col3:
+            filter_issues = st.checkbox("Show only items with ambiguities or duplicates", value=False)
 
         # Build table
         table_rows = []
         for req in reqs:
             active_label = req.reviewer_label.value if req.reviewer_label else (req.predicted_label.value if req.predicted_label else "-")
-            
+            req_is_uncertain = is_prediction_uncertain(req.model_score, uncertainty_threshold)
+
             # Apply filters
             if filter_type != "All" and active_label != filter_type:
                 continue
+            if filter_uncertain and not req_is_uncertain:
+                continue
             if filter_issues and len(req.ambiguities) == 0 and len(req.duplicate_candidates) == 0:
                 continue
+
+            score_str = format_confidence_display(req.model_score, uncertainty_threshold)
 
             table_rows.append({
                 "ID": req.requirement_id,
                 "Requirement Text": req.raw_text,
                 "Predicted Type": req.predicted_label.value if req.predicted_label else "-",
-                "Score": f"{req.model_score:.2f}" if req.model_score else "-",
+                "Score (Uncalibrated)": score_str,
                 "Ambiguities": len(req.ambiguities),
                 "Duplicates Found": len(req.duplicate_candidates),
                 "Review Status": req.review_status.value,
@@ -282,7 +317,7 @@ with tab_table:
 # =============================================================================
 with tab_ambiguity:
     st.subheader("IEEE 830 Ambiguity & Vagueness Quality Review")
-    st.caption("Highlights vague terms, weak modals, passive voice, and subjective metrics with concrete recommendations.")
+    st.caption("Identifies non-verifiable terms, weak modals, and subjective metrics with actionable suggestions.")
 
     if doc and doc.requirements:
         ambiguous_reqs = [r for r in doc.requirements if len(r.ambiguities) > 0]
@@ -302,7 +337,6 @@ with tab_ambiguity:
 
                     # Highlight raw text
                     highlighted_html = req.raw_text
-                    # Highlight occurrences from right to left to preserve offsets
                     sorted_spans = sorted(req.ambiguities, key=lambda s: s.start, reverse=True)
                     for span in sorted_spans:
                         phrase = req.raw_text[span.start:span.end]
@@ -333,9 +367,10 @@ with tab_ambiguity:
 # =============================================================================
 with tab_duplicates:
     st.subheader("Semantic Similarity & Potential Duplicate Candidates")
-    st.caption("Identifies potential duplicate or overlapping requirements with linguistic hard-negative guards.")
+    st.caption("Displays paired matching requirements with cosine similarity scores and linguistic guard indicators.")
 
     if doc and doc.requirements:
+        req_map = {r.requirement_id: r for r in doc.requirements}
         reqs_with_dups = [r for r in doc.requirements if len(r.duplicate_candidates) > 0]
 
         if not reqs_with_dups:
@@ -344,26 +379,37 @@ with tab_duplicates:
             st.markdown(f"Found **{len(reqs_with_dups)}** requirements with potential duplicate or overlapping candidates.")
 
             for req in reqs_with_dups:
-                st.markdown(f"### Source Requirement `{req.requirement_id}`")
-                st.markdown(f"> **\"{req.raw_text}\"**")
-
                 for cand_idx, cand in enumerate(req.duplicate_candidates):
-                    target_req = next((r for r in doc.requirements if r.requirement_id == cand.candidate_id), None)
+                    target_req = req_map.get(cand.candidate_id)
                     target_text = target_req.raw_text if target_req else "(Target requirement text not found)"
 
                     with st.container(border=True):
-                        col_card, col_score, col_actions = st.columns([5, 2, 2])
-                        with col_card:
-                            st.markdown(f"**Candidate:** `{cand.candidate_id}`")
+                        st.markdown(f"#### 🔗 Duplicate Pair: `{req.requirement_id}` ↔ `{cand.candidate_id}`")
+                        
+                        col_a, col_b = st.columns(2)
+                        with col_a:
+                            st.markdown(f"**First Requirement (`{req.requirement_id}`):**")
+                            st.markdown(f"> *\"{req.raw_text}\"*")
+                            st.caption(f"Type: **{req.predicted_label.value if req.predicted_label else '-'}** | Status: `{req.review_status.value}`")
+                        
+                        with col_b:
+                            st.markdown(f"**Matching Requirement (`{cand.candidate_id}`):**")
                             st.markdown(f"> *\"{target_text}\"*")
-                            st.caption(f"Method: `{cand.comparison_method}` | Current Flag: **`{cand.flag}`**")
+                            target_type = target_req.predicted_label.value if target_req and target_req.predicted_label else "-"
+                            target_status = target_req.review_status.value if target_req else "unknown"
+                            st.caption(f"Type: **{target_type}** | Status: `{target_status}`")
 
+                        col_score, col_meta, col_actions = st.columns([3, 3, 3], vertical_alignment="center")
                         with col_score:
-                            st.metric("Similarity Score", f"{cand.similarity_score:.3f}")
+                            st.metric("Cosine Similarity Score", f"{cand.similarity_score:.3f}")
                             st.progress(min(max(cand.similarity_score, 0.0), 1.0))
-
+                        
+                        with col_meta:
+                            st.markdown(f"**Threshold Applied:** `{st.session_state.similarity_threshold:.2f}`")
+                            st.markdown(f"**Method:** `{cand.comparison_method}`")
+                            st.markdown(f"**Current Flag:** `{cand.flag}`")
+                        
                         with col_actions:
-                            st.markdown("**Reviewer Action:**")
                             if cand.flag != "confirmed duplicate":
                                 if st.button("✅ Confirm Duplicate", key=f"conf_{req.requirement_id}_{cand.candidate_id}_{cand_idx}", width="stretch"):
                                     confirm_duplicate_candidate(req, candidate_id=cand.candidate_id, notes="Confirmed by reviewer")
@@ -382,7 +428,7 @@ with tab_duplicates:
 # =============================================================================
 with tab_review:
     st.subheader("Human-in-the-Loop Review & Audit State")
-    st.caption("Review predictions, correct misclassifications, and approve records without overwriting model provenance.")
+    st.caption("Review predictions, resolve uncertain classifications, and approve records without overwriting model provenance.")
 
     if doc and doc.requirements:
         metrics = get_review_metrics(doc.requirements)
@@ -394,23 +440,38 @@ with tab_review:
         with prog_col2:
             st.markdown(f"**{metrics['completion_rate_pct']}% Reviewed**")
 
-        r1, r2, r3, r4, r5 = st.columns(5)
+        r1, r2, r3, r4, r5, r6 = st.columns(6)
         r1.metric("Pending", metrics["pending"])
         r2.metric("Approved", metrics["approved"])
         r3.metric("Edited", metrics["edited"])
         r4.metric("Rejected", metrics["rejected"])
-        r5.metric("Label Overrides", metrics["label_overrides"])
+        r5.metric("Overrides", metrics["label_overrides"])
+        r6.metric("Uncertain", metrics["uncertain_count"])
+
+        # Alert banner for uncertain predictions
+        uncertain_reqs = [r for r in doc.requirements if is_prediction_uncertain(r.model_score, uncertainty_threshold)]
+        if uncertain_reqs:
+            st.warning(
+                f"⚠️ **{len(uncertain_reqs)} requirements have low confidence scores (< {uncertainty_threshold:.2f}).** "
+                "These items are borderline (e.g. accessibility, usability, or ambiguous action verbs). "
+                "Manual review is strongly recommended.",
+                title="Uncertain Predictions Flagged",
+            )
 
         st.divider()
 
         for req in doc.requirements:
+            req_is_uncertain = is_prediction_uncertain(req.model_score, uncertainty_threshold)
             with st.container(border=True):
                 col_text, col_controls = st.columns([3, 2])
                 with col_text:
                     st.markdown(f"### `{req.requirement_id}`")
                     st.markdown(f"**Text:** {req.raw_text}")
                     model_lbl = req.predicted_label.value if req.predicted_label else "None"
-                    st.caption(f"🤖 Model Prediction: **{model_lbl}** (confidence: `{req.model_score}`) | Version: `{req.model_version}`")
+                    score_display = format_confidence_display(req.model_score, uncertainty_threshold)
+                    st.caption(f"🤖 Model Prediction: **{model_lbl}** ({score_display}) | Version: `{req.model_version}`")
+                    if req_is_uncertain:
+                        st.caption("⚠️ *Confidence near decision boundary — verify FR vs NFR intent.*")
 
                 with col_controls:
                     # Status selection
@@ -453,17 +514,18 @@ with tab_review:
 # =============================================================================
 with tab_export:
     st.subheader("Traceable Audit Export")
-    st.caption("Export full structured JSON preserving model provenance and character offsets, or flattened CSV for audit reports.")
+    st.caption("Export full structured JSON preserving offsets, flattened CSV, and dedicated duplicate pairs audit report.")
 
     if doc and doc.requirements:
         json_output = export_to_json(doc)
         csv_df = export_to_csv(doc.requirements)
+        dup_pairs_df = export_duplicate_pairs_to_csv(doc.requirements, similarity_threshold=st.session_state.similarity_threshold)
         md_summary = export_summary_markdown(doc)
 
-        col_d1, col_d2, col_d3 = st.columns(3)
+        col_d1, col_d2, col_d3, col_d4 = st.columns(4)
         with col_d1:
             st.download_button(
-                label="📥 Download Structured JSON",
+                label="📥 Download JSON",
                 data=json_output,
                 file_name=f"{doc.document_id}_reqmind_analysis.json",
                 mime="application/json",
@@ -472,7 +534,7 @@ with tab_export:
             )
         with col_d2:
             st.download_button(
-                label="📊 Download Flattened CSV",
+                label="📊 Download Requirements CSV",
                 data=csv_df.to_csv(index=False).encode("utf-8"),
                 file_name=f"{doc.document_id}_reqmind_audit.csv",
                 mime="text/csv",
@@ -481,7 +543,16 @@ with tab_export:
             )
         with col_d3:
             st.download_button(
-                label="📝 Download Markdown Summary",
+                label="🔗 Download Duplicate Pairs CSV",
+                data=dup_pairs_df.to_csv(index=False).encode("utf-8"),
+                file_name=f"{doc.document_id}_duplicate_pairs.csv",
+                mime="text/csv",
+                type="secondary",
+                width="stretch",
+            )
+        with col_d4:
+            st.download_button(
+                label="📝 Download Summary MD",
                 data=md_summary.encode("utf-8"),
                 file_name=f"{doc.document_id}_summary_report.md",
                 mime="text/markdown",
@@ -492,7 +563,13 @@ with tab_export:
         st.markdown("### Executive Summary Preview")
         st.markdown(md_summary)
 
-        with st.expander("Preview Flattened CSV Data"):
+        with st.expander("Preview Duplicate Pairs CSV"):
+            if not dup_pairs_df.empty:
+                st.dataframe(dup_pairs_df, width="stretch")
+            else:
+                st.info("No duplicate pairs identified above the threshold.")
+
+        with st.expander("Preview Flattened Requirements CSV"):
             st.dataframe(csv_df, width="stretch")
 
         with st.expander("Preview Structured JSON Payload"):
@@ -510,40 +587,35 @@ with tab_benchmarks:
     col_m1, col_m2 = st.columns(2)
 
     with col_m1:
-        st.markdown("#### Phase 3: FR vs NFR Classification Benchmark")
+        st.markdown("#### FR vs NFR Classification Benchmark (6,117 Dataset)")
         bench_data = pd.DataFrame([
-            {"Model": "Majority Baseline", "Validation Macro-F1": "35.1%", "Test Accuracy": "54.1%", "Status": "Baseline"},
-            {"Model": "TF-IDF + Logistic Regression", "Validation Macro-F1": "89.6%", "Test Accuracy": "91.8%", "Status": "Selected Artifact"},
-            {"Model": "TF-IDF + Linear SVM", "Validation Macro-F1": "90.0%", "Test Accuracy": "91.8%", "Status": "Trained Artifact"},
-            {"Model": "Frozen Embeddings + LogReg", "Validation Macro-F1": "83.6%", "Test Accuracy": "85.6%", "Status": "Evaluated"},
-            {"Model": "SetFit (all-MiniLM-L6-v2)", "Validation Macro-F1": "91.2%", "Test Accuracy": "92.5%", "Status": "Transformer Benchmark"},
+            {"Model": "Majority Baseline", "Accuracy": "65.7%", "Macro-F1": "39.6%", "F1 FR": "79.3%", "F1 NFR": "0.0%"},
+            {"Model": "TF-IDF + Linear SVM", "Accuracy": "89.6%", "Macro-F1": "88.2%", "F1 FR": "92.2%", "F1 NFR": "84.1%"},
+            {"Model": "TF-IDF + LogReg", "Accuracy": "87.5%", "Macro-F1": "85.5%", "F1 FR": "91.0%", "F1 NFR": "80.0%"},
+            {"Model": "MiniLM Embeddings + LogReg", "Accuracy": "85.5%", "Macro-F1": "83.3%", "F1 FR": "89.4%", "F1 NFR": "77.2%"},
         ])
         st.dataframe(bench_data, width="stretch")
 
-        st.markdown("#### Phase 4: Ambiguity Detection (IEEE 830)")
+        st.markdown("#### Score Calibration & Uncertainty Notice")
         st.markdown(
-            "- **Benchmark Dataset:** 85 expert-annotated requirements (`ambiguity_gold.json`)\n"
-            "- **Sentence-level Accuracy:** **100.0%**\n"
-            "- **Character Span F1:** **100.0%** (0 false negatives, 0 false positives)\n"
-            "- **Categories Supported:** Vague Adjectives, Weak Modals, Passive Voice, Subjective Metrics, Ambiguous Pronouns, Open-ended Loops."
+            "- Model confidence scores are uncalibrated decision-boundary distances (`predict_proba` max or SVM sigmoid).\n"
+            "- Scores below the configured threshold (default `0.65`) reflect borderline classifications, "
+            "frequently seen in accessibility ('screen readers') and usability ('responsive layout').\n"
+            "- A low score should prompt human review rather than being treated as a confident prediction."
         )
 
     with col_m2:
-        st.markdown("#### Phase 5: Semantic Similarity & Duplicate Detection")
+        st.markdown("#### Ambiguity Detection (IEEE 830 Lexicon Rules)")
+        st.markdown(
+            "- **Evaluation Standard:** Evaluated against 85 rule-coverage test cases (`ambiguity_gold.json`).\n"
+            "- **Rule Categories:** Vague Adverbs, Weak Modals, Usability Adjectives, Unquantified Availability, Vague Quality, Discretionary Clauses.\n"
+            "- **Lexical Bounds Notice:** Rule engines provide 100% precision on targeted terms but do not generalize to out-of-lexicon domain jargon without retraining or LLM integration."
+        )
+
+        st.markdown("#### Duplicate Detection (Sentence Transformers + Guards)")
         sim_benchmark = pd.DataFrame([
             {"Method": "Raw TF-IDF Cosine", "Recall": "88.9%", "Precision": "55.2%", "F1": "68.1%"},
             {"Method": "SentenceTransformer (raw)", "Recall": "100.0%", "Precision": "50.0%", "F1": "66.7%"},
-            {"Method": "SentenceTransformer + Guards", "Recall": "100.0%", "Precision": "52.9%", "F1": "69.3%"},
+            {"Method": "SentenceTransformer + Guards", "Recall": "100.0%", "Precision": "53.1%", "F1": "69.3%"},
         ])
         st.dataframe(sim_benchmark, width="stretch")
-
-        st.markdown("#### MLflow Experiment Tracking")
-        st.markdown(
-            "ReqMind AI uses MLflow with SQLite backend (`sqlite:///mlflow.db`) to log all runs, metrics, and parameters.\n\n"
-            "To launch the MLflow UI locally:\n"
-            "```bash\n"
-            "./mlflow_ui.bat\n"
-            "# or\n"
-            "mlflow ui --backend-store-uri sqlite:///mlflow.db --port 5000\n"
-            "```"
-        )

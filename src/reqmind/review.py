@@ -38,11 +38,12 @@ def dismiss_ambiguity_span(requirement: RequirementRecord, rule_id: str, phrase:
 
 def restore_ambiguity_span(requirement: RequirementRecord, span: AmbiguitySpan) -> RequirementRecord:
     """Restore a previously dismissed ambiguity span."""
-    # Check if already present to avoid duplicates
-    existing = any(s.rule_id == span.rule_id and s.phrase == span.phrase and s.start == span.start for s in requirement.ambiguities)
+    existing = any(
+        s.rule_id == span.rule_id and s.phrase == span.phrase and s.start == span.start 
+        for s in requirement.ambiguities
+    )
     if not existing:
         requirement.ambiguities.append(span)
-        # Sort by start offset to maintain consistency
         requirement.ambiguities.sort(key=lambda s: s.start)
     requirement.review_status = ReviewStatus.EDITED
     return requirement
@@ -92,6 +93,7 @@ def get_review_metrics(requirements: List[RequirementRecord]) -> Dict[str, Any]:
             "rejected": 0,
             "completion_rate_pct": 0.0,
             "label_overrides": 0,
+            "uncertain_count": 0,
             "total_ambiguities": 0,
             "duplicate_candidates_count": 0,
             "duplicates_confirmed": 0,
@@ -105,6 +107,7 @@ def get_review_metrics(requirements: List[RequirementRecord]) -> Dict[str, Any]:
         ReviewStatus.REJECTED: 0,
     }
     label_overrides = 0
+    uncertain_count = 0
     total_ambiguities = 0
     dup_candidates = 0
     dup_confirmed = 0
@@ -115,6 +118,8 @@ def get_review_metrics(requirements: List[RequirementRecord]) -> Dict[str, Any]:
         if req.reviewer_label is not None and req.predicted_label is not None:
             if req.reviewer_label != req.predicted_label:
                 label_overrides += 1
+        if getattr(req, "is_uncertain", False):
+            uncertain_count += 1
         total_ambiguities += len(req.ambiguities)
         for cand in req.duplicate_candidates:
             dup_candidates += 1
@@ -134,6 +139,7 @@ def get_review_metrics(requirements: List[RequirementRecord]) -> Dict[str, Any]:
         "rejected": status_counts[ReviewStatus.REJECTED],
         "completion_rate_pct": round(completion_rate, 1),
         "label_overrides": label_overrides,
+        "uncertain_count": uncertain_count,
         "total_ambiguities": total_ambiguities,
         "duplicate_candidates_count": dup_candidates,
         "duplicates_confirmed": dup_confirmed,

@@ -1,7 +1,11 @@
 """Requirement classification module (FR vs NFR) for ReqMind AI.
 
 Supports baseline majority class, TF-IDF + Linear Classifier, and Embedding-based classifiers.
+Provides uncalibrated model scores and flags predictions near the decision boundary
+as uncertain for human-in-the-loop review.
 """
+
+from __future__ import annotations
 
 import warnings
 from abc import ABC, abstractmethod
@@ -11,6 +15,25 @@ from typing import List, Tuple, Optional
 import numpy as np
 
 from reqmind.schemas import RequirementLabel, RequirementRecord
+from reqmind.preprocessing import clean_requirement_for_model
+
+DEFAULT_UNCERTAINTY_THRESHOLD: float = 0.65
+
+
+def is_prediction_uncertain(score: Optional[float], threshold: float = DEFAULT_UNCERTAINTY_THRESHOLD) -> bool:
+    """Return True if model confidence score is below the threshold or near the decision boundary."""
+    if score is None:
+        return True
+    return float(score) < float(threshold)
+
+
+def format_confidence_display(score: Optional[float], threshold: float = DEFAULT_UNCERTAINTY_THRESHOLD) -> str:
+    """Format model score with an explicit indicator of uncalibrated confidence vs uncertainty."""
+    if score is None:
+        return "-"
+    if is_prediction_uncertain(score, threshold):
+        return f"{score:.2f} ⚠️ (Uncertain)"
+    return f"{score:.2f} ✅"
 
 
 class BaseRequirementClassifier(ABC):
@@ -25,17 +48,23 @@ class BaseRequirementClassifier(ABC):
         """
         pass
 
-    def classify_requirements(self, requirements: List[RequirementRecord], model_version: Optional[str] = None) -> List[RequirementRecord]:
+    def classify_requirements(
+        self,
+        requirements: List[RequirementRecord],
+        model_version: Optional[str] = None,
+        uncertainty_threshold: float = DEFAULT_UNCERTAINTY_THRESHOLD,
+    ) -> List[RequirementRecord]:
         """Classify a list of RequirementRecord objects in-place or returning updated records."""
         if not requirements:
             return requirements
             
-        texts = [req.raw_text for req in requirements]
+        texts = [clean_requirement_for_model(req.raw_text) for req in requirements]
         predictions = self.predict(texts)
         
         for req, (label, score) in zip(requirements, predictions):
             req.predicted_label = label
             req.model_score = score
+            req.is_uncertain = is_prediction_uncertain(score, threshold=uncertainty_threshold)
             if model_version:
                 req.model_version = model_version
                 
@@ -58,29 +87,25 @@ class HeuristicBaselineClassifier(BaseRequirementClassifier):
     def predict(self, texts: List[str]) -> List[Tuple[RequirementLabel, float]]:
         results = []
         for text in texts:
-            lower_text = text.lower()
-            matches = sum(1 for kw in self.NFR_KEYWORDS if kw in lower_text)
+            clean = clean_requirement_for_model(text).lower()
+            matches = sum(1 for kw in self.NFR_KEYWORDS if kw in clean)
             if matches > 0:
-                score = min(0.5 + (0.1 * matches), 0.95)
-                results.append((RequirementLabel.NFR, score))
+                score = min(0.50 + (0.10 * matches), 0.95)
+                results.append((RequirementLabel.NFR, round(score, 4)))
             else:
-                results.append((RequirementLabel.FR, 0.65))
+                results.append((RequirementLabel.FR, 0.6500))
         return results
 
 
-# ---------------------------------------------------------------------------
-# Phase 3: trained classifiers (artifacts produced by experiments/train_classifier.py)
-# ---------------------------------------------------------------------------
-
 DEFAULT_MODELS_DIR = Path(__file__).resolve().parents[2] / "models"
-DEFAULT_MODEL_NAME = "tfidf_logreg"  # selected on validation macro-F1 (see reports/phases/phase_3.md)
+DEFAULT_MODEL_NAME = "tfidf_logreg"
 
 
 class TrainedClassifier(BaseRequirementClassifier):
     """Wraps a saved scikit-learn FR/NFR model.
 
-    model_score is the raw score of the predicted class (predict_proba for LogisticRegression,
-    sigmoid of the SVM margin otherwise). It is NOT calibrated.
+    model_score is the raw score of the predicted class (predict_proba max for LogisticRegression,
+    sigmoid of the SVM margin otherwise). It is uncalibrated and represents decision boundary distance.
     """
 
     def __init__(self, model_name: str = DEFAULT_MODEL_NAME, models_dir: Optional[Path] = None):
@@ -102,9 +127,10 @@ class TrainedClassifier(BaseRequirementClassifier):
         self.model_version = f"{model_name}-phase3-v1"
 
     def _features(self, texts: List[str]):
+        cleaned_texts = [clean_requirement_for_model(t) for t in texts]
         if self.encoder is not None:
-            return self.encoder.encode(texts, normalize_embeddings=True, show_progress_bar=False)
-        return texts
+            return self.encoder.encode(cleaned_texts, normalize_embeddings=True, show_progress_bar=False)
+        return cleaned_texts
 
     def predict(self, texts: List[str]) -> List[Tuple[RequirementLabel, float]]:
         if not texts:
@@ -135,14 +161,15 @@ class SetFitClassifier(BaseRequirementClassifier):
     def predict(self, texts: List[str]) -> List[Tuple[RequirementLabel, float]]:
         if not texts:
             return []
-        preds = self.model.predict(texts)
+        cleaned_texts = [clean_requirement_for_model(t) for t in texts]
+        preds = self.model.predict(cleaned_texts)
         if hasattr(self.model, "predict_proba"):
-            probs = self.model.predict_proba(texts)
+            probs = self.model.predict_proba(cleaned_texts)
             if hasattr(probs, "cpu"):
                 probs = probs.cpu().numpy()
             scores = np.max(probs, axis=1)
         else:
-            scores = [0.85] * len(texts)
+            scores = [0.85] * len(cleaned_texts)
         return [(RequirementLabel(str(p)), round(float(s), 4)) for p, s in zip(preds, scores)]
 
 
@@ -164,4 +191,3 @@ def load_default_classifier(model_name: str = "auto") -> BaseRequirementClassifi
     except Exception as exc:
         warnings.warn(f"Falling back to heuristic classifier: {exc}")
         return HeuristicBaselineClassifier()
-

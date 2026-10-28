@@ -3,7 +3,8 @@
 Splits software requirements specifications into individual requirement units while:
 - Preserving exact character offsets (source_start, source_end) into the original text
 - Preserving raw text integrity without destructive stripping
-- Accurately handling bullet lists, numbered items (1., 1.1, [REQ-01]), section headers
+- Accurately handling bullet lists, numbered items (1., 1.1, [REQ-01]), and separate-line inputs
+- Stripping accidental numbering/bullet prefixes from the clean requirement span
 - Avoiding naive splitting on decimal numbers (e.g. 1.5s, 99.9%) or abbreviations (e.g., e.g., i.e., vs., etc.)
 """
 
@@ -12,6 +13,7 @@ from __future__ import annotations
 import re
 from typing import List, Tuple
 from reqmind.schemas import DocumentRecord, RequirementRecord
+from reqmind.preprocessing import ACCIDENTAL_PREFIX_REGEX
 
 # Common abbreviations that should NOT trigger a sentence/requirement split
 ABBREVIATIONS = (
@@ -30,12 +32,6 @@ ABBREVIATIONS = (
 # Header patterns (Markdown headers #, ==, ---, Section X:)
 HEADER_REGEX = re.compile(
     r"^(?:#{1,6}\s+.*|(?:Section|Chapter|Part)\s+\d+[:.].*|={3,}.*|-{3,}.*)$",
-    re.IGNORECASE,
-)
-
-# Item prefix pattern: bullets (*, -, +, o), numbered (1., 1.1, 1.1.1, 1)), bracketed ([REQ-01], (1))
-ITEM_PREFIX_REGEX = re.compile(
-    r"^\s*(?:[-*+•–—]|(?:\[REQ[-\s]?\w+\])|\(?\d+(?:\.\d+)*[\.\)]?)\s*",
     re.IGNORECASE,
 )
 
@@ -86,7 +82,14 @@ def split_sentences_preserving_spans(text: str, base_offset: int = 0) -> List[Tu
 
 
 def segment_document(document: DocumentRecord) -> List[RequirementRecord]:
-    """Segment document text into individual requirement records with exact character offsets."""
+    """Segment document text into individual requirement records with exact character offsets.
+    
+    Handles:
+    - Requirements pasted on separate lines.
+    - Accidental leading numbering (1., 2., 1.1, [REQ-01], -, *) by advancing offset past the prefix.
+    - Preserves meaningful numbers, units, and negations in the requirement text.
+    - Generates consistent requirement IDs (REQ-001, REQ-002, ...).
+    """
     raw_text = document.raw_text
     requirements: List[RequirementRecord] = []
     lines = raw_text.splitlines(keepends=True)
@@ -114,23 +117,42 @@ def segment_document(document: DocumentRecord) -> List[RequirementRecord]:
             buffer_lines.clear()
             return req_idx
         
-        # Compute exact requirement span
+        # Leading and trailing whitespace of the chunk
         leading_ws = len(text_chunk) - len(text_chunk.lstrip())
         trailing_ws = len(text_chunk) - len(text_chunk.rstrip())
-        exact_start = start + leading_ws
-        exact_end = end - trailing_ws
-        exact_raw = raw_text[exact_start:exact_end]
-        
-        req = RequirementRecord(
-            document_id=document.document_id,
-            requirement_id=f"REQ-{req_idx:03d}",
-            raw_text=exact_raw,
-            source_start=exact_start,
-            source_end=exact_end,
-        )
-        requirements.append(req)
+        chunk_start = start + leading_ws
+        chunk_end = end - trailing_ws
+        trimmed_chunk = raw_text[chunk_start:chunk_end]
+
+        # Check and strip accidental leading prefix (e.g. "1. ", "- ", "[REQ-01] ")
+        prefix_match = ACCIDENTAL_PREFIX_REGEX.match(trimmed_chunk)
+        if prefix_match:
+            prefix_len = len(prefix_match.group(0))
+            exact_start = chunk_start + prefix_len
+            exact_raw = raw_text[exact_start:chunk_end].strip()
+            # If stripping left nothing meaningful, fall back to trimmed_chunk
+            if len(exact_raw) < 3:
+                exact_start = chunk_start
+                exact_raw = trimmed_chunk
+        else:
+            exact_start = chunk_start
+            exact_raw = trimmed_chunk
+
+        exact_end = exact_start + len(exact_raw)
+
+        if len(exact_raw) >= 3:
+            req = RequirementRecord(
+                document_id=document.document_id,
+                requirement_id=f"REQ-{req_idx:03d}",
+                raw_text=exact_raw,
+                source_start=exact_start,
+                source_end=exact_end,
+            )
+            requirements.append(req)
+            req_idx += 1
+
         buffer_lines.clear()
-        return req_idx + 1
+        return req_idx
 
     req_count = 1
     for line in lines:
@@ -141,24 +163,33 @@ def segment_document(document: DocumentRecord) -> List[RequirementRecord]:
         
         stripped_line = line.strip()
         
-        # Empty line denotes paragraph boundary -> flush current buffer
+        # Empty line denotes explicit boundary -> flush current buffer
         if not stripped_line:
             req_count = flush_buffer(req_count)
             continue
             
-        is_new_item = bool(ITEM_PREFIX_REGEX.match(stripped_line))
         is_header = bool(HEADER_REGEX.match(stripped_line))
-        
         if is_header:
             req_count = flush_buffer(req_count)
-            # Do not add header line to requirement buffer
             continue
 
-        if is_new_item:
+        is_prefixed = bool(ACCIDENTAL_PREFIX_REGEX.match(stripped_line))
+        
+        # Check if the previous buffer already ends a sentence and this line starts a new requirement
+        prev_is_complete_sentence = False
+        if buffer_lines:
+            prev_text = "".join(b[2] for b in buffer_lines).rstrip()
+            prev_is_complete_sentence = bool(re.search(r"[\.\?!;:]\s*$", prev_text))
+
+        current_starts_new_sentence = bool(re.match(r"^[A-Z\"'\(]", stripped_line))
+
+        # Start a new requirement if:
+        # 1. Line has an explicit prefix (bullet, number, tag), OR
+        # 2. Previous line was a complete punctuated sentence AND current line starts with capital/quote
+        if buffer_lines and (is_prefixed or (prev_is_complete_sentence and current_starts_new_sentence)):
             req_count = flush_buffer(req_count)
-            buffer_lines.append((line_start, line_end, line))
-        else:
-            buffer_lines.append((line_start, line_end, line))
+
+        buffer_lines.append((line_start, line_end, line))
 
     flush_buffer(req_count)
     return requirements

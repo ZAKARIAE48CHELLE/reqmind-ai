@@ -67,6 +67,7 @@ class RequirementRecord(BaseModel):
     # NLP Model outputs
     predicted_label: Optional[RequirementLabel] = Field(default=None, description="Predicted class (FR or NFR)")
     model_score: Optional[float] = Field(default=None, ge=0.0, le=1.0, description="Model confidence score (uncalibrated)")
+    is_uncertain: bool = Field(default=False, description="Whether predicted classification is near decision boundary and warrants review")
     ambiguities: List[AmbiguitySpan] = Field(default_factory=list, description="List of detected ambiguities")
     duplicate_candidates: List[DuplicateCandidate] = Field(default_factory=list, description="Top-k similar requirements")
     contradiction_candidates: List[ContradictionCandidate] = Field(default_factory=list, description="Optional contradiction flags")
