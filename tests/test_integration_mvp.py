@@ -182,3 +182,4 @@ def test_error_handling_and_edge_cases():
     assert len(doc.requirements) == 1
     assert doc.requirements[0].predicted_label in (RequirementLabel.FR, RequirementLabel.NFR)
     assert doc.requirements[0].duplicate_candidates == []  # No duplicates possible with 1 req
+

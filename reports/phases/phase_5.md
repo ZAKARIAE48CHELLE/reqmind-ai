@@ -118,3 +118,4 @@ With all core analysis modules now validated:
 1. Wire all completed modules together into the end-to-end `ReqMindPipeline` ([src/reqmind/pipeline.py](file:///d:/EMSI/5emme/trautement%20de%20laguage%20naturele/Projet_TALN/src/reqmind/pipeline.py)).
 2. Enhance [app/main.py](file:///d:/EMSI/5emme/trautement%20de%20laguage%20naturele/Projet_TALN/app/main.py) with interactive side-by-side comparison cards, ambiguity span highlighters, human review overrides, and traceable JSON/CSV exports.
 3. Test end-to-end workflow on real requirement documents.
+

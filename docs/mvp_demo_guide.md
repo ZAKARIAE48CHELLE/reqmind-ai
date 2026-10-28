@@ -92,3 +92,4 @@ To launch MLflow tracking dashboard concurrently:
 - **No destructive auto-merges:** Duplicate candidates are presented as suggestions; requirements are never automatically merged or deleted.
 - **Offset preservation:** Exact character offsets reference the original source document without normalization loss.
 - **Auditable provenance:** Predictions and human overrides are stored in separate schema fields (`predicted_label` vs `reviewer_label`).
+

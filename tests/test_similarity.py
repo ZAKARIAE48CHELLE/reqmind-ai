@@ -75,3 +75,4 @@ def test_distinct_domain_requirements_low_similarity():
     sim, flag = compare_pair(text_a, text_b, method="embedding")
     assert sim < 0.50
     assert flag == "related but different"
+

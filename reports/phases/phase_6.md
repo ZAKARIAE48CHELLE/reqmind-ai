@@ -157,3 +157,4 @@ SKIPPED [1] tests\test_classifier.py:60: SetFit model not trained yet
 ## 7. Next Steps (Phase 7 & Phase 8)
 - **Phase 7 (Optional Enhancement):** Potential contradiction detection using an open-source NLI model (`cross-encoder/nli-deberta-v3-small` or `roberta-large-mnli`), logging symmetric premise-hypothesis scores and warnings.
 - **Phase 8 (Final Verification & Academic Synthesis):** Comprehensive final report, error analysis across 10 diverse examples, ablations, and final presentation slide deck.
+
