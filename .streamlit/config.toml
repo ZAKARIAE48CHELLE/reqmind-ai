@@ -1,0 +1,12 @@
+[server]
+headless = false
+runOnSave = true
+fileWatcherType = "poll"
+folderWatchBlacklist = [".venv", "mlruns", "models", ".git", ".pytest_cache"]
+
+[logger]
+level = "error"
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = "stacktrace"

@@ -228,3 +228,4 @@ def test_empty_and_malformed_inputs():
     header_only = "# Section 1: Overview\n## 1.1 Scope\n=== System Architecture ==="
     doc = pipeline.process_text(header_only)
     assert len(doc.requirements) == 0
+
