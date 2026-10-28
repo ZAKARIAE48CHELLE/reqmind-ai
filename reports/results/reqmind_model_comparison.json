@@ -1,0 +1,37 @@
+{
+  "dataset_rows_raw": 6117,
+  "dataset_rows_clean": 5936,
+  "train_rows": 4748,
+  "test_rows": 1188,
+  "random_seed": 42,
+  "models": [
+    {
+      "Modèle": "TF-IDF + Linear SVM",
+      "Accuracy": 0.8956228956228957,
+      "Macro-F1": 0.8818202530589455,
+      "F1 FR": 0.9222082810539524,
+      "F1 NFR": 0.8414322250639387
+    },
+    {
+      "Modèle": "TF-IDF + LogReg",
+      "Accuracy": 0.8754208754208754,
+      "Macro-F1": 0.8545519521129277,
+      "F1 FR": 0.9096459096459096,
+      "F1 NFR": 0.7994579945799458
+    },
+    {
+      "Modèle": "MiniLM + LogReg",
+      "Accuracy": 0.8552188552188552,
+      "Macro-F1": 0.8329206827867486,
+      "F1 FR": 0.8939580764488286,
+      "F1 NFR": 0.7718832891246684
+    },
+    {
+      "Modèle": "Majority Baseline",
+      "Accuracy": 0.6565656565656566,
+      "Macro-F1": 0.39634146341463417,
+      "F1 FR": 0.7926829268292683,
+      "F1 NFR": 0.0
+    }
+  ]
+}

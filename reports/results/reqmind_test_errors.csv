@@ -1,0 +1,125 @@
+text,vrai,prédit
+System shall provide professional video and photo editing tools within the VivaVideo app.,FR,NFR
+The user shall be able to play or learn about Mahjong.,NFR,FR
+"Each user shall have a unique username, password, user ID, department affiliation, duration (in years), age, grade, and user role.",NFR,FR
+User shall be able to access the employee homepage upon login.,NFR,FR
+The system shall ensure safe transactions.,FR,NFR
+Only adjusters with a supervisor role can update preferred repair facility ratings.,NFR,FR
+User shall be able to input correct last watched title string with validation for its presence.,NFR,FR
+The campus map shall cover the central train station of Eindhoven.,NFR,FR
+"The system shall offer a wide range of functions for calculations, data analysis, and manipulation (e.g., SUM, AVERAGE, VLOOKUP).",FR,NFR
+"The healthcare portal shall be accessible and optimized for mobile devices, ensuring a seamless user experience across different screen sizes and orientations.",FR,NFR
+The system shall only allow registered users to access courses.,FR,NFR
+User shall be required to register the software with a serial key provided in the kit.,NFR,FR
+A waiter shall only be able to log into one tablet at any given instance of time.,NFR,FR
+System shall manage up to 10 terabytes of information in various formats.,NFR,FR
+"As and objective, the TCS shall be interoperable with the Integrity Beacon Landing System (IBLS)",NFR,FR
+"System shall require users to comply with applicable laws and regulations governing data privacy, security, and intellectual property rights, including legal notices related to licensing, copyrights, trademarks, and usage restrictions in production environments.",NFR,FR
+"Admin shall manage job seeker and employer profiles, payments, and services.",FR,NFR
+"An FAQ page shall be provided in Webble to explain terms, functionality, and other relevant information.",NFR,FR
+The website shall be compatible with all browsers.,NFR,FR
+System shall ensure security of customer accounts and resist tampering.,FR,NFR
+System shall use Mapbox APIs for geolocation functionality.,FR,NFR
+Agency user shall be able to understand file-level errors better.,FR,NFR
+"System shall enable direct deposition of facility data into the archive on behalf of researchers, eliminating the need for separate facility archives.",NFR,FR
+Fee shall be paid by students and verified by the admin.,NFR,FR
+The system shall allow for password protection of spreadsheets to restrict access.,FR,NFR
+"System shall allow input of numbers, operands, special symbols, and letters.",NFR,FR
+"The system shall offer validation rules to ensure data entered meets specific criteria (e.g., positive numbers only).",FR,NFR
+System shall support version control and revision history tracking for files and log book entries.,NFR,FR
+User shall support the use of multiple users at a time.,NFR,FR
+System shall integrate cancellation deadlines into registration workflows.,NFR,FR
+Each student shall have only one account.,NFR,FR
+Tester shall ensure that FABS properly derives fields through robust testing.,FR,NFR
+System shall provide a user-friendly registration form for ease of registration.,NFR,FR
+Updates to the Teams app shall be delivered through mechanisms that minimize or eliminate impact on ongoing meetings.,NFR,FR
+System shall support the creation and editing of Rights Management statements with appropriate permissions.,NFR,FR
+The tool shall be designed to permit the addition of diagnostic algorithms for other subsystems of HVAC units.,NFR,FR
+"The system shall be able to monitor the overall data processing rate, compare it to tolerances, and report any deviations from those tolerances.",NFR,FR
+"System shall show the manager homepage for adding and deleting cars, displaying car statistics, and adjusting car rents.",NFR,FR
+"User shall be offered several choices of individual sponsorship on the second page of registration, for easy selection.",FR,NFR
+The system shall have sufficient hardware resources to support all functionalities of Adobe Illustrator without limitations due to insufficient hardware.,FR,NFR
+User shall receive information about the number of rows to be published before deciding whether to publish for informed decision-making.,NFR,FR
+The user shall be able to access help content in both offline and online modes.,NFR,FR
+"Upon login, the system shall direct users to either the manager or worker portion of the program.",FR,NFR
+"The IDE and the project shall be located on a local file system (network block storage like EBS is acceptable, network file systems like NFS or SMB are not).",FR,NFR
+The LMS shall grant access to both the previous Access-based database and online databases.,FR,NFR
+Only authorized workers will be able to access the administrative panel.,NFR,FR
+Developer shall determine the best way to load historical FPDS data since 2007 for comprehensive data integration.,NFR,FR
+Agency user shall submit data elements surrounded by quotation marks to prevent Excel from stripping leading and trailing zeroes for data integrity.,NFR,FR
+The search results shall be returned no later 30 seconds after the user has entered the search criteria.,NFR,FR
+The information and the search methods of the Student Handbook-app will be restricted depending on file format of the handbook-information.,NFR,FR
+The product shall allow the user to select a chosen language from one of the target market countries.,NFR,FR
+"The Twitter ""tweet"" interface shall be according to the Twitter Guidelines.",NFR,FR
+System shall provide clear information about the coding lounge.,NFR,FR
+System shall output alarm data and record alarm events for system monitoring.,FR,NFR
+System shall remain available to the user without crashing.,NFR,FR
+The product shall be designed with very limited graphics usage and shall utilize a simple keypad for user input.,FR,NFR
+"User shall have access to various editing features including video collages, themes, music bank, and sound effects in the VivaVideo app.",FR,NFR
+The system shall perform automatic worm motion analysis to reduce video duration in Worm Watch Lab.,FR,NFR
+System shall execute different types of queries for reporting purposes.,FR,NFR
+User must file a First Information Report (FIR) and present a copy for card blocking in case of lost ATM card.,NFR,FR
+The MultiMahjongServer will be designed to reside on a central computer (server) that is connected to a TCP/IP network and has a unique IP address.,FR,NFR
+Webble shall depict weather information using graphical icons corresponding to the current weather.,NFR,FR
+User shall have the option to input using either touch screen or keypad methods.,NFR,FR
+The system shall remotely monitor the status and operational changes of wind power plant and network devices.,FR,NFR
+Visitors shall access the site without registration.,FR,NFR
+System shall support sponsorship opportunities matching sponsor brands.,NFR,FR
+System shall help police personnel in planning and executing tasks efficiently.,FR,NFR
+Agency user shall have a landing page to navigate to either FABS or DABS pages for easy access to different functionalities.,NFR,FR
+The administrator shall have the ability to create and add a new user to the system.,NFR,FR
+FABS user shall not receive DABS banner messages and vice versa for clear communication and information presentation.,NFR,FR
+"User shall create slideshows with additional text art, animated texts, and Photoshop features.",NFR,FR
+The system shall provide basic usage metrics for administrators,NFR,FR
+System shall support the management and sharing of live research data to ensure seamless workflow integration.,FR,NFR
+OpenSSH server version 7.9p1 or later shall be installed on the server (other SSH servers fully implementing RFC 4254 may work but are not supported).,FR,NFR
+"The system shall provide self-descriptive navigation, allowing users to understand their location, history, and future options within the application.",NFR,FR
+"User shall be able to process data, reloading if necessary, and accurately handle attributes for recommendations.",FR,NFR
+The software assumes the use of a tool like Tomcat for connecting web pages and the database.,NFR,FR
+"The system shall implement user authentication and access controls based on user roles (e.g., standard user, administrator).",FR,NFR
+System shall display the user's profile with options to edit information.,NFR,FR
+The system shall securely store campers' emergency information for easy access.,FR,NFR
+The system shall run on Windows Server 2003.,FR,NFR
+The ATM shall provide customers with 24-hour service for consistent availability.,NFR,FR
+User shall/will be able to view and print prescriptions and invoices.,NFR,FR
+Staff shall block accounts with illegal transactions or lost/stolen ATM cards upon proper verification.,NFR,FR
+System shall be able to display the problem statement and coding environment based on the user's selection of problem category and difficulty level.,FR,NFR
+System shall allow for the addition of new servers or resources as the system grows.,NFR,FR
+System shall have a strong network of servers managed by a qualified team to handle application functionality worldwide.,FR,NFR
+FABS user shall have read-only access to DABS for reference and information retrieval purposes.,NFR,FR
+The graphics card compatibility with minimum requirements shall allow full utilization of Adobe Illustrator's capabilities (benefit).,NFR,FR
+"Only eligible students shall apply for scholarships, which shall be verified by the admin.",NFR,FR
+"User shall access different modes for adding filters and effects to scenes and images, enhancing versatility and customization options.",NFR,FR
+"Ideally, each error message will be accompanied by explanatory text and an indication of the action(s) which the user can take in response to the error.",NFR,FR
+System shall allow users to assign CC licenses to files.,NFR,FR
+Users shall be limited to three attempts to enter their password.,NFR,FR
+System shall not mandate logging out.,FR,NFR
+"System shall be able to provide submission status (Accepted, Wrong Answer, Time Limit Exceeded, etc.) for user's code solutions.",FR,NFR
+System shall facilitate integration with institutional repositories and data catalogues.,NFR,FR
+System shall commit all user variable data to the database upon entry.,NFR,FR
+Employee shall receive quick notifications for prompt action.,NFR,FR
+System shall perform proper validation of data before sending it to the database.,NFR,FR
+System shall support dataset deposition and management via SWORD2 API for interoperability.,NFR,FR
+Bank staff shall make entries regarding user bank account details.,NFR,FR
+The Teams app shall be designed to scale based on the size of the organization.,NFR,FR
+System shall support version control and revision history tracking.,NFR,FR
+"User shall be able to utilize the device's camera, gallery, and microphone functionalities.",NFR,FR
+System shall display Dates and Extents consistently in both read and edit views for Accessions and Resources.,NFR,FR
+"User shall have access to video editing effects including background blur, video speed adjustment, fade in and out, animated texts and fonts, GIFs, Giphy video stickers, and a music editor.",FR,NFR
+FABS user shall have validations run in a reasonable amount of time.,FR,NFR
+Delivery boys shall acknowledge requests within 3 seconds.,FR,NFR
+Users shall be able to set their usernames for data discoverability.,NFR,FR
+Developer shall attend UI/UX lessons for developing a visually appealing website.,NFR,FR
+"Users shall specify a timeframe (e.g., one day, one week, one month) for forecasts.",FR,NFR
+"System shall perform checks on deposited datasets for quality, compliance, and licensing before public release.",NFR,FR
+FABS user shall have submission errors accurately represent FABS errors.,FR,NFR
+The system shall function in specific legacy browsers (Developer).,NFR,FR
+Staff shall keep user bank accounts updated and consistent.,NFR,FR
+System shall help the user understand how the application works and how to approach its various functions.,FR,NFR
+"The system shall currently support cash payments, with future expansion for credit/debit cards.",FR,NFR
+System shall display forum threads and replies for user engagement.,NFR,FR
+SSH port forwarding shall be enabled in the server configuration.,FR,NFR
+"System shall provide a login window with fields for username and password, along with buttons for logging in and registering.",NFR,FR
+System shall be able to facilitate data updating.,FR,NFR
+User shall be able to connect to both Wi-Fi and mobile networks for seamless connectivity.,NFR,FR
+User shall be able to access all features of the Online Matrimonial Portal accurately implemented as specified in the document.,NFR,FR
