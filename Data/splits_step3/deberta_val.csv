@@ -1,0 +1,952 @@
+sample_id,text,label
+REQ-DS-02455,"All system functionality shall be accessible through touch sensitive surface  computers, tablets and displays via simple touch gestures.",FR
+REQ-DS-02138,Search agents shall automatically send resumes matching specified criteria via email daily.,FR
+REQ-DS-01590,Only enlightened places shall be visible in the ingame screen.,FR
+REQ-DS-04247,The system shall allow archivists to mark individual and groups of files as restricted.,FR
+REQ-DS-03188,The system shall ensure patient data privacy and comply with HIPAA regulations (if applicable).,FR
+REQ-DS-04821,"Administrator shall have authority to set rules, regulations, and policies.",NFR
+REQ-DS-04659,Customer shall be able to receive delivery boy details once the order is picked up.,FR
+REQ-DS-01485,Patients shall have the ability to bookmark and save their favorite resources for future reference.,FR
+REQ-DS-00745,The APAF ground data system shall have built-in error handling.,NFR
+REQ-DS-02262,The system shall enable users to write comments on posts.,FR
+REQ-DS-01883,The system shall be subject to load testing to ensure it can handle expected levels of usage.,NFR
+REQ-DS-02265,The system shall allow users to select and follow other users.,FR
+REQ-DS-05910,"System shall be able to process account-related issues and send a message ""account issues"" to the central system.",FR
+REQ-DS-04906,The system should be able to handle a growing number of users and scores.,NFR
+REQ-DS-03340,System shall create a new database and register the user upon sign up.,FR
+REQ-DS-03993,"User shall be able to sponsor a summit matching their brand, for exposure and recognition.",FR
+REQ-DS-05210,"User shall be able to choose the type of conversation (video chat, messaging, file transfer, etc.) after selecting the user to communicate with.",FR
+REQ-DS-00519,"For interdepartmental requests, the system shall require approval from both a DA and faculty group member, unless submitted by a higher-level group.",FR
+REQ-DS-00170,Administrators shall be able to modify the list of Dutch news RSS feeds.,FR
+REQ-DS-03180,The system shall maintain an inventory of medicines with stock levels and track expiration dates.,FR
+REQ-DS-02555,System shall facilitate accounts managers in validating customer account numbers with banks before processing transactions.,FR
+REQ-DS-01454,User shall be able to view the application logo and affiliate logos upon startup.,FR
+REQ-DS-02622,User shall be able to access the login window for entering username and password.,NFR
+REQ-DS-01858,System shall be able to allow customers to apply for loans and check their application status.,FR
+REQ-DS-05891,User shall be able to handle the initial withdrawal sequence.,FR
+REQ-DS-01133,The system will notify affected parties when changes occur affecting classes including but not limited to class cancellations class section detail changes and changes to class offerings for a given quarter.,FR
+REQ-DS-02216,"User will be prompted to grant permission to access the camera if they initially deny access, allowing the app to utilize camera functionality.",FR
+REQ-DS-02660,System shall avoid or manage potential disasters and errors autonomously.,NFR
+REQ-DS-04435,Customers shall browse categories and products easily.,FR
+REQ-DS-00400,"System shall be able to provide a list of the 3 nearest sites, sorted alphabetically by name, with links to their respective pages.",FR
+REQ-DS-05177,User shall be guided through the application functions with a graphics-oriented startup guide.,FR
+REQ-DS-04235,The system shall track changes made to metadata over time.,FR
+REQ-DS-05790,System shall verify if the applicant is eligible for the job and send an email for further procedures if applicable.,FR
+REQ-DS-03849,The system shall support OAI-PMH for repository content exposure.,FR
+REQ-DS-05622,User shall upload examination questions and set parameters.,FR
+REQ-DS-02839,System shall retrieve backups of the database from the server and save them in case of hardware failure or database corruption.,NFR
+REQ-DS-00703,"TCS shall provide the capability to monitor specific telemetry elements real-time, and record all telemetry elements for future review and processing.",NFR
+REQ-DS-02599,"User shall find the user interface of the software simple yet efficient, suitable for users with varying levels of technical expertise.",NFR
+REQ-DS-00312,The database will use the generic representations from R4.2.2.1 as table names or column headers for easier retrieval of data.,FR
+REQ-DS-03051,"The system shall specify the content, format, and criteria for generating reports and other data outputs.",FR
+REQ-DS-03091,1.1.1.1 The system shall allow user to specify custom meeting locations.,FR
+REQ-DS-04811,Encryption standard during PIN transmission shall be triple DES.,NFR
+REQ-DS-01893,System shall ensure usability through intuitive navigation and accessibility features.,NFR
+REQ-DS-00959,"The system shall be able, in accordance with the rules on delays for each transaction, to automatically transmit alert messages to senders/replier/administrator when, f.i. a onstraint on delay for reply is not fulfilled.",FR
+REQ-DS-00716,The TCS shall provide override of payload automated as well as preprogrammed inputs.,FR
+REQ-DS-04063,System shall provide guidance and support for recording various data types in the DMP.,FR
+REQ-DS-04605,System shall assign default system data values when necessary.,NFR
+REQ-DS-01626,System shall be able to provide general recommendations based on recent trends.,NFR
+REQ-DS-04907,The system should be easy to learn and use for users with varying levels of musical experience.,NFR
+REQ-DS-05881,User shall be able to initiate user password verification.,FR
+REQ-DS-00460,The system shall be able to offer users alternative ways to navigate to the same content.,NFR
+REQ-DS-01637,"Upon successful login, the system shall redirect the user to the main screen.",FR
+REQ-DS-05676,User shall enter customer and product information for support.,FR
+REQ-DS-00320,The GUI will have a “Send” button which sends text from the textbox to the API when clicked,FR
+REQ-DS-04940,"During installation, the system shall have additional free space available beyond the minimum requirement.",NFR
+REQ-DS-02008,Users shall access the system using a securely managed login/user-ID and password.,NFR
+REQ-DS-00840,Each user shall have a set of system access properties that defines the user's privileges within the system.,NFR
+REQ-DS-01830,User shall/will be able to access online shopping opportunities.,FR
+REQ-DS-03068,The system shall allow the mediator to solve a date conflict.,FR
+REQ-DS-01077,The system shall be expected to manage the nursing program curriculum and class/clinical scheduling for a minimum of 5 years.,NFR
+REQ-DS-03631,The user research plan shall test the user research plan.,NFR
+REQ-DS-04929,The application shall perform smoothly with minimal lag or crashes during regular usage.,NFR
+REQ-DS-03632,"The system shall allow public users to search for information on properties, county services, processes, and general information.",FR
+REQ-DS-04962,User shall be able to efficiently store and retrieve data in MySQL databases.,FR
+REQ-DS-02110,The design of Webble shall ensure that at least 90% of users can navigate and understand the application after training.,NFR
+REQ-DS-01860,"System shall be able to provide channels for users to contact customer support, including email or chat.",FR
+REQ-DS-00553,Each thermostat shall have a unique identifier by which that thermostat is identified in the THEMAS system.,FR
+REQ-DS-01566,User shall be able to start a game once two users are connected.,FR
+REQ-DS-01484,The content shall be categorized and easily searchable.,FR
+REQ-DS-03544,The system shall allow users to store Data Packages in GitHub and automatically publish them to CKAN.,FR
+REQ-DS-02410,The system shall increment the streak counter for daily snapping and reset it to zero upon a break in the chain.,FR
+REQ-DS-00361,"User shall be able to search for items by price, location, or category.",FR
+REQ-DS-00298,The system shall be able to anonymize text by replacing identified keywords with generic terms and provide a mapping between them.,FR
+REQ-DS-03596,"The system shall allow visitors to subscribe to RSS feeds for news, courses/events, and articles.",FR
+REQ-DS-00167,User shall be able to like a certain news item.,FR
+REQ-DS-05357,"Bidders shall be able to view the bidder leaderboard, including the top three positions, without seeing other bidders' predictions.",FR
+REQ-DS-00069,"The system shall allow application maintainers to configure information sources for sub-applications like agenda, news, Facebook, and Twitter.",NFR
+REQ-DS-03157,"The system (MS Forms) shall define the data types allowed for each question (e.g., text, number, date).",FR
+REQ-DS-04242,"The system shall track events related to collections, objects, components, and files.",FR
+REQ-DS-00778,The BE system shall be able to detect and report interruptions of data delivery from the Correlator to M&C.,FR
+REQ-DS-00500,The system shall validate email address existence.,NFR
+REQ-DS-05580,"User shall accommodate a minimum of 10,000 records of clients in the database.",NFR
+REQ-DS-03095,The system shall notify all involved participants if any the following information about the meeting is modified.,FR
+REQ-DS-00824,"The system shall be able to self-monitor and automatically take actions to address various issues including hardware failures, software crashes, performance degradation, errors, and communication disruptions.",NFR
+REQ-DS-00667,The TCS shall provide the capability to enter waypoint data in alphanumeric format.,FR
+REQ-DS-00196,User shall be able to see a displayed set of topics when performing a search as described in requirement UCAR602.,FR
+REQ-DS-03470,FABS user shall have additional helpful info in the submission dashboard for better management and oversight of submissions.,NFR
+REQ-DS-02347,The user shall be able to filter exams by School Year/Term or Subject.,FR
+REQ-DS-00546,System shall restrict local access and maintenance of database servers to authorized IT team members only.,NFR
+REQ-DS-02971,"HPIMS shall generate bed availability reports including ward name, bed number, and status (occupied/unoccupied).",FR
+REQ-DS-02313,System must perform effectively in adverse conditions.,NFR
+REQ-DS-05136,System shall verify the validity of the antivirus serial key during authorization.,FR
+REQ-DS-04353,The system shall pre-filter images to remove artifacts.,FR
+REQ-DS-02390,The user shall be able to either Save or Discard their changes for Subjects.,FR
+REQ-DS-05050,"The system shall leverage a Content Delivery Network (CDN) (e.g., AWS Cloudfront or Akamai CDN) to deliver videos with low latency.",NFR
+REQ-DS-00118,"In the Facebook settings menu, the system shall allow the user to delete their saved username and password for Facebook.",FR
+REQ-DS-01469,"Healthcare providers shall have the ability to accept, reschedule, or cancel appointments.",FR
+REQ-DS-05232,"Consumers shall be able to purchase agricultural products by searching the database for items for sale, and upon successful search, be redirected to the search results page.",FR
+REQ-DS-04467,System shall utilize consistent symbols and colors for notifications.,NFR
+REQ-DS-05816,Administrator shall manage user accounts.,FR
+REQ-DS-04278,"The system shall be user-friendly for various user roles (archivists, researchers, donors).",NFR
+REQ-DS-01712,System shall require user to sign in before adding transportation routes.,FR
+REQ-DS-00650,The TCS shall have the functionality to transmit UAV mission plans to service specific mission planning systems.,FR
+REQ-DS-00301,"The system shall be able to condense the output sentence from the Generic Question Construction unit (R4.2.1.3) into a single, concise sentence.",FR
+REQ-DS-05312,"The system shall integrate with various third-party applications (e.g., SurveyMonkey, Eventbrite) to enhance functionality.",FR
+REQ-DS-00075,Users will be able to access this application on or off campus anytime on their mobile device without the need of an internet connection.,NFR
+REQ-DS-01282,All user created nodes shall be filtered for profanity and removed if any exists.,FR
+REQ-DS-03049,"The system shall document the functionality of each screen, how users interact with it, and how the system responds.",FR
+REQ-DS-00567,The THEMAS system shall be able to control all defined heating and cooling units.,FR
+REQ-DS-04904,The system should be secure to protect user data and prevent unauthorized access.,NFR
+REQ-DS-03008,The system shall remind the user of the task with their chosen ringtone.,FR
+REQ-DS-05108,The user shall be able to log in to the system using a valid user ID and password to book tickets.,FR
+REQ-DS-00082,The accuracy of the Generic Answer Population​ unit will be close to 70%.,NFR
+REQ-DS-04034,System shall enable sponsors to link attendees to their sponsorship page.,NFR
+REQ-DS-02566,System shall prioritize the safety of human users during operation.,NFR
+REQ-DS-04615,User shall be able to manage marks information.,FR
+REQ-DS-03676,The system shall allow staff members to create condo units and associate them with child parcels and addresses.,FR
+REQ-DS-01508,User shall determine brokerage by multiplying transaction amount by brokerage percentage.,FR
+REQ-DS-02214,"User shall be prompted to sign in again and grant permissions if they do not provide access to their account details, ensuring the app has the necessary information.",FR
+REQ-DS-02574,System shall manage expected and unexpected errors to prevent data loss and minimize downtime.,NFR
+REQ-DS-00774,The product will be available over the Internet via the S2S website.,NFR
+REQ-DS-02579,"User shall have the option to modify existing tickets, including parameters such as time, date, route, and availability.",FR
+REQ-DS-02505,A waiter that attempts to log into a second tablet while already logged into another tablet shall be rejected and notified through both tablets.,NFR
+REQ-DS-05438,The system assumes that each user will have only one role assigned at a time.,FR
+REQ-DS-02693,User shall have access to online user documentation and help system.,FR
+REQ-DS-00277,"Users shall be able to search for items by filtering by price, location, and category.",FR
+REQ-DS-05083,The system shall handle online payments through payment gateways using 128 SSL encryption.,NFR
+REQ-DS-02484,A tablet shall allow a waiter to accept an order placed by a customer through a  surface computer.,FR
+REQ-DS-05560,User shall send newsletters.,FR
+REQ-DS-04865,Users are advised to change their passwords regularly and not share their user ID and password with anyone.,NFR
+REQ-DS-05893,User shall be able to perform the transaction.,FR
+REQ-DS-00334,"The user will be able to browse a variety of clothing categories, including outerwear, activewear, and eco-friendly options.",FR
+REQ-DS-00398,System shall be able to update the page with links to nearby sites based on the user's location.,FR
+REQ-DS-03586,The system shall allow administrators to approve job advertisements before publishing.,FR
+REQ-DS-01338,An app shall provide a User/Restaurant with all user/restaurant system functionality (according to access control).,FR
+REQ-DS-04047,System shall enable easy listing of summit agendas.,NFR
+REQ-DS-00427,The system shall be able to facilitate information exchange between citizens and police units/personnel through the Citizen Interface module.,FR
+REQ-DS-03498,A Data Consuming User shall be able to download view state images.,FR
+REQ-DS-01457,User shall toggle between English and Spanish languages using a switch located in the top right corner of every screen for enhanced accessibility.,FR
+REQ-DS-01369,Admin shall be able to display top rated restaurant.,FR
+REQ-DS-05417,"The user can manipulate and view fee details, including tuition fees, exam fees, and donation fees.",FR
+REQ-DS-01603,Documentation for all system modules shall be provided for maintainability.,NFR
+REQ-DS-03587,"The system shall allow administrators to manage job advertisements (edit, delete).",FR
+REQ-DS-03762,The system shall offer a password reminder via email.,FR
+REQ-DS-04224,The system shall allow indicating external descriptions and versions of objects.,FR
+REQ-DS-03602,The system shall allow members to renew their memberships.,FR
+REQ-DS-03017,System shall find diverse applications.,NFR
+REQ-DS-05920,System shall be able to implement robust security measures for the central system and associated software to ensure security.,FR
+REQ-DS-02078,"In the event of a failure, the system shall/will recover within five minutes with minimal data loss.",NFR
+REQ-DS-02416,"The system shall attempt to match user keywords with its database, displaying related queries and offering a direct contact option for zero matches.",FR
+REQ-DS-02727,System shall maintain the quality of service without any compromise on performance.,NFR
+REQ-DS-00009,A new stylistic map must have the right dimensions.,NFR
+REQ-DS-00445,The System must allow a user to stipulate which other users or groups can access cases.,NFR
+REQ-DS-00263,The system shall allow administrators to update restaurant owner information.,FR
+REQ-DS-02039,"Patients shall have the facility to view and print prescriptions and invoices, with admins having the option to print and email prescriptions and invoices.",FR
+REQ-DS-00350,User shall be able to search for products by keyword or product ID.,FR
+REQ-DS-03045,"In case of a failure, a re-initialization of program will be done.",NFR
+REQ-DS-01806,System shall generate attendance reports for specific courses.,FR
+REQ-DS-00416,System shall require authorization for project admins before they can access the admin interface to manage project sites.,NFR
+REQ-DS-02992,Edit task page will be opened.,FR
+REQ-DS-03798,The system shall allow publishers to restore deleted data packages using the command-line interface.,FR
+REQ-DS-03680,The system shall allow inspection staff to assign inspections.,FR
+REQ-DS-03976,"User shall have a link on the home page to a list of training options, for easy access.",FR
+REQ-DS-04544,"System shall check the validity of the entered bank account, displaying error messages if invalid.",FR
+REQ-DS-01640,The system shall allow users to select a specific category to view its contents.,FR
+REQ-DS-02070,"User shall be able to process returns of medicines to distributors within the specified time frame, recording relevant details such as reasons for return and quantities returned.",FR
+REQ-DS-00571,The system shall be able to translate user requests to turn on/off heating or cooling units into corresponding control commands.,FR
+REQ-DS-03611,The system shall display the logos of corporate sponsors on a dedicated page and potentially on the homepage (configurable).,FR
+REQ-DS-03248,The system shall be user-friendly and easy to navigate for users with varying technical skills.,NFR
+REQ-DS-00068,The system shall allow authorized users to delete sub-apps and their launchers within the main application.,NFR
+REQ-DS-04813,"Passwords can include digits, hyphens, and underscores.",NFR
+REQ-DS-02852,User shall be required to input valid user ID and password to access the website.,FR
+REQ-DS-03598,The system shall display a list of the most popular site items for visitors.,FR
+REQ-DS-05874,System shall be able to check if system resources are below a threshold and display an error message if so.,FR
+REQ-DS-03875,System shall provide meaningful error messages when pipeline creation fails due to an existing dataset being incompatible with the pipeline requirements.,NFR
+REQ-DS-04959,The system shall support a dedicated graphics card (GPU) for rendering complex graphics and smooth on-screen navigation.,NFR
+REQ-DS-01148,User shall have the ability to create or initiate ticket retrieval requests within the Disputes System.,FR
+REQ-DS-01527,"Upon submission, the system shall validate and check for duplicate or invalid entries.",FR
+REQ-DS-00875,Each user shall have a set of system access properties that defines the users privileges within the system.,NFR
+REQ-DS-02945,User shall click on any particular passport for checking data.,FR
+REQ-DS-00720,"The TCS shall be capable of interfacing with the specified data terminal and issuing data link terminal commands required to establish, control, and maintain the data link with a selected AV.",FR
+REQ-DS-03339,User shall sign up or sign in using their email ID and password.,FR
+REQ-DS-01928,"User shall be able to view the status of books based on predefined statuses such as Pending, Approved, Rejected/Canceled, Borrowed, Available, and Not Available.",FR
+REQ-DS-02161,Contact information will be optionally hidden.,FR
+REQ-DS-02253,The system shall enable users to search for information online.,FR
+REQ-DS-02274,"The system shall display the selected notification, showing the pins associated with it.",FR
+REQ-DS-04740,System shall enforce proper sequencing and provide guidance for users.,FR
+REQ-DS-00644,The CO will be able to perform look ahead algorithms to determine its best move in the Intermediate and Advanced levels.,FR
+REQ-DS-05911,User shall be able to confirm successful user authorization.,FR
+REQ-DS-04059,System shall be able to manage and track data storage locations throughout its lifecycle.,FR
+REQ-DS-01505,System shall validate Client ID format as AADDMMYYYY99 before proceeding.,FR
+REQ-DS-04299,System shall expose descriptive records for external use.,FR
+REQ-DS-00492,The system shall encrypt all customer data in database.,NFR
+REQ-DS-05842,The system shall allow for user ID and password input.,FR
+REQ-DS-03132,The system shall be available for use with minimal downtime.,NFR
+REQ-DS-02431,Users shall be able to start and manage meetings through both video and audio.,FR
+REQ-DS-05930,The system shall implement measures to prevent unauthorized physical or digital access.,NFR
+REQ-DS-01289,Secure sessions will require users to have been guest members before logging in.,FR
+REQ-DS-04132,System shall provide error handling and logging to identify and communicate import errors effectively.,NFR
+REQ-DS-03120,"The system shall provide various formatting options for text, images, and other content elements on slides.",FR
+REQ-DS-00171,System shall show upcoming events on the title screen when the agenda app is started.,FR
+REQ-DS-02470,A customer shall be able to disengage bill mode to cancel the billing process  through their engaged menu.,FR
+REQ-DS-00037,The overall accuracy of the Web API’s response will be measured using a developer-made testing set.,NFR
+REQ-DS-02062,System shall ensure that prescriptions are mapped to one and only one chemist or lab based on the patient's pincode.,NFR
+REQ-DS-01406,"User shall be able to track the status of sent snaps, displaying ""delivered"" or ""received"" as appropriate.",FR
+REQ-DS-00922,"The File menu shall offer Configure Diagnostics, Logout, and Exit in that order.",FR
+REQ-DS-03918,User shall be able to know exactly what ALFRED does with their personal data and share it only with specific permission.,FR
+REQ-DS-04515,System shall output invalid temperature status if temperature data is outside valid range.,FR
+REQ-DS-00285,"The user shall be able to request an exchange for an item they want, if the item they have is eligible for exchange.",FR
+REQ-DS-00468,The system shall ensure that textual content is free of spelling and grammatical errors for clear readability.,NFR
+REQ-DS-04693,The system shall be able to use the app in different platforms like different versions of OS/Mobiles.,NFR
+REQ-DS-01423,"User shall have access to the WhatsApp internal server, which must be available 24/7.",NFR
+REQ-DS-00626,Users will be able to view the High Scores list that is located on the MultiMahjongServer,FR
+REQ-DS-01020,The system shall be intuitive enough for 90% of new users to start displaying Events or Activities within 90 minutes of initial use.,NFR
+REQ-DS-01016,The system shall ensure that projected Event/Activity data is readable by 90% of viewers on a 10x10 projection screen from a 30-foot viewing distance.,NFR
+REQ-DS-02736,User shall be able to like or dislike videos using buttons.,FR
+REQ-DS-03166,The system shall provide a clear workflow for collecting and analyzing responses.,FR
+REQ-DS-05728,"User shall update a blog by filling out a form with title, description, and content, with validation ensuring data integrity.",FR
+REQ-DS-05601,Customer shall view grocery items by entering keywords in the search option.,FR
+REQ-DS-02961,The passport management website should provide maximal security.,NFR
+REQ-DS-03853,The system shall be highly available and accessible to users with minimal downtime.,NFR
+REQ-DS-02988,The task shall be stored in database.,FR
+REQ-DS-03848,The system shall integrate with Symplectic Elements for bidirectional communication (if needed).,FR
+REQ-DS-00933,"The diagnostic information window shall have a button labeled Print that when clicked will display a window listing items to print including the diagnostic information window, the history window, and both the diagnostic and history windows.",FR
+REQ-DS-04089,System shall offer scalability to accommodate varying project sizes and complexities.,NFR
+REQ-DS-05030,The system shall allow customer login using a valid user ID and password.,FR
+REQ-DS-01086,Program Administrators/Nursing Staff Members are the only people who shall have access to clinical site details.,NFR
+REQ-DS-00876,The administrator shall have the ability to edit a users system access properties.,NFR
+REQ-DS-03507,An API User shall be able to identify Administrators.,FR
+REQ-DS-00061,The system shall anonymize and aggregate route information to enable safe sharing without compromising user privacy.,NFR
+REQ-DS-03149,The system shall save user data frequently and offer options for automatic backups to minimize data loss.,NFR
+REQ-DS-02964,Adaptive Maintenance: The software should be compatible with all web-browsing capable browsers.,NFR
+REQ-DS-03889,User shall have a managed backup protocol for the Neurohub system as a system administrator.,FR
+REQ-DS-00346,User shall be able to play a selected 360° video on their device.,FR
+REQ-DS-03415,Admin shall handle all users' activities for efficient management.,NFR
+REQ-DS-03225,The system shall provide progress indicators during the cloning process.,FR
+REQ-DS-03646,The system shall allow staff members to perform completeness reviews for applications.,FR
+REQ-DS-02500,Wireless communication throughout the system will be encrypted using SSLv3  at the application layer and WPA2-PSK at the data link layer.,NFR
+REQ-DS-05125,"The system shall run on various operating systems, including Windows and Linux, and be compatible with PCs, laptops, and PDAs.",NFR
+REQ-DS-05585,User shall restrict communications between some areas of the program for security.,NFR
+REQ-DS-02084,User shall/will interact with an intuitive user interface requiring minimal training.,NFR
+REQ-DS-00088,"SplitPay's user interface will prioritize usability and clarity, featuring a visually-appealing design and leveraging informative notifications and pop-ups to guide users in the future.",NFR
+REQ-DS-02659,User shall be able to rely on the system's stability and robustness.,NFR
+REQ-DS-05252,User shall be able to enter their consumer number to verify and abandon the subsidy.,FR
+REQ-DS-03014,This program shall be your one-stop shop for getting things done and achieving peace of mind.,NFR
+REQ-DS-04086,System shall support interoperability with external metadata tools and systems.,NFR
+REQ-DS-04516,System shall output valid temperature status if temperature data is within valid range.,FR
+REQ-DS-04585,Administrator shall be able to manage user accounts.,FR
+REQ-DS-03548,The system shall allow users to generate basic data summaries for Data Packages.,FR
+REQ-DS-05484,The system shall provide a merchant for transactions.,FR
+REQ-DS-01668,"The administrator will be able to print reports annually, weekly, and daily based on selected time frames.",FR
+REQ-DS-04964,User shall be able to manage transactions in MySQL to ensure data integrity.,FR
+REQ-DS-04827,Staff shall maintain account backups for reliability and rollback changes during abnormal shutdowns.,NFR
+REQ-DS-02267,The system shall display the list of people the user follows to the followers of those users.,FR
+REQ-DS-00231,"The user shall be able to edit their profile information and choose the app language (Swedish, English, Spanish, French) on the profile page.",FR
+REQ-DS-05821,System shall enforce access control based on assigned user roles and permissions.,FR
+REQ-DS-03793,The system shall allow publishers to permanently delete data packages.,FR
+REQ-DS-01759,Restaurants shall assign delivery boys to deliver orders.,FR
+REQ-DS-02836,"System shall ensure users can log out of their accounts securely, preventing unauthorized access.",FR
+REQ-DS-00866,The system shall be able to continue processing of all correlator configuration/control events until the queues of parameters are exhausted and external communications are restored,NFR
+REQ-DS-03425,User shall receive a more helpful file-level error message when uploading a file with the wrong extension.,FR
+REQ-DS-00789,The BE shall be able to make time stamp adjustments as required by the observational mode and correlator output parameters.,FR
+REQ-DS-01151,"System shall provide a confirmation to the user upon the creation of a ticket retrieval request, including the dispute case number, type of retrieval requested, and due date for the merchant response.",FR
+REQ-DS-01472,Authorized healthcare providers shall have access to view and update patient EHRs.,FR
+REQ-DS-03997,"User shall be able to see a list of attendees signed up for a specific summit, for communication purposes.",FR
+REQ-DS-00863,"Software shall be provided that allows an authorized user full access to all messaging, monitor, and control traffic throughout the CMCS.",NFR
+REQ-DS-05877,User shall be able to read serial number and device information.,FR
+REQ-DS-00635,"If a user leaves the game prematurely, a new CO is created on another user's machine to fill their place.",FR
+REQ-DS-01680,Employees shall be able to maintain daily logs.,FR
+REQ-DS-04351,"The system shall detect flood areas, damage, shelters, blocked roads in satellite images.",FR
+REQ-DS-03296,Reliability shall be ensured to prevent data loss in case of server failure during ongoing operations.,NFR
+REQ-DS-02020,User shall be able to maintain chemists and labs details.,FR
+REQ-DS-05280,The system shall prompt the user to specify the destination for the import operation.,FR
+REQ-DS-02906,"If the password does not meet the criteria, system shall prompt ""Enter 8 characters"".",FR
+REQ-DS-03659,The system shall allow staff members to perform staff reviews to validate application compliance with zoning ordinances.,FR
+REQ-DS-05276,The system shall verify if the image adheres to a standard format.,FR
+REQ-DS-01787,The system shall perform an authentication process for login and payment through a bank card.,NFR
+REQ-DS-01017,"The system shall achieve 99% availability during the first six months of operation, excluding non-business hours.",NFR
+REQ-DS-04204,System shall integrate with CRIS for impact analysis and funding linkage purposes.,NFR
+REQ-DS-01925,User shall be able to cancel a reservation.,FR
+REQ-DS-02634,The system shall communicate through web browser enabling and use HTTP protocol for data transfer.,NFR
+REQ-DS-05241,The system shall provide information about new government schemes related to LPG.,FR
+REQ-DS-01854,System shall be able to provide access to transaction history and available balance for account holders.,FR
+REQ-DS-01063,All of the users shall be able to use the system after one day of training.,NFR
+REQ-DS-05639,User shall enter search text on the screen and display matching products based on the search.,FR
+REQ-DS-05807,System shall confirm submission of leave request.,FR
+REQ-DS-05613,"System shall ensure maximum security by encrypting user data such as name, password, and account balance during transmission.",NFR
+REQ-DS-04157,User shall be able to place data under embargo to protect rights of first use and confidentiality responsibilities.,FR
+REQ-DS-00791,The BE shall be able to apply user selected frequency domain processes.,FR
+REQ-DS-01241,The product must make use of web/application server technology. Open source examples include Apache web server Tomcat and the JBoss application server.,NFR
+REQ-DS-05784,System shall send an email to the user's verified email address with a verification code or link to set a new password.,FR
+REQ-DS-02973,HPIMS shall allow users to update any patient information as necessary.,FR
+REQ-DS-03726,The system shall allow parents to submit various types of forms to camp management.,FR
+REQ-DS-03628,A Visual Designer shall create a moodboard to aid with visual design concepts for the nsf.gov website.,FR
+REQ-DS-04932,Adobe Illustrator shall achieve smooth operation and optimal performance.,NFR
+REQ-DS-05569,Client shall check their booking status.,FR
+REQ-DS-01917,Administrator shall have the capability to remove any book from the library.,FR
+REQ-DS-00079,The overall accuracy shall be calculated by dividing total number of correct answers by the number of questions asked.,NFR
+REQ-DS-03084,The system shall allow the user to change the password.,FR
+REQ-DS-05325,System shall be compatible with Windows and Linux operating systems.,NFR
+REQ-DS-03742,The system shall allow adding new items to the estimation list during a session.,FR
+REQ-DS-02723,Each user shall have a unique username and password to access their account on the site.,FR
+REQ-DS-01286,Users shall be able to select a session based on the FACET and the tool they wish to use.,FR
+REQ-DS-00073,"The system shall operate primarily offline, with networked authentication components functioning only when Radford University's systems are available.",NFR
+REQ-DS-02304,System will display a message confirming that the problem or issue has been submitted successfully.,FR
+REQ-DS-02460,A customer shall not be able to dismiss their engaged menu while there is a  non-empty pending order associated with the engaged menu.,FR
+REQ-DS-05120,"The system shall be available at all times, only restricted by server downtime, and show a replacement page in case of hardware failure or database corruption.",NFR
+REQ-DS-04894,"The system shall include ""legality"" checks to ensure user-placed notes adhere to musical rules.",FR
+REQ-DS-02160,Resumes will have options for private/public/confidential settings.,FR
+REQ-DS-01547,"Users shall view a detailed log of all their past trades, including date, price, and quantity.",FR
+REQ-DS-05340,System shall be testable.,NFR
+REQ-DS-05646,System shall display related items to the items already bought by the user.,FR
+REQ-DS-03499,A Data Consuming User shall be able to share view state images on social media.,FR
+REQ-DS-04632,System shall identify user and grant permission based on user type (instructor/student). (Level 1),FR
+REQ-DS-01517,Authorization login shall be required when the software starts.,NFR
+REQ-DS-03345,System shall notify the user upon successful sharing of the video.,FR
+REQ-DS-05113,"The system shall work on a client-server architecture and require an internet server capable of running PHP applications, supporting commonly used browsers like Internet Explorer.",FR
+REQ-DS-01426,User shall post intelligence items with required spatial index and optional meta-data.,FR
+REQ-DS-01833,System shall be able to allow staff to perform online data entry.,FR
+REQ-DS-04002,"User shall be able to see specific details on summits, to learn more and register.",FR
+REQ-DS-03452,Tester shall access test features in environments other than Staging for comprehensive testing.,NFR
+REQ-DS-04685,Admin shall be able to manage restaurant details.,FR
+REQ-DS-03098,Users shall be required to log into the system for all operations except the operations on the login page.,FR
+REQ-DS-04163,User shall be able to deposit arbitrarily large files without limitations.,FR
+REQ-DS-01481,The system shall securely process online payments using standard payment gateways.,FR
+REQ-DS-00787,The BE shall be able to apply normalizations based on reported data invalid counts.,FR
+REQ-DS-00160,"Administrators shall be able to add POIs associated with a specific building, floor, and room number.",FR
+REQ-DS-00478,The application must be able to link up with the INTERNAL system in order for users to properly log in and be identified.,NFR
+REQ-DS-01076,The system shall be capable of processing 100% of nursing students and their classes for the next 10 years.,NFR
+REQ-DS-00752,There shall be a web server for the APAF system,NFR
+REQ-DS-05431,The system shall allow registered users to log in using their credentials.,FR
+REQ-DS-05587,User shall incorporate encryption techniques in the user/license authentication process for security.,NFR
+REQ-DS-03513,An API User shall be able to use metadata to retrieve data from multiple datasets.,FR
+REQ-DS-04889,The system shall automatically delineate measures within a score.,FR
+REQ-DS-03365,The site should be usable anywhere with internet connectivity and a compatible device.,NFR
+REQ-DS-01961,User shall not be able to view other users' details for privacy and security reasons.,NFR
+REQ-DS-05231,"Customers shall be able to search for new products in the database by entering item names, and upon successful search, view detailed product information.",FR
+REQ-DS-01090,Dr Susan Poslusny and Karen Sysol are the only people who shall have access to the final class section scheduling for the system that interfaces with CampusConnect.,NFR
+REQ-DS-00062,The system shall employ encryption for all privacy-sensitive data at rest to ensure both security and basic functionality.,NFR
+REQ-DS-02233,Crafty kids corner shall include a rating system allowing users to rate projects based on their experience.,FR
+REQ-DS-03194,"The system shall encrypt sensitive data (patient information, prescriptions) at rest and in transit.",NFR
+REQ-DS-03580,The system shall allow editors to update any course/event.,FR
+REQ-DS-04759,All numerical requirements stated above are subject to measurable performance monitoring and evaluation.,NFR
+REQ-DS-04554,System shall send an email to the registered email-id for password reset upon request.,FR
+REQ-DS-05334,System shall protect against data loss.,NFR
+REQ-DS-03817,The system shall provide guidance to new publishers after signup.,FR
+REQ-DS-04728,The system shall be accessible through a compatible web browser on a computer or mobile device.,NFR
+REQ-DS-02200,"User shall receive clear validation messages on both client and server sides, with failed fields highlighted and focus directed to them.",NFR
+REQ-DS-00975,The system shall deliver rapid responses to user requests under 24/7 operation for both internal and enforcement authority use (acceptable response time < 1 minute).,NFR
+REQ-DS-02676,System shall operate on compatible software platforms and environments.,NFR
+REQ-DS-00747,IDFS data access software developed by SwRI shall be made available to the ASPERA-3 Co-Is.,FR
+REQ-DS-02652,The system shall enforce data privacy and confidentiality measures to protect sensitive information handled within the command-line interface.,NFR
+REQ-DS-03390,User shall be able to view a map display of public recycling bins and special waste drop-off sites in their area.,FR
+REQ-DS-01035,The product shall synchronize with the office system every hour.,NFR
+REQ-DS-01727,User passwords shall be encrypted in the database management system (DBMS) for security.,NFR
+REQ-DS-01556,Security audits shall be conducted quarterly to identify potential vulnerabilities.,NFR
+REQ-DS-03497,A Data Consuming User shall be able to share visualizations via URL.,FR
+REQ-DS-02570,"System shall restrict normal users to read-only access, allowing modification only for personal and authorized data.",NFR
+REQ-DS-02688,System shall provide a replacement page in case of hardware failure or database corruption.,NFR
+REQ-DS-03443,FABS user shall not receive DABS banner messages and vice versa.,FR
+REQ-DS-04100,User shall be able to view a finding aid for a particular collection/Resource.,FR
+REQ-DS-03926,"User shall have ALFRED installed on all their computers, tablets, and phones.",FR
+REQ-DS-01121,Program Administrators/Nursing Staff Members shall be able to cancel a clinical lab section only if there are no students registered for that clinical lab section.,FR
+REQ-DS-05678,System shall display online help and FAQs upon request.,FR
+REQ-DS-00248,The system shall allow administrators to log in with their accounts and grant them administrative privileges.,FR
+REQ-DS-02522,User must have a valid login ID to access the site.,FR
+REQ-DS-03879,User shall execute acceptance tests against a Neurohub installation and view the results.,FR
+REQ-DS-05218,System shall offer quick calling features with minimal response time.,NFR
+REQ-DS-03139,The system shall allow users to create charts and graphs to visualize data.,FR
+REQ-DS-01041,100% of saved user preferences shall be restored when system comes back online.,NFR
+REQ-DS-02576,"System shall ensure that the V Mart website is user-friendly for non-technical users, regardless of its size.",NFR
+REQ-DS-04733,The system shall have a minimum of 1 GB of RAM available.,NFR
+REQ-DS-03247,"The system shall accept documents through various methods (e.g., camera capture, file upload).",FR
+REQ-DS-02142,Statistics on views and applicant counts shall be provided for postings.,FR
+REQ-DS-00112,The system shall be able to tweet about insApption from the main menu.,FR
+REQ-DS-04684,Admin shall be able to CRUD items for restaurants.,FR
+REQ-DS-00576,"The system shall be usable by users with basic PC, Macintosh, or Unix operating system knowledge.",NFR
+REQ-DS-00304,The system shall be able to process a mapping received from the Generic Question Construction unit.,FR
+REQ-DS-01272,A moderator shall be able to assign the maximum number of participants to a session.,FR
+REQ-DS-04013,System shall enforce limitations on duplicate registrations to maintain system integrity.,NFR
+REQ-DS-01410,User shall be able to create groups of contacts and broadcast messages to these groups.,FR
+REQ-DS-02934,User shall be able to access the login screen for authorized users.,FR
+REQ-DS-00855,"The MCCC shall be a high availability type generalpurpose computer capable of supporting multiple Ethernet interfaces, COTS operating systems, and support server/host services for the CMIB operating system.",NFR
+REQ-DS-05476,The system shall provide an examination tab where candidates can view cut off marks for various exams.,FR
+REQ-DS-05138,System shall verify the password during installation to ensure the antivirus copy is valid.,FR
+REQ-DS-01611,"User shall easily find what they are looking for on the website, with a simple web design ensuring ease of use.",NFR
+REQ-DS-04232,The system shall provide preservation managers with information for monitoring file integrity.,FR
+REQ-DS-02497,"The system shall log every state and state change of every surface computer,  tablet and display to provision recovery from system failure.",NFR
+REQ-DS-03439,FABS user shall be able to download the uploaded FABS file.,FR
+REQ-DS-01386,"The server shall be capable of supporting an arbitrary number of active orders, that is, no orders shall be lost under any circumstances.",NFR
+REQ-DS-02699,"Alternatively, the user can push the delete key of the keyboard to delete the connection.",FR
+REQ-DS-02647,"The command-line interface shall have a response time of less than 5 seconds, ensuring efficient user interaction.",NFR
+REQ-DS-00670,"The TCS shall provide the capability to modify the maximum number of threats displayed, when de-clutter is selected.",FR
+REQ-DS-02054,System shall securely manage user login credentials and patient data confidentiality.,NFR
+REQ-DS-04489,"Any administrative level or authorized inventory group member can view and approve pending requests, with users notified by email upon request treatment and updates made to the waiting for execution list.",FR
+REQ-DS-03171,The system shall respond to user actions within a reasonable timeframe.,NFR
+REQ-DS-04573,System shall generate weekly rosters for employees (administrator function).,FR
+REQ-DS-03750,The system shall allow importing stories from a spreadsheet.,FR
+REQ-DS-05121,The system shall retrieve and save database backups in case of hardware failure or database corruption and restart the service to ensure 24/7 availability.,NFR
+REQ-DS-02129,Internal notes on applicants shall be maintainable.,FR
+REQ-DS-01582,System shall ensure maintainability by designing a flexible structure that allows for easy integration of new functionalities.,NFR
+REQ-DS-05884,System shall be able to display relevant error messages and take corrective action.,FR
+REQ-DS-02353,The user shall be able to enter the Module for the exam.,FR
+REQ-DS-01881,"The user interface shall be intuitive and user-friendly, catering to users of varying technical abilities.",NFR
+REQ-DS-03881,User shall navigate forwards and backwards between log books and log book pages without using the browser's back button.,FR
+REQ-DS-02295,The application server shall be responsible for maintaining the website.,NFR
+REQ-DS-04671,Restaurant shall be able to view the payment.,FR
+REQ-DS-03285,User shall have the option to add advertisements on the website by providing necessary specifications about the property.,FR
+REQ-DS-01780,Admins shall add promo codes/offers.,FR
+REQ-DS-03892,User shall search and download human-readable experimental protocols.,FR
+REQ-DS-05055,"User shall be able to search for flights by entering destination, boarding place, and date of journey, with a display of available flights matching the criteria.",FR
+REQ-DS-00256,The system shall allow administrators to permanently remove dishes from the list.,FR
+REQ-DS-04952,The graphics card should have at least 1 GB of VRAM for optimal performance (optional).,NFR
+REQ-DS-00048,"Map results should be clear and user-friendly, allowing selection of any pin with a single click.",NFR
+REQ-DS-03614,The system shall have robust security measures to protect user data.,NFR
+REQ-DS-00905,Any and all errors associated with failures of the diagnostic algorithms shall be logged as described in subsequent specifications and selected errors shall be reported to the user.,NFR
+REQ-DS-02919,User shall enter their full name and date for last time authorization.,FR
+REQ-DS-03986,"User shall be able to enter payment information and have their card charged for an individual sponsorship, for easy sponsorship payment.",FR
+REQ-DS-04786,Screen resolution shall be at least 800x600 for complete viewing.,FR
+REQ-DS-01428,"User shall link intelligence items, such as public transport messages, to crowd-sourced messages.",FR
+REQ-DS-00110,"The system shall conditionally display a launcher to the Student handbook-app on the main menu, only when the Dutch language is selected.",FR
+REQ-DS-02322,The user shall be able to enter their school year tenure.,FR
+REQ-DS-03672,The system shall allow staff members to issue development-related permits.,FR
+REQ-DS-02264,The system shall provide the functionality for users to follow other users.,FR
+REQ-DS-05808,Administrator shall review and approve/deny leave requests.,FR
+REQ-DS-03093,The system shall allow users to search for available distributed location templates(if any).,FR
+REQ-DS-03743,The system shall allow editing items in the estimation list.,FR
+REQ-DS-02554,Accounts managers shall validate customer account numbers with banks before processing transactions.,FR
+REQ-DS-03175,The system shall implement security measures to protect user data from unauthorized access.,NFR
+REQ-DS-05509,The product shall be web-based and must operate from a web server.,NFR
+REQ-DS-02277,"The system shall prioritize usability, aiming for easy use and quick familiarity for end users without the need for training or assistance.",NFR
+REQ-DS-03919,User shall be able to receive information from ALFRED through speech technology.,FR
+REQ-DS-03627,A team member shall meet with DIS/cloud.gov to determine requirements for the beta.nsf.gov ATO.,FR
+REQ-DS-05818,Updated user accounts with corresponding roles shall be reflected in the system.,FR
+REQ-DS-04503,System shall read initialization data to derive definitions of heating and cooling units.,FR
+REQ-DS-00406,System shall be able to display a campus map with all historical sites marked upon clicking a Map Sites link on the homepage.,FR
+REQ-DS-04465,System shall employ easy-to-locate buttons.,NFR
+REQ-DS-04354,The system shall detect moving objects in images.,FR
+REQ-DS-00085,"The system shall be designed for high performance with optimized server queries, instantaneous screen transitions, and sub-second cost-division computation.",NFR
+REQ-DS-05768,"User shall have access to predefined emergency response protocols and procedures within the app, providing assistance during critical incidents such as medical emergencies or natural disasters.",NFR
+REQ-DS-02713,"System shall be able to efficiently write client-side data to the disk and retrieve database data on the server side, with a target time of approximately 0.5 seconds for each operation.",NFR
+REQ-DS-01932,"System shall update the book status to Borrowed when the book is borrowed by another member, and the administrator changes the status from Approved.",FR
+REQ-DS-00132,System shall be able to switch between different means of transportation while navigating.,FR
+REQ-DS-02606,User shall confirm deposit money receipt.,FR
+REQ-DS-01628,"System shall update recommendations at the end of listening to a track or after purchasing a track, aiming for real-time functionality.",NFR
+REQ-DS-03037,The system shall store all databases on redundant computers with automatic switchover.,NFR
+REQ-DS-00198,User shall be able to view the full text regarding a topic by clicking on it.,FR
+REQ-DS-04538,System shall direct the user to respective account pages for login and terms acceptance.,FR
+REQ-DS-04756,System shall complete data processing tasks within 5 seconds under peak workload conditions.,NFR
+REQ-DS-03040,"For the system to be stable, the container and its underlying operating system shall be stable.",NFR
+REQ-DS-00031,"The application's code structure should be designed for easy extension, facilitating the addition of new features.",NFR
+REQ-DS-01479,"Attachments and images shall be allowed in messages, subject to file size restrictions.",FR
+REQ-DS-02649,The security requirements of the system shall adhere to industry standards and best practices.,NFR
+REQ-DS-00955,The system shall allow a member of the network to send a bulk request on all or a large part of its driver's smart card holders to a particular or all members of the network.,FR
+REQ-DS-05021,A user shall be able to select a payment method and complete the payment.,FR
+REQ-DS-02203,User shall have a seamless browsing experience across all major web browsers.,NFR
+REQ-DS-04799,Touch screen and button response time must not exceed 5000 milliseconds.,NFR
+REQ-DS-02474,"When in billing mode, a surface computer shall display a representation of tip  denominations that may be dragged into a payment.",FR
+REQ-DS-02681,User shall not have their passwords stored in cookies.,NFR
+REQ-DS-05564,Employee shall check their rosters.,FR
+REQ-DS-00213,"Users shall be able to register on the mobile application by providing a username, password, and email address, with the option to provide a phone number.",FR
+REQ-DS-01346,Customer shall able to track the delivery boy details,FR
+REQ-DS-03530,The system shall allow users to translate EML datasets to Data Packages.,FR
+REQ-DS-00544,Users shall authenticate using a username and password.,NFR
+REQ-DS-05112,The system shall generate a PDF report of all transactions and send a copy to the customer's email address and another copy to the system database for monthly transaction calculation.,FR
+REQ-DS-02821,"User shall be able to view the price of selected products, including any applicable discounts.",FR
+REQ-DS-02263,The system shall process and display the written comment on the post.,FR
+REQ-DS-00434,The system shall be able to support a multilingual interface.,NFR
+REQ-DS-03765,The system shall allow joining a game by entering a name on the provided URL.,FR
+REQ-DS-04317,System shall allow browsing content by author or subject area.,NFR
+REQ-DS-03033,The system shall automatically log out all customers after a period of inactivity.,NFR
+REQ-DS-02781,"User shall be able to differentiate between primary, social, and promotional emails based on email tabs.",FR
+REQ-DS-04124,User shall be able to log in.,FR
+REQ-DS-03416,Company shall have an easy-to-use website for step-by-step uploading or deleting of content.,NFR
+REQ-DS-00782,The BE system shall be able to receive data packets from the Correlator on the Backend network interface.,FR
+REQ-DS-01394,"User shall be able to view real-time location maps with friends' Bitmoji representations, accessible by swiping down on the camera screen.",FR
+REQ-DS-03205,The system may optionally provide real-time train location information if available.,FR
+REQ-DS-01425,Only maintainers shall be granted access to internal servers for maintenance purposes.,NFR
+REQ-DS-03080,The system shall allow the user to modify the date preference set of an already submitted meeting response.,FR
+REQ-DS-04504,System shall use initialization data to determine heating and cooling units in the system.,FR
+REQ-DS-05291,The Khan Academy platform shall provide opportunities for students to learn independently.,FR
+REQ-DS-00798,The BE shall periodically or upon request check Backend physical processors and assure that all needed processors are alive and responding,NFR
+REQ-DS-01336,A server shall host the Foodie App and provide system data processing and storage capability.,FR
+REQ-DS-00817,The total processor capability of the BE System shall be sufficient to accomplish all processing tasks while avoiding loss or delay on the input and output data streams.,NFR
+REQ-DS-02858,User shall be able to issue complaints to traffic police as pedestrians or vehicle owners.,FR
+REQ-DS-04596,System shall keep error tracking logs to aid users.,NFR
+REQ-DS-03272,System shall validate the information provided by the user using JavaScript on the client side.,FR
+REQ-DS-05040,"The system shall achieve high availability, ensuring videos are accessible even during potential data inconsistencies.",NFR
+REQ-DS-02936,System shall validate the entered credentials in the database.,FR
+REQ-DS-00597,"A users manual, explaining how to install and operate the MultiMahjongClient, will be provided.",NFR
+REQ-DS-05173,System shall process the user's input and perform the desired action in the application interface.,FR
+REQ-DS-00554,Each quadrant of each floor shall have a thermostat which is to be used to provide temperature data to the THEMAS system.,FR
+REQ-DS-05186,System shall establish a safe connection between users over the network for optimal gaming experiences.,FR
+REQ-DS-00780,The BE system shall be able to ensure the secure delivery of all internal messages.,FR
+REQ-DS-05281,"The system shall provide functionalities for adding, updating, and deleting user information.",FR
+REQ-DS-04761,"System shall provide a menu-driven interface with screens including login, language selection, and options for users and administrators.",FR
+REQ-DS-00730,"The system should be able to handle parameter changes in three ways: single parameter, subset of settings, and pre-defined parameter set switching.",FR
+REQ-DS-05723,"User shall see a list of blogs upon clicking the button on the homepage, providing access to individual post pages.",FR
+REQ-DS-03125,"The system shall allow users to deliver presentations in various modes, including full-screen mode and slide sorter view.",FR
+REQ-DS-04833,User shall be able to log in with their email and password and receive a message indicating successful sign-in.,FR
+REQ-DS-03656,The system shall allow staff members to conduct and track plan amendments and planning studies.,FR
+REQ-DS-00501,The system shall be easy to use.,NFR
+REQ-DS-02719,"User shall be able to access all stored data, including student details, faculty members details, student queries and solutions, and course information, from a single centralized database.",FR
+REQ-DS-01009,The system shall allow a user to define the time segments,FR
+REQ-DS-04607,User shall be able to view information about various subjects offered.,FR
+REQ-DS-05101,"The system shall check if the product ID exists in the inventory database and update the quantity if it does, otherwise, it shall add new product information to the database.",FR
+REQ-DS-04790,Data transfer protocol shall be File Transfer Protocol (FTP).,FR
+REQ-DS-04755,System shall complete data processing tasks within 2 seconds under normal workload conditions.,NFR
+REQ-DS-00572,"Once a request to turn on or off a heating or cooling unit, the THEMAS system shall provide the necessary control signal for the unit.",FR
+REQ-DS-01614,Users' personal information shall be securely stored and kept confidential within the system.,NFR
+REQ-DS-02631,The system shall utilize separate databases for cars and customers.,NFR
+REQ-DS-02429,"The system shall allow users to report Snapchatters for irrelevant, inappropriate content, misbehavior, or anything uncomfortable and shall take strict action against reported individuals, posts, or spam.",NFR
+REQ-DS-03027,Users shall be able to book a movie through the service.,FR
+REQ-DS-05838,"If no network connection can be established to receive roll information, the instructor shall be allowed to enter roll later.",NFR
+REQ-DS-05469,The speed of the Reader's connection depends on their hardware rather than system characteristics.,NFR
+REQ-DS-01953,The system shall provide clear instructions and intuitive navigation for ease of use by all users.,NFR
+REQ-DS-04534,System shall generate reports based on selected parameters.,FR
+REQ-DS-00660,The TCS shall provide the system functionality necessary to upload a flight route plan and payload plan (if applicable) to the AV via the selected system data link as well as direct ground connection.,FR
+REQ-DS-01636,System shall display input fields for email and password.,FR
+REQ-DS-02551,System shall allow purchase managers to manage product stocks.,FR
+REQ-DS-05522,"User shall be able to access registration forms for customers, agents, and employees.",FR
+REQ-DS-03203,The system shall display a list of matching train schedules to the user.,FR
+REQ-DS-00367,User shall be able to add items to their cart by selecting the Add to Cart button.,FR
+REQ-DS-01209,The adjuster shall be able to override the preferred repair facility on the estimate assignment.,FR
+REQ-DS-05338,System shall be flexible.,NFR
+REQ-DS-01048,Only registered realtors shall be able to access the system.,NFR
+REQ-DS-00027,"To prevent unauthorized access, restaurant owner accounts will be locked for 30 minutes after three failed login attempts, disabling login functionality during that period.",NFR
+REQ-DS-03626,A user researcher shall conduct a user definition workshop with NSF.,FR
+REQ-DS-01058,The realtor shall be notified of new client appointments after automatic synchronization with office system.,FR
+REQ-DS-04902,The system shall allow users to create scores with multiple sheets for different instruments.,FR
+REQ-DS-03028,"The service shall be able to show the seating arrangement and available seats, allowing users to book the desired number of seats.",FR
+REQ-DS-01078,The system shall able to operate within a business office environment typical of the Nursing Department at DePaul University.,NFR
+REQ-DS-02785,User shall have the ability to search for specific emails using keywords or filters.,FR
+REQ-DS-01557,The system shall implement comprehensive security measures to safeguard users from harm.,NFR
+REQ-DS-05559,User shall check feedbacks.,FR
+REQ-DS-05795,"User shall have a maximum of three attempts to enter the password, after which an email notification will be sent if there's an additional attempt.",NFR
+REQ-DS-00864,"The CMCS shall autonomously monitor and respond to hardware issues, software crashes, resource limitations, errors, and communication failures.",NFR
+REQ-DS-04327,The system shall allow searching content using automatic speech recognition.,FR
+REQ-DS-01066,The system shall be intuitive to the Program Administrators/Nursing Staff Members.,NFR
+REQ-DS-01722,User shall be able to change the language of the system.,FR
+REQ-DS-02076,User shall/will be provided with reports generated in a time not exceeding five seconds.,NFR
+REQ-DS-02162,Resumes will be hidden from specific companies.,FR
+REQ-DS-00598,"This documentation will be available in electronic files, and, with the exception of source code, in hard copy format.",NFR
+REQ-DS-05701,"User views the cart contents, which are managed by JavaScript code.",FR
+REQ-DS-00172,System shall provide a calendar view.,FR
+REQ-DS-02006,Error messages shall be descriptive and easily understandable.,NFR
+REQ-DS-01285,Users shall be verified upon logging in LDAP.,FR
+REQ-DS-01551,Past data up to the present date shall be available for context.,FR
+REQ-DS-01796,System shall inform the user of failed login attempts due to incorrect credentials.,FR
+REQ-DS-04011,System shall provide a clear and easily navigable map interface.,NFR
+REQ-DS-03092,The system shall allow users to view location information.,FR
+REQ-DS-04181,User shall be able to manage and share live research data to maintain workflow continuity.,FR
+REQ-DS-00687,The TCS shall provide the capability to fully control and display the AV's Identification Friend or Foe (IFF).,FR
+REQ-DS-02996,The user shall select and delete a task in one action.,FR
+REQ-DS-01625,User shall be able to maintain data by implementing the latest model and regular updates for new titles.,NFR
+REQ-DS-02450,"Under normal conditions, 95% of transactions shall be processed in less than 5 seconds.",FR
+REQ-DS-04457,System shall perform searches using Dijkstra's shortest path algorithm.,NFR
+REQ-DS-04254,The system shall allow archivists to create quality scans and automatically generate access derivatives.,FR
+REQ-DS-00964,The system shall be highly automatic to relieve the users of as many repetitive and tedious tasks as possible.,NFR
+REQ-DS-04420,"User shall be able to create accounts to store profiles, contact info, purchase history, and confirm orders.",FR
+REQ-DS-04939,"More RAM shall allow Illustrator to handle extensive use of drawing tools, complex vector illustrations, and advanced effects without significant lag or slowdown.",NFR
+REQ-DS-05831,An instructor shall be permitted to view and edit absence information in the database for only his/her classes.,NFR
+REQ-DS-00967,The system shall guide users through an interface based on end user concepts.,NFR
+REQ-DS-03174,The system shall be able to scale to accommodate an increasing number of users and forms.,NFR
+REQ-DS-04669,Restaurant shall be able to assign a delivery boy to deliver an order.,FR
+REQ-DS-04309,System shall provide a Linked Data interface for repository data.,FR
+REQ-DS-04537,"User shall be able to autofill details using accounts from Google, LinkedIn, Facebook, or Yahoo.",FR
+REQ-DS-05047,The system shall ensure video reliability through replication and geographical distribution of video files.,NFR
+REQ-DS-00893,The tool shall input sensed data in real time from data acquisition devices and the HVAC unit under diagnosis.,FR
+REQ-DS-00512,The system shall be able to run in debug mode.,NFR
+REQ-DS-00104,The system shall display a launcher to the News-app version 3.1.4 on the main menu.,FR
+REQ-DS-01763,Restaurants shall offer discounts.,FR
+REQ-DS-05005,The GUI and other parts of the software shall be developed using JAVA and J2EE.,NFR
+REQ-DS-04987,"Students shall be able to participate in forums, blogs, and discussions.",FR
+REQ-DS-00014,The information and the search methods of the Encyclopedia-app will be restricted to the services provided by the MediaWiki of the TU/e Encyclopedia.,NFR
+REQ-DS-01447,"User can create profiles with health worker information, attaching usernames for identification, and supporting multiple users on a single device.",FR
+REQ-DS-04744,System shall manage and adjust operations based on given parameters.,FR
+REQ-DS-01079,The system shall be used within the specifications defined by the computers used by the Program Administrators/Nursing Staff Members.,NFR
+REQ-DS-01024,The system shall have a professional appearance.,NFR
+REQ-DS-02244,"Crafty kids corner shall include accessibility features such as easy navigation, clear labels, and high contrast for readability.",NFR
+REQ-DS-04946,The user experience with Adobe Illustrator shall be enhanced by meeting the 64-bit requirements.,NFR
+REQ-DS-03863,"User shall ensure that when deploying a new version of an app including an older version of a dataset type deployed by another app, dataset instances created by this app use the included dataset type code.",FR
+REQ-DS-01499,"User shall store the starting, closing, intraday high, and intraday low of a stock in the database.",FR
+REQ-DS-05114,"The system shall include measures of service quality, such as ease of booking, hassle-free check-in, efficient ticketing staff, regular announcements during flight delays, on-time performance, in-flight experience, baggage handling, and value for money.",FR
+REQ-DS-01152,"The Disputes System shall allow users to create chargeback requests, prompting for required information and resulting in printed notifications sent to merchants if proof of disputed transactions is not provided.",FR
+REQ-DS-02618,User shall access various car rent statistics stored in the car database.,FR
+REQ-DS-01420,User shall perform adequately under adverse conditions such as slow internet and low battery.,NFR
+REQ-DS-00313,The database will be updated periodically and the API will be unavailable during the update.,FR
+REQ-DS-02235,Crafty kids corner will provide cross-platform support to ensure a consistent user experience across different operating systems.,NFR
+REQ-DS-00890,The system shall restrict broadcast message transmission to authorized administrators only.,NFR
+REQ-DS-01274,Session creators and moderators shall be able to import data from previously closed sessions into a currently open session.,FR
+REQ-DS-02901,"If the validation succeeds, user shall be redirected to the ""Password reset"" page.",FR
+REQ-DS-02680,System shall automatically log out inactive users.,NFR
+REQ-DS-05751,"User shall seamlessly translate text input from one language to another in real-time, preserving meaning and conveying nuance effectively.",FR
+REQ-DS-01930,System shall update the book status to Approved when the administrator approves the member request.,FR
+REQ-DS-01315,The application shall maintain a list of classes for the user.,FR
+REQ-DS-01672,User shall be able to perform the weekly roster of employees.,FR
+REQ-DS-01195,Only valid data shall be entered into the system. No invalid data shall be entered into the system.,NFR
+REQ-DS-03924,"User shall have ALFRED preinstalled, eliminating the need for manual setup.",FR
+REQ-DS-00269,The system shall display a search bar prominently to enable users to easily find the information they need.,FR
+REQ-DS-03999,"User shall be able to list sponsors for their summit, to acknowledge support.",FR
+REQ-DS-02870,User shall enter registered name and mobile number for login.,FR
+REQ-DS-01326,Users shall be able to clear all assignments for a particular class.,FR
+REQ-DS-02205,User shall be able to select from various workout sessions available in the app.,FR
+REQ-DS-04498,Only IT team members can access and maintain database servers locally.,NFR
+REQ-DS-03536,The system shall allow users to add type information to their data.,FR
+REQ-DS-02012,User shall be able to maintain different types of specialties.,FR
+REQ-DS-00664,The TCS shall allow the operator to set the LOL delay timer(s) during mission planning.,FR
+REQ-DS-02351,The user shall be able to add a new academic year/term to add the exam.,FR
+REQ-DS-04065,System shall provide information and tools for users to specify security measures for data.,FR
+REQ-DS-02633,The hardware requirements include a computer with at least 256 MB RAM and internet connection.,NFR
+REQ-DS-01861,User shall/will be able to generate and download account statements.,FR
+REQ-DS-02365,The user shall be able to edit the Academic Year by tapping on the three-dotted menu.,FR
+REQ-DS-04901,The system shall allow users to print musical scores.,FR
+REQ-DS-00973,The system shall be able to establish and keep the dialog with the Members systems despite the various technical environments and technologies used on their sites,NFR
+REQ-DS-02683,User shall rely on the overall project's reliability.,NFR
+REQ-DS-05396,Users must be prompted to change their PIN on first use for security.,NFR
+REQ-DS-02150,Password retrieval via email shall be automated.,FR
+REQ-DS-05869,User shall be able to initialize system parameters.,FR
+REQ-DS-00569,The system shall be able to monitor thermostat and heating/cooling data to trigger specific events.,FR
+REQ-DS-00753,There shall be a network connection between SwRI and NISN.,NFR
+REQ-DS-05499,The website shall provide forms for certificates so users can request certificates online.,FR
+REQ-DS-02950,System shall update the status of a particular application number with the selected status.,FR
+REQ-DS-02969,Administrative staff in the ward shall be able to update the beds-available list with recently vacated beds.,FR
+REQ-DS-00551,Initialization Data,FR
+REQ-DS-05688,Reliability of the system depends on the reliability of its separate components.,NFR
+REQ-DS-02466,A customer shall be able to place an order through their engaged menu if it is  pending and not empty.,FR
+REQ-DS-02706,"User shall be able to paste items by clicking the ""Paste"" button.",FR
+REQ-DS-03936,User shall be able to use ALFRED for small payments.,FR
+REQ-DS-01649,System shall allow users to filter content based on various criteria.,FR
+REQ-DS-02064,User shall be able to use a barcode scanner or manual entry for sales processes.,FR
+REQ-DS-00414,System shall be able to operate without storing any personal user data.,FR
+REQ-DS-04121,System shall support basic archival description creation and updates.,FR
+REQ-DS-05444,The system requires end users to provide their symptoms accurately to avoid false predictions.,NFR
+REQ-DS-04843,"User shall be able to save videos offline in the mobile app by clicking ""Save Offline"" and receive confirmation that the video was saved.",FR
+REQ-DS-03156,The system shall be able to open and work with spreadsheets created in previous versions of Excel (with potential limitations).,NFR
+REQ-DS-04524,System shall provide necessary control signals to heating or cooling units upon request.,FR
+REQ-DS-03772,The system shall allow initiating a two-minute countdown timer visible to all participants.,FR
+REQ-DS-02911,System shall validate the OTP.,FR
+REQ-DS-01337,A surface app page shall provide a customer with all customer system functionality.,FR
+REQ-DS-02544,Sales managers shall view customer details and manage product sales and deliveries.,FR
+REQ-DS-04766,User shall be able to block system access for a user by entering their card number.,FR
+REQ-DS-00906,"The tool shall monitor the unit under diagnosis, either in real time or batch mode, for an indefinite period of time or until input data are no longer available, and log diagnostic results as they are determined.",FR
+REQ-DS-03581,The system shall allow trainers to convert courses to events and vice versa.,FR
+REQ-DS-00442,the system shall enforce role-based access control (RBAC) for its functionalities.,NFR
+REQ-DS-05203,"The application shall be easy to maintain, with access restricted to a select group of authorized personnel to maintain integrity.",NFR
+REQ-DS-05850,Workers shall be able to view rewards.,FR
+REQ-DS-01179,The search for the preferred repair facility should be completed within 8 seconds.,NFR
+REQ-DS-01723,The system shall allow users to change the language without any preconditions.,FR
+REQ-DS-02374,The user shall be able to add their Teacher Name for the class.,FR
+REQ-DS-04734,The system display shall support a minimum resolution of 1024 x 576 pixels.,NFR
+REQ-DS-02985,Third field will be time of task completion.,FR
+REQ-DS-05918,System shall be able to check if the transaction amount adheres to predefined limits and fail the transaction if the amount exceeds the limit.,FR
+REQ-DS-00790,The BE shall be able to perform Fourier Transform the lag set time series.,FR
+REQ-DS-04324,The system shall allow browsing video thumbnails and segments.,FR
+REQ-DS-03004,"Upon utilizing this feature, the system shall display all pending tasks.",FR
+REQ-DS-03567,The system shall allow administrators to edit any member profile.,FR
+REQ-DS-03894,User shall view events and equipment bookings within the group as a lab member.,FR
+REQ-DS-02080,"User shall/will be subject to role-based access control, restricting access based on assigned roles.",NFR
+REQ-DS-05400,The client can register themselves in the system by filling in the required data.,FR
+REQ-DS-03514,An API User shall be able to use data to retrieve data from multiple datasets.,FR
+REQ-DS-01899,System shall enforce access constraints for different types of users.,NFR
+REQ-DS-04788,Database used for record-keeping shall be Oracle version 7.0.,FR
+REQ-DS-03582,"The system shall allow site administrators to set listing fees for ""Other"" courses/events.",FR
+REQ-DS-01945,User shall experience quick and seamless authentication processes facilitated by the application.,NFR
+REQ-DS-03107,The system shall generate reports and visualizations to track progress towards digital wellbeing goals.,FR
+REQ-DS-05091,"The manager shall view sales statistics in various formats such as pie charts, bar graphs, and tabular formats.",FR
+REQ-DS-03164,The system shall allow users to analyze responses through charts and graphs.,FR
+REQ-DS-00769,The user shall be able to choose between returning to the main menu or exiting the game.,FR
+REQ-DS-05107,The user shall be able to register on the website before booking tickets.,FR
+REQ-DS-02489,A chef shall be able to accept a customers order item through a display.,FR
+REQ-DS-03256,"The system shall allow users to create, join, and leave groups for shared expense management.",FR
+REQ-DS-01383,Any element of the system will take no longer than 10-seconds to restart.,NFR
+REQ-DS-01350,Customer shall be able to use offers available for the restaurants they have selected.,FR
+REQ-DS-04405,Only admin-users shall set up user profiles and allocate users to groups.,NFR
+REQ-DS-01070,Staff members shall be able to complete a set of tasks in a timely manner.,NFR
+REQ-DS-00892,"The automated diagnostic tool shall input sensed data in real time from data acquisition devices and the HVAC unit under diagnosis as well as from data files containing previously acquired data, though not simultaneously.",FR
+REQ-DS-05119,The system's overall stability shall depend on the stability of its components and underlying operating system.,NFR
+REQ-DS-01552,The system shall highlight and provide a numerical value for the predicted price of the next trading day.,FR
+REQ-DS-00274,The user shall be able to create an account by providing credentials and activating it via email.,FR
+REQ-DS-01575,"User shall be able to load the game within 1 minute on subsequent visits, benefiting from cache optimization.",NFR
+REQ-DS-01779,Admins shall facilitate communication between delivery boys and restaurants for order replacements or cancellations.,FR
+REQ-DS-00653,The TCS shall have the functionality to transmit UAV mission plans to other TCSs.,FR
+REQ-DS-01849,User shall/will be able to have different levels of access and privileges based on their roles.,FR
+REQ-DS-00614,"Any user who creates or joins a game will be able to upload their own JPEG or GIF image that they wish to have displayed above their name, if they do not wish to use a preset icon.",FR
+REQ-DS-04626,System shall be extensible to accommodate future features and customizations.,NFR
+REQ-DS-05565,Employee shall maintain daily logs.,FR
+REQ-DS-03648,The system shall allow staff members to assign applications for detailed review.,FR
+REQ-DS-05126,"User shall be able to initialize parameters (t, k, m, n) and set the parameters during the initialization process.",FR
+REQ-DS-03356,System shall display History section showing all the videos watched by the user.,FR
+REQ-DS-00115,"In the Twitter settings menu, the user shall be able to save their username and password for Twitter.",FR
+REQ-DS-00199,User shall be able to like a certain topic.,FR
+REQ-DS-01850,System shall be able to assign different levels of access and privileges to users based on their roles.,FR
+REQ-DS-03493,"A Data Consuming User shall be able to filter, sort, and aggregate data.",FR
+REQ-DS-05819,System shall define user roles and access permissions.,FR
+REQ-DS-01664,"Both employees and clients will be able to update personal details anytime, with clients also able to update booking details.",FR
+REQ-DS-02695,"Alternatively, the user can push the up, down, right, and left keys of the keyboard to move the activity.",FR
+REQ-DS-02556,Accounts managers shall consult with the administrator regarding payment details for updating the database.,FR
+REQ-DS-05391,The system must be bolted to the floor to prevent theft.,NFR
+REQ-DS-05347,"Users shall be able to log in using a username and password, which must match the authentication criteria. If the login is successful, users can access the provided functionalities of the system.",FR
+REQ-DS-00181,System shall display a set of events that match the search input by date or subject (as described in requirements UCAR406 and UCAR407).,FR
+REQ-DS-04858,Administrator shall be able to arrange videos in their respective categories in the database.,FR
+REQ-DS-04270,The system shall allow researchers to view thumbnails and film clips.,FR
+REQ-DS-01588,"Characters in the ingame screen shall be able to move in up, down, right, and left directions.",FR
+REQ-DS-02406,The system shall utilize AI to analyze surroundings and select the appropriate lens based on the analysis.,FR
+REQ-DS-02995,System shall prevent saving edits to a task unless a task is selected first.,FR
+REQ-DS-02948,"User shall have access to an ""Edit application status"" page.",FR
+REQ-DS-03018,This software shall be a great means for the ecosystem.,NFR
+REQ-DS-03437,Data user shall access two additional fields from the FPDS data pull.,FR
+REQ-DS-01043,The product shall be able support 1000 simultaneous users.,NFR
+REQ-DS-00871,"I/O, communications, and processing hardware shall be easily expandable, reconfigurable, augmentable and replaceable to meet increasing data traffic and processing demands imposed by EVLA science, Correlator changes, and availability of new hardware.",NFR
+REQ-DS-02167,Statistics on resume views by interested employers shall be available.,FR
+REQ-DS-01161,"The Disputes System shall record user names and dates for all case-related activities, maintaining detailed audit history.",FR
+REQ-DS-04816,Cash vault shall be secured with a combination lock.,NFR
+REQ-DS-00812,"The system shall provide status reports on the functional state of internal system components such as processes, processors, and networks.",FR
+REQ-DS-05714,"User shall access the system 24/7, with planned maintenance during off-peak hours.",NFR
+REQ-DS-02917,User shall select the type of passport (Tatkaal or normal).,FR
+REQ-DS-04661,Customer shall be able to give ratings for the restaurant and delivery boy.,FR
+REQ-DS-00127,System shall be able to navigate from a building to a POI on the campus.,FR
+REQ-DS-04338,The system shall prompt scientists to review subjects based on annotations and comments.,FR
+REQ-DS-03668,The system shall allow staff members to assign plans for review to appropriate plan reviewers.,FR
+REQ-DS-00419,System shall be deployable and operational in under one minute upon USB insertion.,NFR
+REQ-DS-05596,System shall rebuild all cached data during every startup for availability.,NFR
+REQ-DS-01395,"User shall be able to send various forms of messages, including text, media, and calls, with recent conversations displayed.",FR
+REQ-DS-01679,System shall be able to check their rosters.,FR
+REQ-DS-00819,"All math/science application software shall take optimal advantage of all language, compiler, and system computational features and resources to reduce run times to the minimum practical level.",NFR
+REQ-DS-01408,Application shall detect contacts from the user's phone book and automatically add WhatsApp contacts to the user's contact list.,FR
+REQ-DS-01969,"User shall easily maintain the system due to its modular design, especially concerning frequent changes in database contents.",NFR
+REQ-DS-04677,Delivery boy shall be able to reach the restaurant and check order details.,FR
+REQ-DS-04859,The subscription will end if the user does not respond to the subscription package within the allotted time frame.,NFR
+REQ-DS-01746,"During billing mode, the app shall represent cash payment for items ordered.",FR
+REQ-DS-00328,"The system shall be able to find the best route for multiple addresses, including fixing any gaps between them.",FR
+REQ-DS-04655,"When in billing mode, app shall display a representation of a cash payment for the item ordered.",FR
+REQ-DS-03503,A Platform Administrator shall be able to hide public datasets.,FR
+REQ-DS-05907,User shall be able to handle invalid passwords.,FR
+REQ-DS-04960,The system shall provide a high-quality display with accurate color reproduction and high resolution.,NFR
+REQ-DS-02970,"HPIMS shall generate patient reports including patient’s PHN, name, ward name, bed number, and assigned doctor’s name.",FR
+REQ-DS-01771,Delivery boys shall receive ratings from customers.,FR
+REQ-DS-03707,The system shall allow camp administrators to send bi-weekly feedback reports to parents.,FR
+REQ-DS-01459,System shall generate alert messages for upcoming or overdue vaccination dates.,FR
+REQ-DS-03294,The user interface should prioritize simplicity and avoid cluttering with excessive information to enhance usability.,NFR
+REQ-DS-04737,User shall be able to perform validity checks on inputs.,FR
+REQ-DS-00816,The BE System shall be capable of delivering an output data stream to the e2e System of a minimum of 25 MBytes/sec,NFR
+REQ-DS-02310,System will display a message confirming that the password has been created successfully.,FR
+REQ-DS-04915,The system shall have at least 2 GB of available hard-disk space to install Adobe Illustrator.,FR
+REQ-DS-04057,System shall be able to store metadata accurately and comprehensively.,FR
+REQ-DS-01206,The search radius shall be between 1 and 30 miles.,FR
+REQ-DS-02640,The system shall provide a structured experience for users to navigate through commands tailored to their needs.,FR
+REQ-DS-01188,The product shall interface with the ChoiceParts system once per day at approximately 1:00 AM.,NFR
+REQ-DS-00139,System shall be able to search for the to-location by the address of a building.,FR
+REQ-DS-00600,The MultiMahjongServer will allow connections from MultiMahjongClients and communicate with them using IP.,FR
+REQ-DS-01646,The system shall accurately display the average rating for each content item.,FR
+REQ-DS-04459,System shall automatically compress large image files.,NFR
+REQ-DS-02047,User shall/will be able to request one or more consultation requests linked back to a specialty.,NFR
+REQ-DS-01980,System shall ensure user data and personal information are securely managed and protected within the VivaVideo app.,NFR
+REQ-DS-01238,The product must work with most database management systems (DBMS) on the market whether the DBMS is colocated with the product on the same machine or is located on a different machine on the computer network.,NFR
+REQ-DS-03199,The system shall have a user-friendly interface that is easy to learn and navigate for both staff and patients (if applicable).,NFR
+REQ-DS-01898,Normal users will have read-only access to information except for their personal and some other specified information.,NFR
+REQ-DS-00286,The user shall be able to approve an exchange offer from another user.,FR
+REQ-DS-01345,Customer shall able to receive delivery boy details once order picked up,FR
+REQ-DS-04032,System shall ensure visibility of all sponsored events for user engagement.,NFR
+REQ-DS-05069,Verification department employees shall verify and approve or disapprove applications upon receiving requests from agents.,FR
+REQ-DS-00399,System shall be able to construct an Ajax Response to update the home page with links to nearby sites.,FR
+REQ-DS-03052,The system shall document who can enter data by defining user roles and permissions.,FR
+REQ-DS-05309,The system shall offer a customer support portal for managing customer relationships and resolving post-service issues.,FR
+REQ-DS-04731,The system shall function on a processor with a minimum clock speed of 1.6 GHz.,NFR
+REQ-DS-02603,"User shall be able to rely on the system's redundancy measures, ensuring the reliability of data storage and minimizing the risk of data loss.",NFR
+REQ-DS-02069,"System shall provide tools for tracking and analyzing sales performance, including metrics such as total sales, top-selling medicines, and sales trends over time.",FR
+REQ-DS-05796,System shall prioritize security and performance as the two primary objectives.,NFR
+REQ-DS-01177,User help resources should be accessible within 90% of the system.,NFR
+REQ-DS-04158,System shall provide functionality for depositors to apply embargoes to datasets.,FR
+REQ-DS-03198,"The system shall be scalable to accommodate future growth in the number of users, medicines, and transactions.",NFR
+REQ-DS-04072,User shall be able to prepopulate DMP information from other institutional systems.,FR
+REQ-DS-03258,"The system shall offer functionalities for users to mark debts as settled (e.g., by cash payment) and update balances accordingly.",FR
+REQ-DS-03007,The user shall choose their desired alarm tone.,FR
+REQ-DS-02395,The system shall acknowledge user actions with confirmation to ensure application reliability for business purposes.,NFR
+REQ-DS-00533,The system shall allow administrators and authorized inventory group members to view and approve pending requests at their level.,FR
+REQ-DS-01259,"The product shall be able to process 10,000 transactions per hour within two years of its launch.",NFR
+REQ-DS-00885,The system shall support secure communication through message encryption and decryption techniques.,NFR
+REQ-DS-03172,The system shall be able to handle a high volume of form submissions without performance degradation.,NFR
+REQ-DS-04819,System shall have self-monitoring to detect faults periodically.,NFR
+REQ-DS-04077,System shall provide information on the responsible party for each DMP.,FR
+REQ-DS-00466,"The system shall be able to handle user interfaces that accept and display information like currency, measurements, dates, and addresses in a way that is clear for users from various backgrounds.",NFR
+REQ-DS-00157,Administrators shall be able to remove vertices from paths used in the route planner.,FR
+REQ-DS-04374,System shall facilitate the interface between police personnel and the courts.,FR
+REQ-DS-04099,System shall facilitate data citation and attribution to promote research integrity and transparency.,NFR
+REQ-DS-05162,User shall connect the device to a network to use the application.,FR
+REQ-DS-03617,A CMS administrator shall have roles to assign to users.,FR
+REQ-DS-03163,The system shall allow users to collect responses and view submitted data.,FR
+REQ-DS-01176,The product must be easily learnable within two days of onsite training for Adjusters and Collision Estimators.,NFR
+REQ-DS-01762,Restaurants shall receive notifications once orders are delivered.,FR
+REQ-DS-05504,The website shall offer forms and downloads so users can request certificates online.,FR
+REQ-DS-01919,"Users of the system include four categories: Student (Transaction and view), Faculty (Transaction and view), Author (view), Publisher (view).",FR
+REQ-DS-01140,"User shall be able to access the Disputes System, which must be accessible to both internal and external users.",FR
+REQ-DS-02678,System shall adhere to specified quality attributes such as security and portability.,NFR
+REQ-DS-03669,"The system shall allow staff members to review plans for compliance and approve, fail, or deny them, recording any conditions or corrections needed.",FR
+REQ-DS-01686,System shall be able to allow clients to view driver history.,FR
+REQ-DS-01896,System shall not cause harm to human users during its use.,NFR
+REQ-DS-00877,The system shall utilize a modular design with hot-swappable components for maximum repairability and uptime.,NFR
+REQ-DS-04291,System shall define accepted data formats for deposit.,FR
+REQ-DS-00661,"TCS shall provide the capability for the operator to retrieve a mission plan for viewing, modification, as well as deletion at the operator's discretion [SSS071], and allow the operator to save the mission plan under a different name, for future retrieval",FR
+REQ-DS-00351,"User shall be able to access the Catalogue PDF, 360° videos, and contact a representative using the sub navigation icons.",NFR
+REQ-DS-03555,The system shall integrate with various data analysis and storage platforms.,NFR
+REQ-DS-00242,User shall be able to add restaurant information by completing mandatory fields and optionally adding additional details.,FR
+REQ-DS-02299,"User will input their card details including card number, card type, expiration date, security code, and billing address, and then click on the link card option.",FR
+REQ-DS-05826,"Upon start of the roll program, roll information shall be displayed on the instructor’s Pocket PC within 10 seconds.",NFR
+REQ-DS-02708,"User shall be able to zoom in or out by clicking the ""Zoom In"" or ""Zoom Out"" button.",FR
+REQ-DS-04754,System shall process up to 50 tasks per second to maintain operational efficiency.,NFR
+REQ-DS-03777,The system shall comply with XHTML and CSS standards (Developer).,NFR
+REQ-DS-05789,User shall apply for a job by filling out the necessary details in the respective form.,FR
+REQ-DS-02575,"The website of V Mart shall be user-friendly for non-technical users, regardless of its size.",NFR
+REQ-DS-00802,The BE shall be able to alter the priority of any of the BE tasks,FR
+REQ-DS-02337,The user shall be able to select a subject from the Subject drop-down menu when creating a new task.,FR
+REQ-DS-02796,System shall ensure data security and privacy by encrypting emails and implementing robust authentication mechanisms.,FR
+REQ-DS-05830,An antivirus has been installed on the system for safety purposes as it is connected via LAN and MAN.,NFR
+REQ-DS-03712,The system shall allow camp administrators to quickly log daily attendance.,FR
+REQ-DS-02807,"Accessibility features, such as keyboard navigation and screen reader compatibility, shall be implemented to cater to users with disabilities.",NFR
+REQ-DS-01604,Requirement and change management shall be utilized during the development phase.,NFR
+REQ-DS-05106,The system shall be available for use from the supermarket's opening time to its closing time.,NFR
+REQ-DS-03310,User shall confirm orders from the shopping bag to proceed with the purchase.,FR
+REQ-DS-05703,JavaScript functions process user actions and update the cart display accordingly.,FR
+REQ-DS-02886,Interaction between users must be secured to maintain privacy.,NFR
+REQ-DS-01318,Users shall be able to completely reset their lists of classes and assignments.,FR
+REQ-DS-04073,System shall automatically populate relevant DMP fields with existing institutional data.,FR
+REQ-DS-02132,Multiple registration accounts for colleagues shall be set up.,FR
+REQ-DS-02782,"System shall analyze emails and categorize them automatically into primary, social, or promotional categories.",FR
+REQ-DS-01407,"User shall be able to register for the application using a valid phone number, with a prompt upon installing the app.",FR
+REQ-DS-01246,The product shall be easy to use. 90% of users will be able to successfully reserve a conference room within 5 minutes of product use.,NFR
+REQ-DS-02187,"Reports on total system sales, jobs, job seekers, accounting, and order history shall be viewable.",FR
+REQ-DS-02523,System shall require customers to log in with a valid ID to access the site.,FR
+REQ-DS-02218,User shall expect the database to update data in less than 1 second to ensure timely information retrieval.,NFR
+REQ-DS-01530,System shall cross-verify entered credentials with the stored user database.,FR
+REQ-DS-05236,The system shall provide security by encrypting user passwords stored in the database and protecting against online threats such as SQL injection attacks.,NFR
+REQ-DS-01673,"System shall be able to print reports annually, weekly, and daily based on selected time frames.",FR
+REQ-DS-04849,"User shall be able to receive help with queries by clicking ""Help"" and receive assistance.",FR
+REQ-DS-04173,User shall be able to specify disposal policies for datasets to ensure compliance with laws and agreements.,FR
+REQ-DS-01235,The ratings shall include categories for attempted use of recycled parts and actual use of recycled parts.,FR
+REQ-DS-04984,Students shall be able to choose courses.,FR
+REQ-DS-05510,The initial load time of the product shall vary based on the internet connection strength and the media used for access.,NFR
+REQ-DS-01911,System shall provide an Inbox feature for administrators to view all requests made by active members.,FR
+REQ-DS-05792,System shall search the database for available job options matching the user's preferences and display them along with the company's contact details.,FR
+REQ-DS-00925,The system shall only enable the Logout menu item in the File menu if the current user is authenticated as the administrator.,FR
+REQ-DS-04831,User shall be able to receive an error message if the server is busy or under maintenance.,FR
+REQ-DS-00714,The TCS shall permit the operator to control the payload using all methods supported by the payload installed in the selected AV,NFR
+REQ-DS-01793,"The server shall be capable of supporting an arbitrary number of active orders, meaning no orders shall be lost under any circumstances.",NFR
+REQ-DS-02189,Resumes will be imported directly from an existing database.,FR
+REQ-DS-05595,User shall integrate error prevention measures such as sanity checks and limiting free-text input for usability.,NFR
+REQ-DS-03678,The system shall allow staff members to send or post citations and fines.,FR
+REQ-DS-01902,"The LMS shall allow searching for items by author, title, or keywords.",FR
+REQ-DS-00476,The system shall experience no more than <x> unplanned outages in a rolling three-month period.,NFR
+REQ-DS-05349,"Admin shall be able to manage teams, including creating a unique ID for each team and managing team details.",FR
+REQ-DS-05179,"User shall be able to delete their account, which will update the database and notify the server.",FR
+REQ-DS-00266,The system shall be able to display the web-portal in Swedish upon administrator selection.,FR
+REQ-DS-02118,The search resume facility shall be activated by paying a fee based on requirements.,FR
+REQ-DS-03076,The system shall allow the user to view their schedule.,FR
+REQ-DS-02893,System shall verify the entered credentials in the database.,FR
+REQ-DS-02487,A tablet shall allow a waiter to process a payment using cash.,FR
+REQ-DS-05327,System shall run on devices with less than 1GB RAM.,NFR
+REQ-DS-00518,"System shall allow authorized personnel within the same department to update the database directly, adhering to established access controls.",FR
+REQ-DS-05192,User shall receive a message when network coverage is low.,NFR
+REQ-DS-02163,Multiple qualifications and experiences will be added and submitted.,FR
+REQ-DS-02842,System shall not store any cookies containing user passwords on the customer’s computer.,NFR
+REQ-DS-01732,A surface app page shall offer customers all system functionality.,FR
+REQ-DS-00665,"The Flight Route Plan, as a minimum, shall include AV flight path information, Loss of Link plan, AV VCR control tasking (if applicable to the selected AV), and data link control information.",FR
+REQ-DS-04053,System shall ensure easy access to the registration form from the menu.,NFR
+REQ-DS-02188,Full lists of job seekers and employers along with their contact information can be printed.,FR
+REQ-DS-00052,Users shall be able to configure settings both locally on the device and remotely.,NFR
+REQ-DS-03618,A content editor shall be able to easily find content to edit.,FR
+REQ-DS-05658,System shall display the most frequently searched items by the user in the profile.,FR
+REQ-DS-01366,Admin shall be able to manage restaurant details,FR
+REQ-DS-04893,The system shall support the addition of chords to a score.,FR
+REQ-DS-05362,System shall display the initial screen if no cash card is present.,FR
+REQ-DS-01156,The Disputes System must provide viewing capability for existing dispute cases.,FR
+REQ-DS-00792,The BE shall combine the finished spectra with meta and auxiliary data to form suitably formatted output data sets.,FR
+REQ-DS-02366,The user shall be able to add a New Academic Year.,FR
+REQ-DS-02247,Crafty kids corner shall incorporate interactive elements to keep children interested and entertained.,NFR
+REQ-DS-05853,The system shall provide a basic help guide to aid in usability.,FR
+REQ-DS-02001,The system shall ensure a high level of security and integrity for the data it holds.,NFR
+REQ-DS-05341,Admin shall monitor the whole process.,NFR
+REQ-DS-02096,User shall search for locations using city names for weather information.,FR
+REQ-DS-03719,The system shall allow camp administrators to delete campers from the database.,FR
+REQ-DS-02320,The user shall have the option to sign up using their Office 365 account.,FR
+REQ-DS-02350,"The user shall be able to create a new exam by tapping the ""Add"" button.",FR
+REQ-DS-01275,All sessions shall be associated with a single EDGE project.,FR
+REQ-DS-03385,User shall be able to view the operating hours of each recycling facility.,FR
+REQ-DS-01390,User shall be able to create and customize a personal emoji avatar through Bitmoji integration.,FR
+REQ-DS-05516,The server must have UPS support with at least 8 hours of backup power in case of power failure.,NFR
+REQ-DS-05185,System shall provide visual feedback in the form of infographics such as numbers and progress bars for profile changes.,FR
+REQ-DS-01025,The product shall have a consistent color scheme and fonts.,NFR
+REQ-DS-01815,System shall integrate with Netbeans IDE 7.2.1 for Java development and MySQL Query Browser for database management.,NFR
+REQ-DS-04634,"User shall be able to register with ID, password, PIN, email, and ticket number. (Level 1)",FR
+REQ-DS-02290,The system shall be accessible on mobile browsers as well.,NFR
+REQ-DS-00990,"Drexel staff's office locations, contact information, and positions will have accuracy greater than 70%.",NFR
+REQ-DS-00655,"The TCS shall be capable of storing a minimum of 500 mission plans under unique names to allow for later
+retrieval.",FR
+REQ-DS-00636,The CO must play moves according to the Chinese rules of Mahjong.,FR
+REQ-DS-00235,User shall be able to log in as a restaurant owner upon successful authentication.,FR
+REQ-DS-04098,System shall offer customization options to adapt to different project requirements and workflows.,NFR
+REQ-DS-00078,The system will be designed in such a way that the algorithms for the four main units will be able to be easily swapped out.,NFR
+REQ-DS-02657,User shall be able to report errors encountered during system use.,NFR
+REQ-DS-01061,The product shall allow the user to save the property search results.,FR
+REQ-DS-05759,"User shall access a limited feature set for offline usage, prioritizing essential translation functionalities for usability and efficiency.",FR
+REQ-DS-03891,User shall move multiple files using the Neurohub file browser.,FR
+REQ-DS-01122,A Program Administrator/Nursing Staff Member shall be able to add a new nursing student to the system.,FR
+REQ-DS-05270,System shall display the number of people who have given up LPG subsidy.,NFR
+REQ-DS-04162,System shall support privileged access management to enable efficient collaboration among depositors and collaborators.,FR
+REQ-DS-01062,The system shall be easy to use by the Program Administrators/Nursing Staff Members.,NFR
+REQ-DS-03116,"The system shall allow users to import and manage various data formats like images, videos, and audio files within presentations.",FR
+REQ-DS-04453,System shall auto-detect and block IP DOS attacks.,NFR
+REQ-DS-00102,The default language of insErtion will be English.,FR
+REQ-DS-05475,"Upon successful validation, the user shall be registered to the system.",FR
+REQ-DS-00195,User shall be able to search the book by a certain word or phrase.,FR
+REQ-DS-02398,The system shall prioritize WiFi connection and automatically switch to mobile network when WiFi is unavailable.,NFR
+REQ-DS-01689,The system shall authenticate users based on username and password.,FR
+REQ-DS-02394,"The user shall be able to navigate the app intuitively, without requiring external instructions.",NFR
+REQ-DS-00994,The system shall have a MDI form that allows for the viewing of the graph and the data table.,FR
+REQ-DS-02617,System shall update the car status accordingly.,FR
+REQ-DS-04789,System shall employ dial-up POS with central server using TCP/IP communication protocol.,FR
+REQ-DS-01213,The estimator shall search for available recycled parts using a list of preferred parts suppliers.,FR
+REQ-DS-01424,User shall enjoy maximal security measures implemented in the application to prevent unauthorized access.,NFR
+REQ-DS-02928,User shall check the current status of their application using the application number.,FR
+REQ-DS-03141,The system shall allow users to create new spreadsheets or open existing ones.,FR
+REQ-DS-00587,The system shall be able to exchange data with the MultiMahjongServer without encryption as the data is considered non-sensitive and poses no risk to system integrity.,NFR
+REQ-DS-05075,The system shall communicate with the database through a wireless Ethernet system.,FR
+REQ-DS-01869,User shall/will be able to ensure acceptable response times even during peak times.,NFR
+REQ-DS-04388,"System shall allow creation, updating, and deletion of state-specific data elements such as acts, sections, castes, tribes, etc.",FR
+REQ-DS-04709,The server shall have a higher clock frequency than core count (preferred).,NFR
+REQ-DS-03823,The system shall allow curators to configure deposit forms specific to collections.,FR
+REQ-DS-04914,Adobe Illustrator shall function with a minimum of 8 GB of RAM.,FR
+REQ-DS-01197,The product shall be free of computer viruses.,NFR
+REQ-DS-03208,The system interface shall be user-friendly and easy to navigate for users with varying technical skills.,NFR
+REQ-DS-03192,The system shall handle high volumes of concurrent users without performance degradation.,NFR
+REQ-DS-01377,The system shall be able to display a menu at all times to facilitate manual order taking should the need arise.,NFR
+REQ-DS-03818,The system shall ensure downloaded data is reliable and usable.,FR
+REQ-DS-04288,Curators shall manage user groups and permissions.,FR
+REQ-DS-04009,System shall provide a user-friendly interface for viewing sponsors and user profiles.,NFR
+REQ-DS-01462,System shall provide pop-up messages prompting profile updates for children.,FR
+REQ-DS-04911,Adobe Illustrator shall support both Intel and AMD processors.,FR
+REQ-DS-00234,Users shall be able to log in only after receiving a confirmation email following verification of their restaurant owner application.,FR
+REQ-DS-04898,The system shall provide temporary color-coded highlighting to show edits and changes made by other users.,FR
+REQ-DS-01923,"System shall provide an interface for users to request non-availability of a book, which the administrator can accept or reject.",FR
+REQ-DS-04860,"The system shall display ""video not found"" if the requested video is not available.",NFR
+REQ-DS-03509,An API User shall be able to request dynamic polygons based on queries.,FR
+REQ-DS-04762,"User shall have a login screen to enter username, pin, and account number.",FR
+REQ-DS-00006,"The Facebook ""like"" interface shall be according to the Facebook Guidelines.",NFR
+REQ-DS-00228,The user shall be able to refine their search directly on the same page if their initial search yields no results.,FR
+REQ-DS-04543,User shall be able to validate their cash card for transactions.,FR
+REQ-DS-05643,User shall notify the user when no matching product is found on the search.,FR
+REQ-DS-04569,"Commercial databases and application servers shall maintain the system's database, with efficient reinitialization in case of failure.",NFR
+REQ-DS-05151,User shall have a registered phone number for software registration.,NFR
+REQ-DS-03934,User shall be able to purchase ALFRED at an affordable price.,FR
