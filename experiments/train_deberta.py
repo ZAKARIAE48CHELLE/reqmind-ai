@@ -61,7 +61,7 @@ def parse_args():
     parser.add_argument("--epochs", type=int, default=5, help="Number of training epochs")
     parser.add_argument("--batch_size", type=int, default=16, help="Per-device batch size")
     parser.add_argument("--lr", type=float, default=2e-5, help="Learning rate")
-    parser.add_argument("--warmup_ratio", type=float, default=0.1, help="Warmup ratio")
+    parser.add_argument("--warmup_steps", type=int, default=100, help="Warmup steps")
     parser.add_argument("--weight_decay", type=float, default=0.01, help="Weight decay")
     parser.add_argument("--patience", type=int, default=2, help="Early stopping patience")
     parser.add_argument("--max_length", type=int, default=96, help="Max sequence length")
@@ -177,14 +177,14 @@ def main():
 
     training_args = TrainingArguments(
         output_dir=str(Path(args.output_dir) / "checkpoints"),
-        evaluation_strategy="epoch",
+        eval_strategy="epoch",
         save_strategy="epoch",
         learning_rate=args.lr,
         per_device_train_batch_size=args.batch_size,
         per_device_eval_batch_size=args.batch_size * 2,
         num_train_epochs=args.epochs,
         weight_decay=args.weight_decay,
-        warmup_ratio=args.warmup_ratio,
+        warmup_steps=args.warmup_steps,
         metric_for_best_model="macro_f1",
         greater_is_better=True,
         load_best_model_at_end=True,
@@ -337,7 +337,7 @@ def main():
             "epochs": args.epochs,
             "learning_rate": args.lr,
             "batch_size": args.batch_size,
-            "warmup_ratio": args.warmup_ratio,
+            "warmup_steps": args.warmup_steps,
             "weight_decay": args.weight_decay,
             "max_length": args.max_length,
             "early_stopping_patience": args.patience,
