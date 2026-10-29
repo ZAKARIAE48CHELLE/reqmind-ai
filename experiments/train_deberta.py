@@ -60,14 +60,30 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Fine-tune DeBERTa-v3-small for FR/NFR classification.")
     parser.add_argument("--epochs", type=int, default=5, help="Number of training epochs")
     parser.add_argument("--batch_size", type=int, default=16, help="Per-device batch size")
-    parser.add_argument("--lr", type=float, default=2e-5, help="Learning rate")
+    parser.add_argument("--lr", type=float, default=1e-5, help="Learning rate (conservative for DeBERTa-v3)")
     parser.add_argument("--warmup_steps", type=int, default=100, help="Warmup steps")
     parser.add_argument("--weight_decay", type=float, default=0.01, help="Weight decay")
+    parser.add_argument("--max_grad_norm", type=float, default=1.0, help="Max gradient norm")
     parser.add_argument("--patience", type=int, default=2, help="Early stopping patience")
     parser.add_argument("--max_length", type=int, default=96, help="Max sequence length")
     parser.add_argument("--model_name", type=str, default="microsoft/deberta-v3-small")
     parser.add_argument("--output_dir", type=str, default=str(OUTPUT_MODEL_DIR))
     return parser.parse_args()
+
+
+class NanDetectorCallback(TrainerCallback):
+    """Fail-fast callback that immediately halts if any training or validation loss is non-finite."""
+    def on_log(self, args, state, control, logs=None, **kwargs):
+        if logs is not None and "loss" in logs:
+            loss = logs["loss"]
+            if not np.isfinite(loss):
+                raise ValueError(f"FATAL: Non-finite training loss ({loss}) detected at step {state.global_step}! Aborting.")
+
+    def on_evaluate(self, args, state, control, metrics=None, **kwargs):
+        if metrics is not None and "eval_loss" in metrics:
+            eval_loss = metrics["eval_loss"]
+            if not np.isfinite(eval_loss):
+                raise ValueError(f"FATAL: Non-finite validation loss ({eval_loss}) detected at step {state.global_step}! Aborting.")
 
 
 class MetricLoggerCallback(TrainerCallback):
@@ -169,7 +185,12 @@ def main():
         num_labels=2,
         id2label=ID2LABEL,
         label2id=LABEL2ID,
+        torch_dtype=torch.float32,
     )
+    for name, p in model.named_parameters():
+        assert p.dtype == torch.float32, f"Parameter {name} is {p.dtype}, expected float32!"
+        assert torch.isfinite(p).all(), f"Parameter {name} has NaN/Inf initial values!"
+    print("[*] Parameter dtype assertion: ALL PARAMETERS ARE FLOAT32 AND FINITE.")
 
     # 4. Training Arguments
     metric_callback = MetricLoggerCallback()
@@ -185,10 +206,12 @@ def main():
         num_train_epochs=args.epochs,
         weight_decay=args.weight_decay,
         warmup_steps=args.warmup_steps,
+        max_grad_norm=args.max_grad_norm,
         metric_for_best_model="macro_f1",
         greater_is_better=True,
         load_best_model_at_end=True,
         fp16=False,
+        bf16=False,
         logging_strategy="epoch",
         save_total_limit=2,
         report_to="none",
@@ -203,7 +226,7 @@ def main():
         processing_class=tokenizer,
         data_collator=data_collator,
         compute_metrics=compute_metrics,
-        callbacks=[early_stopping, metric_callback],
+        callbacks=[early_stopping, metric_callback, NanDetectorCallback()],
     )
 
     # 5. Train
@@ -324,6 +347,20 @@ def main():
     print(f"\n[*] Exporting final fine-tuned model and tokenizer to {args.output_dir}...")
     trainer.save_model(args.output_dir)
     tokenizer.save_pretrained(args.output_dir)
+
+    # 10b. Reload verification in fresh session
+    print("[*] Validating model export in fresh session...")
+    reloaded_tok = AutoTokenizer.from_pretrained(args.output_dir)
+    reloaded_model = AutoModelForSequenceClassification.from_pretrained(args.output_dir)
+    reloaded_model.eval()
+    test_texts = ["The user shall be able to upload files.", "Response time shall be under 2s."]
+    with torch.no_grad():
+        in1 = tokenizer(test_texts, padding=True, truncation=True, return_tensors="pt").to(device)
+        in2 = reloaded_tok(test_texts, padding=True, truncation=True, return_tensors="pt").to(reloaded_model.device)
+        diff = torch.abs(model(**in1).logits.cpu() - reloaded_model(**in2).logits.cpu()).max().item()
+        print(f"[*] Max logit discrepancy between live and reloaded model: {diff:.6e}")
+        assert diff < 1e-4, f"Reload verification failed: discrepancy={diff}"
+    print("[*] Reload verification PASSED: Saved model reproduces identical outputs.")
 
     # 11. Results Summary JSON
     summary = {
