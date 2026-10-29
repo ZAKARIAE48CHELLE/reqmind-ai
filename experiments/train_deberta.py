@@ -188,7 +188,7 @@ def main():
         metric_for_best_model="macro_f1",
         greater_is_better=True,
         load_best_model_at_end=True,
-        fp16=use_cuda,
+        fp16=False,
         logging_strategy="epoch",
         save_total_limit=2,
         report_to="none",
