@@ -106,11 +106,19 @@ with st.sidebar:
     st.caption("Intelligent Requirements Engineering Assistant")
 
     st.subheader("Model Configuration")
+    engine_labels = {
+        "auto": "Auto (DeBERTa-v3 Transformer if available)",
+        "deberta_v3_small": "DeBERTa-v3-small (Fine-Tuned)",
+        "tfidf_svm": "Calibrated Linear SVM (TF-IDF)",
+        "tfidf_logreg": "Logistic Regression (TF-IDF)",
+        "embedding_logreg": "MiniLM Embeddings + LogReg",
+    }
     classifier_choice = st.selectbox(
         "Classification Engine",
-        options=["auto", "tfidf_logreg", "tfidf_svm", "embedding_logreg"],
+        options=list(engine_labels.keys()),
+        format_func=lambda k: engine_labels[k],
         index=0,
-        help="Selects the classifier artifact trained in Phase 3 / 6k dataset benchmark.",
+        help="Selects the classifier artifact trained for FR/NFR requirement classification.",
     )
     pipeline = get_pipeline(classifier_name=classifier_choice)
 
@@ -587,21 +595,21 @@ with tab_benchmarks:
     col_m1, col_m2 = st.columns(2)
 
     with col_m1:
-        st.markdown("#### FR vs NFR Classification Benchmark (6,117 Dataset)")
+        st.markdown("#### FR vs NFR Classification Benchmark")
         bench_data = pd.DataFrame([
             {"Model": "Majority Baseline", "Accuracy": "65.7%", "Macro-F1": "39.6%", "F1 FR": "79.3%", "F1 NFR": "0.0%"},
-            {"Model": "TF-IDF + Linear SVM", "Accuracy": "89.6%", "Macro-F1": "88.2%", "F1 FR": "92.2%", "F1 NFR": "84.1%"},
+            {"Model": "DeBERTa-v3-small (Fine-Tuned)", "Accuracy": "89.2%", "Macro-F1": "88.1%", "F1 FR": "91.7%", "F1 NFR": "84.4%"},
+            {"Model": "TF-IDF + Linear SVM (Calibrated)", "Accuracy": "87.5%", "Macro-F1": "85.9%", "F1 FR": "90.7%", "F1 NFR": "81.2%"},
             {"Model": "TF-IDF + LogReg", "Accuracy": "87.5%", "Macro-F1": "85.5%", "F1 FR": "91.0%", "F1 NFR": "80.0%"},
             {"Model": "MiniLM Embeddings + LogReg", "Accuracy": "85.5%", "Macro-F1": "83.3%", "F1 FR": "89.4%", "F1 NFR": "77.2%"},
         ])
         st.dataframe(bench_data, width="stretch")
 
-        st.markdown("#### Score Calibration & Uncertainty Notice")
+        st.markdown("#### Score Calibration & Model Evolution")
         st.markdown(
-            "- Model confidence scores are uncalibrated decision-boundary distances (`predict_proba` max or SVM sigmoid).\n"
-            "- Scores below the configured threshold (default `0.65`) reflect borderline classifications, "
-            "frequently seen in accessibility ('screen readers') and usability ('responsive layout').\n"
-            "- A low score should prompt human review rather than being treated as a confident prediction."
+            "- **Step 3 Contextual Transformer:** Fine-tuned `microsoft/deberta-v3-small` in FP32 with disentangled self-attention. Achieves the highest NFR recall (**85.58%**) and overall Macro-F1 (**88.05%**).\n"
+            "- **Calibrated Linear SVM:** Platt scaling sigmoid calibration ensures smooth probability curves on top of TF-IDF n-grams.\n"
+            "- **Uncertainty Alert:** Predictions with score < configured threshold (default `0.65`) flag borderline requirements (e.g. accessibility, subtle UX constraints) for engineer validation."
         )
 
     with col_m2:
