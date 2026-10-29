@@ -16,6 +16,7 @@ from reqmind.ingestion import ingest_text
 from reqmind.segmentation import segment_document
 from reqmind.preprocessing import strip_accidental_prefix, clean_requirement_for_model
 from reqmind.classification import (
+    TrainedClassifier,
     is_prediction_uncertain,
     format_confidence_display,
     load_default_classifier,
@@ -99,9 +100,8 @@ def test_prefix_stripping_varieties():
 # -----------------------------------------------------------------------------
 def test_fr_nfr_prediction_integration():
     """Evaluate classifier predictions and confidence levels on the 4 manual test examples."""
-    pipeline = ReqMindPipeline()
-    
     # 1. Clear Functional Requirements
+    pipeline = ReqMindPipeline()
     req_roles = "Administrators shall be able to assign roles to employees."
     req_pdf = "Users shall be able to upload PDF documents."
 
@@ -114,21 +114,26 @@ def test_fr_nfr_prediction_integration():
     assert doc_fr.requirements[1].model_score > 0.80
     assert not doc_fr.requirements[1].is_uncertain
 
-    # 2. Borderline Usability / Accessibility Requirements
+    # 2. Borderline Usability / Accessibility Requirements on Calibrated Linear SVM
     req_screen_reader = "The user interface shall support screen readers."
     req_responsive = "The interface shall remain responsive on mobile screens."
 
-    doc_borderline = pipeline.process_text(
+    svm_pipeline = ReqMindPipeline(classifier=TrainedClassifier("tfidf_svm"))
+    doc_borderline = svm_pipeline.process_text(
         f"{req_screen_reader}\n{req_responsive}",
         uncertainty_threshold=0.65,
     )
-    # Both items lie near the decision boundary (confidence < 0.65)
+    # Calibrated SVM places both borderline usability items near the boundary (< 0.65)
     r1, r2 = doc_borderline.requirements[0], doc_borderline.requirements[1]
     assert r1.model_score < 0.65
     assert r1.is_uncertain is True
-
     assert r2.model_score < 0.65
     assert r2.is_uncertain is True
+
+    # Fine-tuned contextual transformer (default) resolves usability as NFR
+    doc_contextual = pipeline.process_text(f"{req_screen_reader}\n{req_responsive}")
+    assert doc_contextual.requirements[0].predicted_label == RequirementLabel.NFR
+    assert doc_contextual.requirements[1].predicted_label == RequirementLabel.NFR
 
 
 # -----------------------------------------------------------------------------

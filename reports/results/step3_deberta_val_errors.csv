@@ -1,0 +1,105 @@
+sample_id,text,label,target,predicted_label,confidence,prob_FR,prob_NFR,is_correct
+REQ-DS-02455,"All system functionality shall be accessible through touch sensitive surface  computers, tablets and displays via simple touch gestures.",FR,0,NFR,0.9375,0.0625,0.9375,False
+REQ-DS-03188,The system shall ensure patient data privacy and comply with HIPAA regulations (if applicable).,FR,0,NFR,0.9745,0.0255,0.9745,False
+REQ-DS-04821,"Administrator shall have authority to set rules, regulations, and policies.",NFR,1,FR,0.5005,0.5005,0.4995,False
+REQ-DS-02622,User shall be able to access the login window for entering username and password.,NFR,1,FR,0.9894,0.9894,0.0106,False
+REQ-DS-05177,User shall be guided through the application functions with a graphics-oriented startup guide.,FR,0,NFR,0.8561,0.1439,0.8561,False
+REQ-DS-00703,"TCS shall provide the capability to monitor specific telemetry elements real-time, and record all telemetry elements for future review and processing.",NFR,1,FR,0.9433,0.9433,0.0567,False
+REQ-DS-00312,The database will use the generic representations from R4.2.2.1 as table names or column headers for easier retrieval of data.,FR,0,NFR,0.5945,0.4055,0.5945,False
+REQ-DS-04605,System shall assign default system data values when necessary.,NFR,1,FR,0.7894,0.7894,0.2106,False
+REQ-DS-01626,System shall be able to provide general recommendations based on recent trends.,NFR,1,FR,0.9408,0.9408,0.0592,False
+REQ-DS-00460,The system shall be able to offer users alternative ways to navigate to the same content.,NFR,1,FR,0.8623,0.8623,0.1377,False
+REQ-DS-00840,Each user shall have a set of system access properties that defines the user's privileges within the system.,NFR,1,FR,0.6295,0.6295,0.3705,False
+REQ-DS-03631,The user research plan shall test the user research plan.,NFR,1,FR,0.8073,0.8073,0.1927,False
+REQ-DS-01484,The content shall be categorized and easily searchable.,FR,0,NFR,0.8013,0.1987,0.8013,False
+REQ-DS-00069,"The system shall allow application maintainers to configure information sources for sub-applications like agenda, news, Facebook, and Twitter.",NFR,1,FR,0.9761,0.9761,0.0239,False
+REQ-DS-00500,The system shall validate email address existence.,NFR,1,FR,0.9852,0.9852,0.0148,False
+REQ-DS-05312,"The system shall integrate with various third-party applications (e.g., SurveyMonkey, Eventbrite) to enhance functionality.",FR,0,NFR,0.577,0.423,0.577,False
+REQ-DS-01282,All user created nodes shall be filtered for profanity and removed if any exists.,FR,0,NFR,0.7487,0.2513,0.7487,False
+REQ-DS-04034,System shall enable sponsors to link attendees to their sponsorship page.,NFR,1,FR,0.9922,0.9922,0.0078,False
+REQ-DS-00774,The product will be available over the Internet via the S2S website.,NFR,1,FR,0.5869,0.5869,0.4131,False
+REQ-DS-02505,A waiter that attempts to log into a second tablet while already logged into another tablet shall be rejected and notified through both tablets.,NFR,1,FR,0.9612,0.9612,0.0388,False
+REQ-DS-05438,The system assumes that each user will have only one role assigned at a time.,FR,0,NFR,0.8269,0.1731,0.8269,False
+REQ-DS-02693,User shall have access to online user documentation and help system.,FR,0,NFR,0.7978,0.2022,0.7978,False
+REQ-DS-04047,System shall enable easy listing of summit agendas.,NFR,1,FR,0.8264,0.8264,0.1736,False
+REQ-DS-01457,User shall toggle between English and Spanish languages using a switch located in the top right corner of every screen for enhanced accessibility.,FR,0,NFR,0.7291,0.2709,0.7291,False
+REQ-DS-05920,System shall be able to implement robust security measures for the central system and associated software to ensure security.,FR,0,NFR,0.9805,0.0195,0.9805,False
+REQ-DS-00445,The System must allow a user to stipulate which other users or groups can access cases.,NFR,1,FR,0.7454,0.7454,0.2546,False
+REQ-DS-00068,The system shall allow authorized users to delete sub-apps and their launchers within the main application.,NFR,1,FR,0.9604,0.9604,0.0396,False
+REQ-DS-04813,"Passwords can include digits, hyphens, and underscores.",NFR,1,FR,0.8639,0.8639,0.1361,False
+REQ-DS-00875,Each user shall have a set of system access properties that defines the users privileges within the system.,NFR,1,FR,0.7481,0.7481,0.2519,False
+REQ-DS-04740,System shall enforce proper sequencing and provide guidance for users.,FR,0,NFR,0.9709,0.0291,0.9709,False
+REQ-DS-01289,Secure sessions will require users to have been guest members before logging in.,FR,0,NFR,0.944,0.056,0.944,False
+REQ-DS-03166,The system shall provide a clear workflow for collecting and analyzing responses.,FR,0,NFR,0.511,0.489,0.511,False
+REQ-DS-00876,The administrator shall have the ability to edit a users system access properties.,NFR,1,FR,0.8106,0.8106,0.1894,False
+REQ-DS-03889,User shall have a managed backup protocol for the Neurohub system as a system administrator.,FR,0,NFR,0.8886,0.1114,0.8886,False
+REQ-DS-05821,System shall enforce access control based on assigned user roles and permissions.,FR,0,NFR,0.9265,0.0735,0.9265,False
+REQ-DS-02836,"System shall ensure users can log out of their accounts securely, preventing unauthorized access.",FR,0,NFR,0.9804,0.0196,0.9804,False
+REQ-DS-00866,The system shall be able to continue processing of all correlator configuration/control events until the queues of parameters are exhausted and external communications are restored,NFR,1,FR,0.9506,0.9506,0.0494,False
+REQ-DS-01787,The system shall perform an authentication process for login and payment through a bank card.,NFR,1,FR,0.8478,0.8478,0.1522,False
+REQ-DS-04157,User shall be able to place data under embargo to protect rights of first use and confidentiality responsibilities.,FR,0,NFR,0.7813,0.2187,0.7813,False
+REQ-DS-02723,Each user shall have a unique username and password to access their account on the site.,FR,0,NFR,0.686,0.314,0.686,False
+REQ-DS-01517,Authorization login shall be required when the software starts.,NFR,1,FR,0.6558,0.6558,0.3442,False
+REQ-DS-05113,"The system shall work on a client-server architecture and require an internet server capable of running PHP applications, supporting commonly used browsers like Internet Explorer.",FR,0,NFR,0.9496,0.0504,0.9496,False
+REQ-DS-03098,Users shall be required to log into the system for all operations except the operations on the login page.,FR,0,NFR,0.6353,0.3647,0.6353,False
+REQ-DS-01481,The system shall securely process online payments using standard payment gateways.,FR,0,NFR,0.8964,0.1036,0.8964,False
+REQ-DS-02200,"User shall receive clear validation messages on both client and server sides, with failed fields highlighted and focus directed to them.",NFR,1,FR,0.532,0.532,0.468,False
+REQ-DS-03443,FABS user shall not receive DABS banner messages and vice versa.,FR,0,NFR,0.664,0.336,0.664,False
+REQ-DS-03926,"User shall have ALFRED installed on all their computers, tablets, and phones.",FR,0,NFR,0.565,0.435,0.565,False
+REQ-DS-02522,User must have a valid login ID to access the site.,FR,0,NFR,0.9113,0.0887,0.9113,False
+REQ-DS-05138,System shall verify the password during installation to ensure the antivirus copy is valid.,FR,0,NFR,0.8995,0.1005,0.8995,False
+REQ-DS-04786,Screen resolution shall be at least 800x600 for complete viewing.,FR,0,NFR,0.9743,0.0257,0.9743,False
+REQ-DS-01628,"System shall update recommendations at the end of listening to a track or after purchasing a track, aiming for real-time functionality.",NFR,1,FR,0.9014,0.9014,0.0986,False
+REQ-DS-00544,Users shall authenticate using a username and password.,NFR,1,FR,0.8872,0.8872,0.1128,False
+REQ-DS-04317,System shall allow browsing content by author or subject area.,NFR,1,FR,0.9845,0.9845,0.0155,False
+REQ-DS-05186,System shall establish a safe connection between users over the network for optimal gaming experiences.,FR,0,NFR,0.9813,0.0187,0.9813,False
+REQ-DS-00780,The BE system shall be able to ensure the secure delivery of all internal messages.,FR,0,NFR,0.9625,0.0375,0.9625,False
+REQ-DS-04761,"System shall provide a menu-driven interface with screens including login, language selection, and options for users and administrators.",FR,0,NFR,0.6744,0.3256,0.6744,False
+REQ-DS-02429,"The system shall allow users to report Snapchatters for irrelevant, inappropriate content, misbehavior, or anything uncomfortable and shall take strict action against reported individuals, posts, or spam.",NFR,1,FR,0.9167,0.9167,0.0833,False
+REQ-DS-05838,"If no network connection can be established to receive roll information, the instructor shall be allowed to enter roll later.",NFR,1,FR,0.7112,0.7112,0.2888,False
+REQ-DS-05795,"User shall have a maximum of three attempts to enter the password, after which an email notification will be sent if there's an additional attempt.",NFR,1,FR,0.9382,0.9382,0.0618,False
+REQ-DS-01625,User shall be able to maintain data by implementing the latest model and regular updates for new titles.,NFR,1,FR,0.8119,0.8119,0.1881,False
+REQ-DS-02450,"Under normal conditions, 95% of transactions shall be processed in less than 5 seconds.",FR,0,NFR,0.9781,0.0219,0.9781,False
+REQ-DS-04457,System shall perform searches using Dijkstra's shortest path algorithm.,NFR,1,FR,0.7984,0.7984,0.2016,False
+REQ-DS-00014,The information and the search methods of the Encyclopedia-app will be restricted to the services provided by the MediaWiki of the TU/e Encyclopedia.,NFR,1,FR,0.6432,0.6432,0.3568,False
+REQ-DS-05114,"The system shall include measures of service quality, such as ease of booking, hassle-free check-in, efficient ticketing staff, regular announcements during flight delays, on-time performance, in-flight experience, baggage handling, and value for money.",FR,0,NFR,0.9283,0.0717,0.9283,False
+REQ-DS-00313,The database will be updated periodically and the API will be unavailable during the update.,FR,0,NFR,0.8563,0.1437,0.8563,False
+REQ-DS-00890,The system shall restrict broadcast message transmission to authorized administrators only.,NFR,1,FR,0.8334,0.8334,0.1666,False
+REQ-DS-05751,"User shall seamlessly translate text input from one language to another in real-time, preserving meaning and conveying nuance effectively.",FR,0,NFR,0.9186,0.0814,0.9186,False
+REQ-DS-03924,"User shall have ALFRED preinstalled, eliminating the need for manual setup.",FR,0,NFR,0.5408,0.4592,0.5408,False
+REQ-DS-00753,There shall be a network connection between SwRI and NISN.,NFR,1,FR,0.5395,0.5395,0.4605,False
+REQ-DS-00414,System shall be able to operate without storing any personal user data.,FR,0,NFR,0.9663,0.0337,0.9663,False
+REQ-DS-04121,System shall support basic archival description creation and updates.,FR,0,NFR,0.6503,0.3497,0.6503,False
+REQ-DS-04788,Database used for record-keeping shall be Oracle version 7.0.,FR,0,NFR,0.9014,0.0986,0.9014,False
+REQ-DS-01849,User shall/will be able to have different levels of access and privileges based on their roles.,FR,0,NFR,0.7192,0.2808,0.7192,False
+REQ-DS-04915,The system shall have at least 2 GB of available hard-disk space to install Adobe Illustrator.,FR,0,NFR,0.9552,0.0448,0.9552,False
+REQ-DS-04057,System shall be able to store metadata accurately and comprehensively.,FR,0,NFR,0.9486,0.0514,0.9486,False
+REQ-DS-01206,The search radius shall be between 1 and 30 miles.,FR,0,NFR,0.8751,0.1249,0.8751,False
+REQ-DS-02640,The system shall provide a structured experience for users to navigate through commands tailored to their needs.,FR,0,NFR,0.9572,0.0428,0.9572,False
+REQ-DS-02047,User shall/will be able to request one or more consultation requests linked back to a specialty.,NFR,1,FR,0.9749,0.9749,0.0251,False
+REQ-DS-00351,"User shall be able to access the Catalogue PDF, 360° videos, and contact a representative using the sub navigation icons.",NFR,1,FR,0.9929,0.9929,0.0071,False
+REQ-DS-02796,System shall ensure data security and privacy by encrypting emails and implementing robust authentication mechanisms.,FR,0,NFR,0.9814,0.0186,0.9814,False
+REQ-DS-00714,The TCS shall permit the operator to control the payload using all methods supported by the payload installed in the selected AV,NFR,1,FR,0.9706,0.9706,0.0294,False
+REQ-DS-00518,"System shall allow authorized personnel within the same department to update the database directly, adhering to established access controls.",FR,0,NFR,0.8841,0.1159,0.8841,False
+REQ-DS-05192,User shall receive a message when network coverage is low.,NFR,1,FR,0.975,0.975,0.025,False
+REQ-DS-00052,Users shall be able to configure settings both locally on the device and remotely.,NFR,1,FR,0.9079,0.9079,0.0921,False
+REQ-DS-05853,The system shall provide a basic help guide to aid in usability.,FR,0,NFR,0.9436,0.0564,0.9436,False
+REQ-DS-05341,Admin shall monitor the whole process.,NFR,1,FR,0.9691,0.9691,0.0309,False
+REQ-DS-01275,All sessions shall be associated with a single EDGE project.,FR,0,NFR,0.8528,0.1472,0.8528,False
+REQ-DS-00655,"The TCS shall be capable of storing a minimum of 500 mission plans under unique names to allow for later
+retrieval.",FR,0,NFR,0.9109,0.0891,0.9109,False
+REQ-DS-00636,The CO must play moves according to the Chinese rules of Mahjong.,FR,0,NFR,0.7878,0.2122,0.7878,False
+REQ-DS-02657,User shall be able to report errors encountered during system use.,NFR,1,FR,0.9757,0.9757,0.0243,False
+REQ-DS-05759,"User shall access a limited feature set for offline usage, prioritizing essential translation functionalities for usability and efficiency.",FR,0,NFR,0.9689,0.0311,0.9689,False
+REQ-DS-05270,System shall display the number of people who have given up LPG subsidy.,NFR,1,FR,0.9866,0.9866,0.0134,False
+REQ-DS-04162,System shall support privileged access management to enable efficient collaboration among depositors and collaborators.,FR,0,NFR,0.9482,0.0518,0.9482,False
+REQ-DS-02398,The system shall prioritize WiFi connection and automatically switch to mobile network when WiFi is unavailable.,NFR,1,FR,0.8532,0.8532,0.1468,False
+REQ-DS-04789,System shall employ dial-up POS with central server using TCP/IP communication protocol.,FR,0,NFR,0.7938,0.2062,0.7938,False
+REQ-DS-05075,The system shall communicate with the database through a wireless Ethernet system.,FR,0,NFR,0.7554,0.2446,0.7554,False
+REQ-DS-04914,Adobe Illustrator shall function with a minimum of 8 GB of RAM.,FR,0,NFR,0.9514,0.0486,0.9514,False
+REQ-DS-01377,The system shall be able to display a menu at all times to facilitate manual order taking should the need arise.,NFR,1,FR,0.9379,0.9379,0.0621,False
+REQ-DS-03818,The system shall ensure downloaded data is reliable and usable.,FR,0,NFR,0.9815,0.0185,0.9815,False
+REQ-DS-04911,Adobe Illustrator shall support both Intel and AMD processors.,FR,0,NFR,0.7285,0.2715,0.7285,False
+REQ-DS-04860,"The system shall display ""video not found"" if the requested video is not available.",NFR,1,FR,0.9937,0.9937,0.0063,False
+REQ-DS-00006,"The Facebook ""like"" interface shall be according to the Facebook Guidelines.",NFR,1,FR,0.8263,0.8263,0.1737,False
+REQ-DS-05151,User shall have a registered phone number for software registration.,NFR,1,FR,0.9477,0.9477,0.0523,False

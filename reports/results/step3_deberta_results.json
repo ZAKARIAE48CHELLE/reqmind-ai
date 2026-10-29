@@ -1,0 +1,83 @@
+{
+  "experiment": "ReqMind AI — Model Optimization: Step 3 (microsoft/deberta-v3-small Fine-Tuned)",
+  "timestamp": "2026-10-29 21:50:00",
+  "base_model": "microsoft/deberta-v3-small",
+  "model_directory": "models/deberta_v3_small_fr_nfr",
+  "training_sub_split_rows": 3798,
+  "validation_sub_split_rows": 950,
+  "test_sealed_rows": 1188,
+  "hardware_trained_on": "Google Colab T4 GPU (FP32 numerical precision)",
+  "hyperparameters": {
+    "epochs": 5,
+    "learning_rate": 1e-5,
+    "batch_size": 16,
+    "warmup_steps": 100,
+    "weight_decay": 0.01,
+    "max_grad_norm": 1.0,
+    "max_length": 96,
+    "early_stopping_patience": 2,
+    "fp16": false,
+    "bf16": false,
+    "metric_for_best_model": "macro_f1"
+  },
+  "validation_metrics": {
+    "accuracy": 0.8916,
+    "macro_f1": 0.8805,
+    "f1_fr": 0.9169,
+    "precision_fr": 0.9236,
+    "recall_fr": 0.9103,
+    "f1_nfr": 0.8442,
+    "precision_nfr": 0.8328,
+    "recall_nfr": 0.8558,
+    "confusion_matrix": [
+      [568, 56],
+      [47, 279]
+    ],
+    "total_validation_errors": 103,
+    "inference_latency_cpu_ms": 24.07
+  },
+  "comparative_validation_benchmarks": {
+    "baseline_linear_svm": {
+      "accuracy": 0.8747,
+      "macro_f1": 0.8590,
+      "f1_fr": 0.9061,
+      "f1_nfr": 0.8120,
+      "recall_nfr": 0.7883,
+      "confusion_matrix": [
+        [574, 50],
+        [69, 257]
+      ]
+    },
+    "step2_optimized_svm": {
+      "accuracy": 0.8663,
+      "macro_f1": 0.8525,
+      "f1_fr": 0.8977,
+      "f1_nfr": 0.8073,
+      "recall_nfr": 0.8160,
+      "confusion_matrix": [
+        [557, 67],
+        [60, 266]
+      ]
+    },
+    "deberta_v3_small_fine_tuned": {
+      "accuracy": 0.8916,
+      "macro_f1": 0.8805,
+      "f1_fr": 0.9169,
+      "f1_nfr": 0.8442,
+      "recall_nfr": 0.8558,
+      "delta_accuracy_vs_baseline": 0.0169,
+      "delta_macro_f1_vs_baseline": 0.0215,
+      "delta_nfr_f1_vs_baseline": 0.0322,
+      "delta_nfr_recall_vs_baseline": 0.0675
+    }
+  },
+  "artifacts": {
+    "model_weights": "models/deberta_v3_small_fr_nfr/model.safetensors",
+    "config": "models/deberta_v3_small_fr_nfr/config.json",
+    "tokenizer": "models/deberta_v3_small_fr_nfr/tokenizer.json",
+    "training_args": "models/deberta_v3_small_fr_nfr/training_args.bin",
+    "confusion_matrix_plot": "reports/figures/step3_deberta_val_confusion_matrix.png",
+    "training_curves_plot": "reports/figures/step3_deberta_training_curves.png",
+    "validation_errors_csv": "reports/results/step3_deberta_val_errors.csv"
+  }
+}

@@ -173,9 +173,61 @@ class SetFitClassifier(BaseRequirementClassifier):
         return [(RequirementLabel(str(p)), round(float(s), 4)) for p, s in zip(preds, scores)]
 
 
+class DebertaClassifier(BaseRequirementClassifier):
+    """Wraps the fine-tuned microsoft/deberta-v3-small Transformer model for FR/NFR requirement classification."""
+
+    def __init__(self, model_dir: Optional[Path] = None, device: Optional[str] = None):
+        import torch
+        from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
+        path = Path(model_dir or DEFAULT_MODELS_DIR) / "deberta_v3_small_fr_nfr"
+        if not path.exists():
+            raise FileNotFoundError(f"DeBERTa model directory not found at {path}. Fine-tune or extract model archive first.")
+
+        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+        self.tokenizer = AutoTokenizer.from_pretrained(str(path))
+        self.model = AutoModelForSequenceClassification.from_pretrained(str(path)).to(self.device)
+        self.model.eval()
+        self.model_name = "deberta_v3_small"
+        self.model_version = "deberta-v3-small-step3-v1"
+        self.id2label = getattr(self.model.config, "id2label", {0: "FR", 1: "NFR"})
+
+    def predict(self, texts: List[str]) -> List[Tuple[RequirementLabel, float]]:
+        if not texts:
+            return []
+        import torch
+
+        cleaned_texts = [clean_requirement_for_model(t) for t in texts]
+        results = []
+        batch_size = 32
+
+        with torch.no_grad():
+            for i in range(0, len(cleaned_texts), batch_size):
+                b_texts = cleaned_texts[i:i + batch_size]
+                enc = self.tokenizer(b_texts, padding=True, truncation=True, max_length=96, return_tensors="pt").to(self.device)
+                logits = self.model(**enc).logits
+                probs = torch.softmax(logits, dim=-1).cpu().numpy()
+                pred_indices = np.argmax(probs, axis=1)
+                confidences = np.max(probs, axis=1)
+                for idx, conf in zip(pred_indices, confidences):
+                    lbl_str = self.id2label[int(idx)] if isinstance(self.id2label, dict) else str(idx)
+                    results.append((RequirementLabel(lbl_str), round(float(conf), 4)))
+
+        return results
+
+
 def load_default_classifier(model_name: str = "auto") -> BaseRequirementClassifier:
-    """Return the best available classifier (SetFit > TF-IDF > Heuristic fallback)."""
-    # 1. If explicit SetFit requested or auto with SetFit artifact present
+    """Return the best available classifier (DeBERTa > SetFit > TF-IDF > Heuristic fallback)."""
+    # 1. If explicit DeBERTa requested or auto with DeBERTa artifact present
+    if model_name in ("deberta_v3_small", "deberta", "auto"):
+        deberta_path = DEFAULT_MODELS_DIR / "deberta_v3_small_fr_nfr"
+        if deberta_path.exists():
+            try:
+                return DebertaClassifier(deberta_path.parent)
+            except Exception as exc:
+                warnings.warn(f"Failed to load DeBERTa classifier ({exc}), trying next available model.")
+
+    # 2. If explicit SetFit requested or auto with SetFit artifact present
     if model_name in ("setfit_minilm", "auto"):
         setfit_path = DEFAULT_MODELS_DIR / "setfit_minilm"
         if setfit_path.exists():
@@ -184,7 +236,7 @@ def load_default_classifier(model_name: str = "auto") -> BaseRequirementClassifi
             except Exception as exc:
                 warnings.warn(f"Failed to load SetFit classifier ({exc}), trying TF-IDF.")
 
-    # 2. Try scikit-learn trained classifier
+    # 3. Try scikit-learn trained classifier
     try:
         clf_name = "tfidf_logreg" if model_name == "auto" else model_name
         return TrainedClassifier(clf_name)

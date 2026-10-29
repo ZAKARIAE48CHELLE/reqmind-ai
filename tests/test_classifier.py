@@ -67,10 +67,25 @@ def test_setfit_classifier_inference_if_present():
     assert 0.5 <= preds[0][1] <= 1.0
 
 
+def test_deberta_classifier_inference_if_present():
+    deberta_dir = DEFAULT_MODELS_DIR / "deberta_v3_small_fr_nfr"
+    if not deberta_dir.exists():
+        pytest.skip("DeBERTa model not fine-tuned yet")
+    from reqmind.classification import DebertaClassifier
+    clf = DebertaClassifier()
+    preds = clf.predict([
+        "The system shall display Events in a table.",
+        "The system shall be available 99.9% of the time."
+    ])
+    assert len(preds) == 2
+    assert preds[0][0] == RequirementLabel.FR
+    assert preds[1][0] == RequirementLabel.NFR
+    assert 0.5 <= preds[0][1] <= 1.0
+
+
 def test_fallback_to_heuristic_when_artifact_missing(tmp_path: Path):
     with pytest.raises(FileNotFoundError):
         TrainedClassifier("tfidf_logreg", models_dir=tmp_path)
     with pytest.warns(UserWarning):
         clf = load_default_classifier("does_not_exist")
     assert isinstance(clf, HeuristicBaselineClassifier)
-

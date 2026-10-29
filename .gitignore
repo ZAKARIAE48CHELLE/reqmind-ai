@@ -47,6 +47,8 @@ Thumbs.db
 .streamlit/secrets.toml
 
 # Heavy Model Weights & Local Checkpoints (keep notebooks and reports)
+*.zip
+*.safetensors
 models/*.pt
 models/*.pth
 models/*.bin
@@ -55,8 +57,12 @@ models/*.joblib
 models/*.pkl
 models/*.h5
 models/*.safetensors
+models/**/*.safetensors
+models/**/*.bin
 models/**/checkpoint-*/
 models/setfit_minilm/
+models/deberta_v3_small_fr_nfr/model.safetensors
+models/deberta_v3_small_fr_nfr/*.bin
 
 # Temporary or local runs
 reports/figures/*.png
