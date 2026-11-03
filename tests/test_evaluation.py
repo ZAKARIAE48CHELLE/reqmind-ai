@@ -184,3 +184,4 @@ def test_export_deliverables(valid_dataset_df):
     comp_excel = export_comparison_to_excel(comp)
     assert isinstance(comp_excel, bytes)
     assert len(comp_excel) > 1000
+

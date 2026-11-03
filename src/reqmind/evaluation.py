@@ -504,3 +504,4 @@ def export_comparison_to_excel(comp_result: MultiModelComparisonResult) -> bytes
             res.predictions_df.to_excel(writer, sheet_name=sheet_title, index=False)
 
     return output.getvalue()
+

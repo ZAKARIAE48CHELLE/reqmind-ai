@@ -643,6 +643,25 @@ with tab_benchmarks:
         ])
         st.dataframe(sim_benchmark, width="stretch")
 
+    st.divider()
+    with st.expander("🖼️ Milestone Benchmark Confusion Matrices (Training & Validation)", expanded=False):
+        col_fig1, col_fig2, col_fig3 = st.columns(3)
+        with col_fig1:
+            st.markdown("**Fine-Tuned DeBERTa-v3 (Val Split, N=950)**")
+            fig_deb = Path("reports/figures/step3_deberta_val_confusion_matrix.png")
+            if fig_deb.exists():
+                st.image(str(fig_deb), caption="DeBERTa-v3-small (89.16% Acc, 88.05% F1)")
+        with col_fig2:
+            st.markdown("**Optimized SVM (5-Fold CV, N=4,748)**")
+            fig_svm = Path("reports/figures/optimized_svm_cv_confusion_matrix.png")
+            if fig_svm.exists():
+                st.image(str(fig_svm), caption="Calibrated Linear SVM (87.74% Acc, 86.16% F1)")
+        with col_fig3:
+            st.markdown("**Baseline SVM (Phase 3 Split)**")
+            fig_base = Path("reports/figures/phase3_confusion_tfidf_svm.png")
+            if fig_base.exists():
+                st.image(str(fig_base), caption="Baseline TF-IDF SVM")
+
 
 # =============================================================================
 # TAB 8: MODEL EVALUATION (ANNOTATED VS PREDICTIONS)

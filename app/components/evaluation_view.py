@@ -11,6 +11,7 @@ import io
 from pathlib import Path
 from typing import Dict, List, Optional
 
+import altair as alt
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -46,6 +47,71 @@ def get_cached_evaluation_model(model_name: str):
     if not info:
         raise ValueError(f"Unknown evaluation model: {model_name}")
     return info["factory"]()
+
+
+def build_confusion_matrix_chart(cm: np.ndarray, model_name: str = "") -> alt.Chart:
+    """Build an interactive, theme-adaptive Altair heatmap for a 2x2 confusion matrix."""
+    labels = ["FR", "NFR"]
+    cell_descriptions = {
+        (0, 0): "True FR (TN: Correct functional requirement)",
+        (0, 1): "False NFR (FP: Functional requirement misclassified as NFR)",
+        (1, 0): "False FR (FN: Missed non-functional constraint)",
+        (1, 1): "True NFR (TP: Correct non-functional requirement)",
+    }
+    data = []
+    max_val = int(cm.max()) if cm.size > 0 else 1
+    for i, actual in enumerate(labels):
+        row_total = int(cm[i].sum()) if i < cm.shape[0] else 0
+        for j, pred in enumerate(labels):
+            count = int(cm[i, j]) if i < cm.shape[0] and j < cm.shape[1] else 0
+            pct = (count / row_total * 100) if row_total > 0 else 0
+            desc = cell_descriptions.get((i, j), "")
+            data.append({
+                "Actual": f"Actual {actual}",
+                "Predicted": f"Predicted {pred}",
+                "Count": count,
+                "Rate": f"{pct:.1f}%",
+                "Description": desc,
+            })
+    df_cm = pd.DataFrame(data)
+
+    base = alt.Chart(df_cm).encode(
+        x=alt.X(
+            "Predicted:O",
+            title="Predicted Class",
+            sort=["Predicted FR", "Predicted NFR"],
+            axis=alt.Axis(labelAngle=0),
+        ),
+        y=alt.Y(
+            "Actual:O",
+            title="Ground Truth",
+            sort=["Actual FR", "Actual NFR"],
+        ),
+    )
+
+    heatmap = base.mark_rect(stroke="#E2E8F0", strokeWidth=2).encode(
+        color=alt.Color("Count:Q", scale=alt.Scale(scheme="blues"), legend=None),
+        tooltip=["Actual", "Predicted", "Count", "Rate", "Description"],
+    )
+
+    threshold = max(max_val * 0.45, 1)
+
+    text_count = base.mark_text(baseline="bottom", dy=-3, fontSize=16, fontWeight="bold").encode(
+        text="Count:Q",
+        color=alt.condition(alt.datum.Count > threshold, alt.value("#FFFFFF"), alt.value("#0F172A")),
+    )
+
+    text_pct = base.mark_text(baseline="top", dy=3, fontSize=11).encode(
+        text="Rate:N",
+        color=alt.condition(alt.datum.Count > threshold, alt.value("#F1F5F9"), alt.value("#475569")),
+    )
+
+    title_str = f"{model_name} Confusion Matrix" if model_name else "Confusion Matrix"
+    chart = (heatmap + text_count + text_pct).properties(
+        title=alt.TitleParams(text=title_str, fontSize=13, anchor="middle"),
+        height=210,
+    )
+    return chart
 
 
 def render_model_evaluation_tab():
@@ -269,28 +335,34 @@ def render_single_model_dashboard(res: SingleModelEvaluationResult, dataset_name
         st.metric("Avg Latency", f"{res.avg_latency_ms:.1f} ms", delta=f"{res.total_latency_seconds:.2f}s total")
 
     # Confusion Matrix Section
-    st.markdown("#### Confusion Matrix")
+    st.markdown("#### 🎯 Confusion Matrix & Error Heatmap")
     cm = res.confusion_matrix
-    col_cm_table, col_cm_summary = st.columns([3, 2])
+    col_cm_plot, col_cm_summary = st.columns([3, 2], vertical_alignment="center")
 
-    with col_cm_table:
-        cm_display = pd.DataFrame(
-            cm,
-            index=["Actual FR", "Actual NFR"],
-            columns=["Predicted FR", "Predicted NFR"],
-        )
-        st.dataframe(cm_display, width="stretch")
+    with col_cm_plot:
+        cm_chart = build_confusion_matrix_chart(cm, model_name=res.model_name)
+        st.altair_chart(cm_chart, width="stretch")
 
     with col_cm_summary:
         if cm.shape == (2, 2):
-            total_fr = cm[0, 0] + cm[0, 1]
-            total_nfr = cm[1, 0] + cm[1, 1]
-            st.markdown(
-                f"- **Actual FR ({total_fr}):** {cm[0, 0]} correct ({cm[0, 0]/total_fr*100:.1f}%), "
-                f"{cm[0, 1]} false NFR alarms\n"
-                f"- **Actual NFR ({total_nfr}):** {cm[1, 1]} correct ({cm[1, 1]/total_nfr*100:.1f}%), "
-                f"{cm[1, 0]} missed NFRs (false FRs)"
-            )
+            tn, fp = int(cm[0, 0]), int(cm[0, 1])
+            fn, tp = int(cm[1, 0]), int(cm[1, 1])
+            total_fr = tn + fp
+            total_nfr = fn + tp
+
+            fr_rec = (tn / total_fr * 100) if total_fr > 0 else 0
+            nfr_rec = (tp / total_nfr * 100) if total_nfr > 0 else 0
+            nfr_prec = (tp / (tp + fp) * 100) if (tp + fp) > 0 else 0
+
+            with st.container(border=True):
+                st.markdown("**Diagnostic Breakdown:**")
+                st.markdown(
+                    f"- **True FR (TN):** `{tn}` ({fr_rec:.1f}% Recall)\n"
+                    f"- **False NFR (FP):** `{fp}` (False alarms on FR)\n"
+                    f"- **False FR (FN):** `{fn}` (Missed NFRs)\n"
+                    f"- **True NFR (TP):** `{tp}` ({nfr_rec:.1f}% Recall)\n"
+                    f"- **NFR Precision:** `{nfr_prec:.1f}%`"
+                )
 
     st.markdown("---")
 
@@ -378,7 +450,27 @@ def render_multi_model_dashboard(comp: MultiModelComparisonResult, dataset_name:
     clean_table = comp.comparison_df[[c for c in comp.comparison_df.columns if not c.startswith("_")]]
     st.dataframe(clean_table, width="stretch")
 
-    # 2. Comparative Bar Charts
+    # 2. Side-by-Side Confusion Matrices
+    st.markdown("---")
+    st.markdown("#### 🎯 Side-by-Side Confusion Matrices")
+    st.caption("Visual error heatmaps across all selected models on the identical dataset:")
+    model_keys = list(comp.results.keys())
+    cm_cols = st.columns(len(model_keys))
+    for idx, m_name in enumerate(model_keys):
+        m_res = comp.results[m_name]
+        with cm_cols[idx]:
+            sub_chart = build_confusion_matrix_chart(m_res.confusion_matrix, model_name=m_name)
+            st.altair_chart(sub_chart, width="stretch")
+            cm_m = m_res.confusion_matrix
+            if cm_m.shape == (2, 2):
+                st.caption(
+                    f"**TN (FR):** `{cm_m[0, 0]}` | **FP (NFR):** `{cm_m[0, 1]}`<br/>"
+                    f"**FN (FR):** `{cm_m[1, 0]}` | **TP (NFR):** `{cm_m[1, 1]}`",
+                    unsafe_allow_html=True,
+                )
+
+    # 3. Comparative Bar Charts
+    st.markdown("---")
     st.markdown("#### Performance Metrics Comparison")
     chart_data = comp.comparison_df.set_index("Model")[["_raw_acc", "_raw_macro_f1", "_raw_fr_f1", "_raw_nfr_f1"]]
     chart_data.columns = ["Accuracy", "Macro-F1", "FR-F1", "NFR-F1"]
@@ -389,7 +481,7 @@ def render_multi_model_dashboard(comp: MultiModelComparisonResult, dataset_name:
     latency_data.columns = ["Latency (ms)"]
     st.bar_chart(latency_data, width="stretch")
 
-    # 3. Model Disagreements
+    # 4. Model Disagreements
     st.markdown("---")
     st.markdown(f"#### 🔍 Model Disagreement Inspector ({len(comp.disagreements_df)} requirements)")
     if not comp.disagreements_df.empty:
@@ -400,7 +492,7 @@ def render_multi_model_dashboard(comp: MultiModelComparisonResult, dataset_name:
     else:
         st.success("All evaluated models produced 100% identical predictions across this dataset.")
 
-    # 4. Export Section
+    # 5. Export Section
     st.divider()
     st.markdown("#### 💾 Export Comparative Deliverables")
     excel_bytes = export_comparison_to_excel(comp)
