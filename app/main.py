@@ -27,6 +27,7 @@ from reqmind.export import (
     export_to_pdf,
 )
 from reqmind.classification import is_prediction_uncertain, format_confidence_display, DEFAULT_UNCERTAINTY_THRESHOLD
+from app.components.evaluation_view import render_model_evaluation_tab
 
 # -----------------------------------------------------------------------------
 # Streamlit Page Configuration
@@ -175,9 +176,10 @@ tabs = st.tabs([
     "✍️ Human Review",
     "💾 Traceable Export",
     "📊 Benchmarks & Models",
+    "🧪 Model Evaluation",
 ])
 
-tab_input, tab_table, tab_ambiguity, tab_duplicates, tab_review, tab_export, tab_benchmarks = tabs
+tab_input, tab_table, tab_ambiguity, tab_duplicates, tab_review, tab_export, tab_benchmarks, tab_evaluation = tabs
 
 # =============================================================================
 # TAB 1: INGESTION & INPUT
@@ -640,3 +642,10 @@ with tab_benchmarks:
             {"Method": "SentenceTransformer + Guards", "Recall": "100.0%", "Precision": "53.1%", "F1": "69.3%"},
         ])
         st.dataframe(sim_benchmark, width="stretch")
+
+
+# =============================================================================
+# TAB 8: MODEL EVALUATION (ANNOTATED VS PREDICTIONS)
+# =============================================================================
+with tab_evaluation:
+    render_model_evaluation_tab()
