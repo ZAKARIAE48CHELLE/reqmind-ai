@@ -24,6 +24,7 @@ from reqmind.export import (
     export_to_csv,
     export_duplicate_pairs_to_csv,
     export_summary_markdown,
+    export_to_pdf,
 )
 from reqmind.classification import is_prediction_uncertain, format_confidence_display, DEFAULT_UNCERTAINTY_THRESHOLD
 
@@ -530,40 +531,52 @@ with tab_export:
         dup_pairs_df = export_duplicate_pairs_to_csv(doc.requirements, similarity_threshold=st.session_state.similarity_threshold)
         md_summary = export_summary_markdown(doc)
 
-        col_d1, col_d2, col_d3, col_d4 = st.columns(4)
+        pdf_bytes = export_to_pdf(doc)
+
+        col_d1, col_d2, col_d3, col_d4, col_d5 = st.columns(5)
         with col_d1:
             st.download_button(
-                label="📥 Download JSON",
-                data=json_output,
-                file_name=f"{doc.document_id}_reqmind_analysis.json",
-                mime="application/json",
+                label="📄 Download PDF",
+                data=pdf_bytes,
+                file_name=f"{doc.document_id}_classified_report.pdf",
+                mime="application/pdf",
                 type="primary",
                 width="stretch",
             )
         with col_d2:
             st.download_button(
-                label="📊 Download Requirements CSV",
+                label="📥 Download JSON",
+                data=json_output,
+                file_name=f"{doc.document_id}_reqmind_analysis.json",
+                mime="application/json",
+                type="secondary",
+                width="stretch",
+            )
+        with col_d3:
+            st.download_button(
+                label="📊 Download CSV",
                 data=csv_df.to_csv(index=False).encode("utf-8"),
                 file_name=f"{doc.document_id}_reqmind_audit.csv",
                 mime="text/csv",
                 type="secondary",
                 width="stretch",
             )
-        with col_d3:
+        with col_d4:
             st.download_button(
-                label="🔗 Download Duplicate Pairs CSV",
+                label="🔗 Duplicate Pairs",
                 data=dup_pairs_df.to_csv(index=False).encode("utf-8"),
                 file_name=f"{doc.document_id}_duplicate_pairs.csv",
                 mime="text/csv",
                 type="secondary",
                 width="stretch",
             )
-        with col_d4:
+        with col_d5:
             st.download_button(
-                label="📝 Download Summary MD",
+                label="📝 Summary MD",
                 data=md_summary.encode("utf-8"),
                 file_name=f"{doc.document_id}_summary_report.md",
                 mime="text/markdown",
+                type="secondary",
                 width="stretch",
             )
 

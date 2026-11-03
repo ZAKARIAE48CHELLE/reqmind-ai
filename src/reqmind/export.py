@@ -7,11 +7,23 @@ Includes dedicated duplicate pairs export and round-trip validation.
 
 from __future__ import annotations
 
+import html
+import io
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import List, Union, Optional, Dict
 import pandas as pd
 from reqmind.schemas import DocumentRecord, RequirementRecord, ReviewStatus
+
+__all__ = [
+    "export_to_json",
+    "validate_exported_json",
+    "export_to_csv",
+    "export_duplicate_pairs_to_csv",
+    "export_summary_markdown",
+    "export_to_pdf",
+]
 
 
 def export_to_json(document: DocumentRecord, output_path: Optional[Union[str, Path]] = None) -> str:
@@ -213,3 +225,314 @@ def export_summary_markdown(document: DocumentRecord) -> str:
         md.append(f"| {r.requirement_id} | {snippet} | **{label}** | {score_str} | `{r.review_status.value}` | {amb_count} | {cand_str} |")
 
     return "\n".join(md)
+
+
+def export_to_pdf(
+    document_or_requirements: Union[DocumentRecord, List[RequirementRecord]],
+    output_path: Optional[Union[str, Path]] = None,
+    document_id: Optional[str] = None,
+    title: str = "ReqMind AI — Classified Requirements Report",
+    subtitle: Optional[str] = None,
+) -> bytes:
+    """Export classified requirements into a publication-quality PDF audit report.
+    
+    Parameters
+    ----------
+    document_or_requirements : Union[DocumentRecord, List[RequirementRecord]]
+        Either a complete DocumentRecord or an iterable of RequirementRecord objects.
+    output_path : Optional[Union[str, Path]]
+        Optional destination file path. If provided, writes the PDF bytes to disk.
+    document_id : Optional[str]
+        Optional document identifier override.
+    title : str
+        Document title displayed in the header banner.
+    subtitle : Optional[str]
+        Optional subtitle. Defaults to document metadata, timestamp, and model version.
+        
+    Returns
+    -------
+    bytes
+        Raw PDF file bytes suitable for direct download or file transmission.
+    """
+    try:
+        from reportlab.lib import colors
+        from reportlab.lib.pagesizes import letter
+        from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+        from reportlab.platypus import (
+            SimpleDocTemplate,
+            Paragraph,
+            Spacer,
+            Table,
+            TableStyle,
+            HRFlowable,
+        )
+        from reportlab.pdfgen import canvas
+    except ImportError as exc:
+        raise ImportError(
+            "The 'reportlab' package is required for PDF export. "
+            "Please install it using: pip install reportlab"
+        ) from exc
+
+    class _NumberedCanvas(canvas.Canvas):
+        """Two-pass canvas for dynamic total page counting and branded running footer."""
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self._saved_page_states = []
+
+        def showPage(self):
+            self._saved_page_states.append(dict(self.__dict__))
+            self._startPage()
+
+        def save(self):
+            num_pages = len(self._saved_page_states)
+            for state in self._saved_page_states:
+                self.__dict__.update(state)
+                self.draw_page_decorations(num_pages)
+                canvas.Canvas.showPage(self)
+            canvas.Canvas.save(self)
+
+        def draw_page_decorations(self, page_count: int):
+            self.saveState()
+            self.setFont("Helvetica", 8)
+            self.setFillColor(colors.HexColor("#64748B"))
+            page_text = f"Page {self._pageNumber} of {page_count}"
+            self.drawRightString(612 - 36, 18, page_text)
+            self.drawString(36, 18, "ReqMind AI — Requirements Engineering & NLP Classification Audit")
+            self.setStrokeColor(colors.HexColor("#CBD5E1"))
+            self.setLineWidth(0.5)
+            self.line(36, 28, 612 - 36, 28)
+            self.restoreState()
+
+    # 1. Resolve metadata and records
+    if isinstance(document_or_requirements, DocumentRecord):
+        reqs = document_or_requirements.requirements
+        doc_id = document_id or document_or_requirements.document_id
+        created_at = document_or_requirements.created_at
+        source_name = document_or_requirements.filename or "Direct Text Input"
+    else:
+        reqs = list(document_or_requirements)
+        doc_id = document_id or (reqs[0].document_id if reqs else "DOC-EXPORT")
+        created_at = reqs[0].created_at if reqs else datetime.now(timezone.utc)
+        source_name = "Requirements Batch"
+
+    total = len(reqs)
+    pipeline_ver = reqs[0].pipeline_version if reqs else "0.2.1"
+    model_ver = reqs[0].model_version if reqs else "Unknown"
+    date_str = created_at.strftime("%Y-%m-%d %H:%M:%S UTC") if hasattr(created_at, "strftime") else str(created_at)
+
+    # 2. Compute aggregate classification and quality statistics
+    fr_count = sum(1 for r in reqs if (r.reviewer_label.value if r.reviewer_label else (r.predicted_label.value if r.predicted_label else "")) == "FR")
+    nfr_count = sum(1 for r in reqs if (r.reviewer_label.value if r.reviewer_label else (r.predicted_label.value if r.predicted_label else "")) == "NFR")
+    uncertain_count = sum(1 for r in reqs if getattr(r, "is_uncertain", False))
+    ambiguous_count = sum(1 for r in reqs if len(r.ambiguities) > 0)
+    reviewed_count = sum(1 for r in reqs if r.review_status != ReviewStatus.PENDING)
+
+    # 3. Setup document template & printable geometry (Letter: 612x792 pt, margins 36 pt -> 540 pt width)
+    buf = io.BytesIO()
+    pdf_doc = SimpleDocTemplate(
+        buf,
+        pagesize=letter,
+        leftMargin=36,
+        rightMargin=36,
+        topMargin=36,
+        bottomMargin=45,
+    )
+
+    styles = getSampleStyleSheet()
+    title_style = ParagraphStyle(
+        "PDFDocTitle",
+        parent=styles["Heading1"],
+        fontName="Helvetica-Bold",
+        fontSize=18,
+        leading=22,
+        textColor=colors.HexColor("#0F172A"),
+        spaceAfter=4,
+    )
+    subtitle_style = ParagraphStyle(
+        "PDFDocSub",
+        parent=styles["Normal"],
+        fontName="Helvetica",
+        fontSize=9,
+        leading=13,
+        textColor=colors.HexColor("#64748B"),
+        spaceAfter=10,
+    )
+    section_heading = ParagraphStyle(
+        "PDFSectionHeading",
+        parent=styles["Heading2"],
+        fontName="Helvetica-Bold",
+        fontSize=12,
+        leading=16,
+        textColor=colors.HexColor("#1E293B"),
+        spaceBefore=12,
+        spaceAfter=6,
+    )
+    kpi_cell_style = ParagraphStyle(
+        "PDFKPICell",
+        parent=styles["Normal"],
+        fontName="Helvetica",
+        fontSize=8,
+        leading=11,
+        alignment=1,  # Center
+        textColor=colors.HexColor("#334155"),
+    )
+    cell_style = ParagraphStyle(
+        "PDFTableCell",
+        parent=styles["Normal"],
+        fontName="Helvetica",
+        fontSize=8,
+        leading=11,
+        textColor=colors.HexColor("#1E293B"),
+    )
+    cell_code = ParagraphStyle(
+        "PDFTableCode",
+        parent=cell_style,
+        fontName="Courier",
+        fontSize=7.5,
+        leading=10,
+        textColor=colors.HexColor("#334155"),
+    )
+    header_cell = ParagraphStyle(
+        "PDFHeaderCell",
+        parent=styles["Normal"],
+        fontName="Helvetica-Bold",
+        fontSize=8,
+        leading=11,
+        textColor=colors.white,
+    )
+
+    story = []
+
+    # Title & Subtitle Banner
+    story.append(Paragraph(html.escape(title), title_style))
+    sub_line = subtitle or (
+        f"Document ID: <b>{html.escape(doc_id)}</b> &bull; "
+        f"Source: <b>{html.escape(source_name)}</b> &bull; "
+        f"Date: <b>{date_str}</b> &bull; "
+        f"Model: <b>{html.escape(model_ver)}</b> (Pipeline v{html.escape(pipeline_ver)})"
+    )
+    story.append(Paragraph(sub_line, subtitle_style))
+    story.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor("#0EA5E9"), spaceAfter=12))
+
+    # Executive KPI Cards Table
+    fr_pct = f"{fr_count/total*100:.0f}%" if total else "0%"
+    nfr_pct = f"{nfr_count/total*100:.0f}%" if total else "0%"
+    kpi_cells = [
+        Paragraph(f"<b>Total Requirements</b><br/><font size=\"13\" color=\"#0F172A\"><b>{total}</b></font>", kpi_cell_style),
+        Paragraph(f"<b>Functional (FR)</b><br/><font size=\"13\" color=\"#1D4ED8\"><b>{fr_count}</b></font><br/><font size=\"7\" color=\"#64748B\">({fr_pct})</font>", kpi_cell_style),
+        Paragraph(f"<b>Non-Functional (NFR)</b><br/><font size=\"13\" color=\"#7C3AED\"><b>{nfr_count}</b></font><br/><font size=\"7\" color=\"#64748B\">({nfr_pct})</font>", kpi_cell_style),
+        Paragraph(f"<b>Borderline (&lt;0.65)</b><br/><font size=\"13\" color=\"#D97706\"><b>{uncertain_count}</b></font><br/><font size=\"7\" color=\"#64748B\">Need Review</font>", kpi_cell_style),
+        Paragraph(f"<b>Ambiguities Flagged</b><br/><font size=\"13\" color=\"#DC2626\"><b>{ambiguous_count}</b></font><br/><font size=\"7\" color=\"#64748B\">IEEE 830 Rules</font>", kpi_cell_style),
+    ]
+    t_kpi = Table([kpi_cells], colWidths=[108, 108, 108, 108, 108])
+    t_kpi.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#F8FAFC")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#CBD5E1")),
+        ("INNERGRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#E2E8F0")),
+        ("TOPPADDING", (0, 0), (-1, -1), 6),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 6),
+        ("ALIGN", (0, 0), (-1, -1), "CENTER"),
+        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+    ]))
+    story.append(t_kpi)
+    story.append(Spacer(1, 12))
+
+    # Section Heading
+    story.append(Paragraph("Classified Requirements Specification & Traceability", section_heading))
+
+    # Main Classified Elements Table
+    # Widths: ID (50), Text (235), Class (45), Confidence (60), Status (65), Quality & Ambiguities (85) -> Total = 540 pt
+    table_rows = [
+        [
+            Paragraph("ID", header_cell),
+            Paragraph("Requirement Text", header_cell),
+            Paragraph("Class", header_cell),
+            Paragraph("Confidence", header_cell),
+            Paragraph("Status", header_cell),
+            Paragraph("Quality & Ambiguities", header_cell),
+        ]
+    ]
+
+    if not reqs:
+        empty_cell = Paragraph("<i>No requirements available to display.</i>", cell_style)
+        table_rows.append([empty_cell, empty_cell, empty_cell, empty_cell, empty_cell, empty_cell])
+    else:
+        for r in reqs:
+            # Resolved label
+            resolved_label = r.reviewer_label.value if r.reviewer_label else (r.predicted_label.value if r.predicted_label else "N/A")
+            is_fr = resolved_label == "FR"
+            lbl_color = "#1D4ED8" if is_fr else "#7C3AED"
+            label_p = Paragraph(f"<font color=\"{lbl_color}\"><b>{resolved_label}</b></font>", cell_style)
+
+            # Confidence with uncertainty indicator
+            if r.model_score is not None:
+                score_str = f"<b>{r.model_score:.1%}</b>"
+                if getattr(r, "is_uncertain", False):
+                    score_str += '<br/><font size="7" color="#D97706">⚠️ Low Conf</font>'
+            else:
+                score_str = "<font color=\"#64748B\">-</font>"
+            score_p = Paragraph(score_str, cell_style)
+
+            # Review status
+            status_val = r.review_status.value if hasattr(r.review_status, "value") else str(r.review_status)
+            if status_val == ReviewStatus.APPROVED.value:
+                status_color = "#059669"
+            elif status_val == ReviewStatus.REJECTED.value:
+                status_color = "#DC2626"
+            elif status_val == ReviewStatus.EDITED.value:
+                status_color = "#0284C7"
+            else:
+                status_color = "#64748B"
+            status_p = Paragraph(f"<font color=\"{status_color}\"><b>{html.escape(status_val.upper())}</b></font>", cell_style)
+
+            # Ambiguities summary
+            if r.ambiguities:
+                amb_items = []
+                for a in r.ambiguities[:3]:
+                    amb_items.append(f"&bull; <b>{html.escape(a.phrase)}</b> ({html.escape(a.rule_id)})")
+                if len(r.ambiguities) > 3:
+                    amb_items.append(f"&bull; <i>+{len(r.ambiguities)-3} more</i>")
+                amb_p = Paragraph("<br/>".join(amb_items), cell_style)
+            else:
+                amb_p = Paragraph("<font color=\"#059669\">Clean (0)</font>", cell_style)
+
+            # Text cell
+            text_p = Paragraph(html.escape(r.raw_text), cell_style)
+
+            table_rows.append([
+                Paragraph(f"<b>{html.escape(r.requirement_id)}</b>", cell_code),
+                text_p,
+                label_p,
+                score_p,
+                status_p,
+                amb_p,
+            ])
+
+    t_main = Table(table_rows, colWidths=[50, 235, 45, 60, 65, 85], repeatRows=1)
+    t_style = [
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#0F172A")),
+        ("ALIGN", (0, 0), (-1, -1), "LEFT"),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("TOPPADDING", (0, 0), (-1, -1), 5),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+        ("LEFTPADDING", (0, 0), (-1, -1), 4),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 4),
+        ("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#E2E8F0")),
+    ]
+    for row_idx in range(1, len(table_rows)):
+        if row_idx % 2 == 0:
+            t_style.append(("BACKGROUND", (0, row_idx), (-1, row_idx), colors.HexColor("#F8FAFC")))
+    t_main.setStyle(TableStyle(t_style))
+    story.append(t_main)
+
+    # Build PDF using NumberedCanvas
+    pdf_doc.build(story, canvasmaker=_NumberedCanvas)
+    pdf_bytes = buf.getvalue()
+
+    if output_path is not None:
+        p_out = Path(output_path)
+        p_out.parent.mkdir(parents=True, exist_ok=True)
+        with open(p_out, "wb") as f:
+            f.write(pdf_bytes)
+
+    return pdf_bytes
