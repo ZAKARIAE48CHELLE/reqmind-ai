@@ -4,19 +4,25 @@
 [![License](https://img.shields.io/badge/License-Academic-green.svg)]()
 [![Pydantic v2](https://img.shields.io/badge/Pydantic-v2-orange.svg)](https://docs.pydantic.dev/)
 [![Streamlit](https://img.shields.io/badge/UI-Streamlit-red.svg)](https://streamlit.io/)
+[![Tests](https://img.shields.io/badge/Tests-66%20Passed-brightgreen.svg)]()
+[![DeBERTa-v3](https://img.shields.io/badge/Model-DeBERTa--v3--small-purple.svg)]()
 
-ReqMind AI is a local Natural Language Processing (TALN) decision-support system designed to assist software engineers in analyzing, cleaning, and auditing software requirement specifications (SRS).
+ReqMind AI is a local Natural Language Processing (TALN) decision-support system designed to assist software engineers in analyzing, auditing, and optimizing software requirement specifications (SRS).
 
 ---
 
 ## 🎯 Key Features
 
-- **Document Ingestion & Provenance:** Ingests requirements from raw text or `.txt`/`.md` files while preserving exact character offsets.
-- **FR vs NFR Classification:** Classifies requirements into Functional (FR) or Non-Functional (NFR) categories using classical baselines and contextual embeddings.
-- **Ambiguity & Quality Highlighting:** Detects vague adverbs, subjective usability claims, and non-binding modals with character-exact span highlights and actionable explanations.
-- **Semantic Similarity & Duplicate Ranking:** Identifies candidate duplicate requirements via pairwise cosine similarity without performing destructive auto-merges.
-- **Human-in-the-Loop Review:** Provides an interactive interface for human reviewers to confirm/override labels and dismiss false positives while preserving model audit history.
-- **Traceable Export:** Exports structured JSON (full provenance and offsets) and tabular CSV reports.
+- **Document Ingestion & Provenance:** Ingests requirements from raw text or `.txt`, `.md`, `.csv`, and `.xlsx` files while preserving exact character offsets.
+- **Multi-Model FR vs NFR Classification:**
+  - *Original TF-IDF + LinearSVC* (Ultra-fast baseline; 0.46 ms CPU latency).
+  - *Optimized Calibrated SVM* (Word+Char n-grams with Platt calibrated probabilities; 80.0% benchmark accuracy).
+  - *Fine-Tuned DeBERTa-v3-small* (Disentangled attention transformer; **96.7% benchmark accuracy** on challenging edge cases).
+- **IEEE 830 Ambiguity & Quality Highlighting:** Detects vague adverbs, subjective usability claims, and non-binding modals with character-exact yellow span badges, actionable recommendations, and false-positive dismissal.
+- **Semantic Similarity & Duplicate Ranking:** Identifies candidate duplicate requirements via pairwise cosine similarity (`all-MiniLM-L6-v2`) with automated **Negation** and **SLA Numeric Conflict Guards**.
+- **Auditable Human-in-the-Loop Review:** Provides an interactive workbench for domain experts to confirm or override predictions, dismiss false alarms, and record notes without mutating underlying model provenance.
+- **Multi-Channel Traceable Export:** Exports lossless structured JSON (with programmatic round-trip validation), tabular CSV, executive Markdown briefings, and **publication-grade PDF reports** built via ReportLab.
+- **Model Evaluation & Head-to-Head Comparison:** Upload or benchmark against ground-truth annotated datasets, view interactive Altair confusion matrices, and inspect inter-model disagreements.
 
 ---
 
@@ -24,35 +30,42 @@ ReqMind AI is a local Natural Language Processing (TALN) decision-support system
 
 ```text
 reqmind-ai/
-├── app/                       # Streamlit views and UI integration
-│   ├── main.py                # Main Streamlit dashboard
-│   └── components/            # UI components
+├── app/                       # Streamlit web application
+│   ├── main.py                # Main 8-tab Streamlit dashboard
+│   └── components/            # UI modular components
+│       └── evaluation_view.py # Tab 8: Model Evaluation & Comparison view
 ├── src/reqmind/               # Core NLP and processing package
-│   ├── schemas.py             # Pydantic v2 contracts
-│   ├── ingestion.py           # Document loading
+│   ├── schemas.py             # Pydantic v2 data contracts
+│   ├── ingestion.py           # Document loading and UTF-8 validation
 │   ├── preprocessing.py       # Conservative text normalization
-│   ├── segmentation.py        # Offset-preserving segmentation
-│   ├── classification.py      # FR/NFR classifiers
-│   ├── ambiguity.py           # Ambiguity & vagueness detection
-│   ├── similarity.py          # Semantic similarity & duplicate ranking
-│   ├── contradiction.py       # Potential contradiction warnings (Phase 7)
-│   ├── review.py              # Review state machine & human overrides
-│   ├── export.py              # Traceable JSON and CSV exporters
+│   ├── segmentation.py        # Offset-preserving segmentation engine
+│   ├── classification.py      # Multi-model FR/NFR classifiers
+│   ├── ambiguity.py           # IEEE 830 ambiguity & quality rules
+│   ├── similarity.py          # Bi-encoder semantic similarity & duplicate guards
+│   ├── review.py              # Review state machine & human adjudication
+│   ├── export.py              # Traceable JSON, CSV, MD, and PDF exporters
+│   ├── evaluation.py          # Ground-truth metrics & comparison engine
 │   └── pipeline.py            # End-to-end pipeline coordinator
-├── data/
-│   ├── raw/                   # Raw requirement datasets
-│   ├── processed/             # Cleaned datasets
-│   ├── annotations/           # Ground truth benchmark annotations
-│   ├── splits/                # Frozen train/val/test splits
-│   └── sample_requirements.txt# 5 representative benchmark cases
+├── data/                      # Raw, processed, and benchmark datasets
+│   ├── splits_step3/          # Frozen train/val/test splits
+│   └── Validation data/       # 60-example human-annotated test set
 ├── models/                    # Serialized local model artifacts
-├── experiments/               # Training and evaluation benchmarks
-├── tests/                     # Automated unit and integration tests
+│   ├── tfidf_svm_pipeline.joblib
+│   ├── optimized_svm_bundle.joblib
+│   └── deberta_v3_small_final/
+├── tests/                     # 67 automated unit and integration tests
 ├── reports/
-│   ├── phases/                # Phase milestone reports (Phase 0, 1, ...)
-│   ├── figures/               # Confusion matrices and plots
-│   └── results/               # Benchmark metrics
-├── docs/                      # Architectural specifications and scope
+│   ├── phases/                # Milestone reports (Phase 0 through Phase 8)
+│   ├── figures/               # Confusion matrices and calibration curves
+│   └── results/               # Empirical evaluation summaries & error tables
+├── docs/                      # Comprehensive technical & academic documentation
+│   ├── architecture.md        # System architecture v2.0
+│   ├── installation.md        # Setup & environment manual
+│   ├── user_guide.md          # Complete 8-tab user guide
+│   ├── model_comparison.md    # Empirical benchmark & latency analysis
+│   ├── testing_report.md      # Pytest test execution audit
+│   ├── limitations.md         # Scientific boundary conditions
+│   └── final_project_report.md# Formal academic project report
 ├── pyproject.toml             # Build system & pytest configuration
 ├── requirements.txt           # Dependency specifications
 └── README.md
@@ -68,11 +81,11 @@ reqmind-ai/
 ```cmd
 :: Install environment & dependencies
 install.bat
-:: Or in PowerShell: .\install.ps1
+:: Or in PowerShell: powershell -ExecutionPolicy Bypass -File .\install.ps1
 
 :: Launch the Streamlit application
 run.bat
-:: Or in PowerShell: .\run.ps1
+:: Or in PowerShell: powershell -ExecutionPolicy Bypass -File .\run.ps1
 ```
 
 **On Linux / macOS:**
@@ -89,8 +102,8 @@ chmod +x install.sh run.sh
 1. **Create and Activate Virtual Environment:**
 ```bash
 python -m venv .venv
-# On Windows (PowerShell):
-.venv\Scripts\Activate.ps1
+# On Windows:
+.venv\Scripts\activate
 # On Linux/macOS:
 source .venv/bin/activate
 ```
@@ -103,49 +116,48 @@ pip install -e .
 
 3. **Run Automated Tests:**
 ```bash
-pytest tests/
+pytest tests/ -v
 ```
+*Expected: 66 passed, 1 skipped in ~35s.*
 
 4. **Launch the Streamlit Application:**
 ```bash
 streamlit run app/main.py
 ```
-
-5. **Launch MLflow Experiment Tracking Dashboard:**
-```bash
-# On Windows:
-mlflow_ui.bat
-# Or in PowerShell:
-.\mlflow_ui.ps1
-# On Linux/macOS:
-./mlflow_ui.sh
-```
-Open [http://localhost:5000](http://localhost:5000) to inspect all model runs, parameters, metrics, confusion matrices, and artifacts.
+Open [http://localhost:8501](http://localhost:8501) in your browser.
 
 ---
 
-## 🔬 MLOps & Experiment Tracking (MLflow)
+## 🖥️ Streamlit Interactive Dashboard (8 Tabs)
 
-ReqMind AI integrates **MLflow** for reproducible experiment tracking, hyperparameter tuning logs, and model governance:
-- **Experiment Name:** `reqmind-classification`
-- **Backend Storage:** Local SQLite database (`sqlite:///mlflow.db`) with artifacts in `mlruns/` (no external server required).
-- **Tracked Parameters:** Model type, regularizer `C`, n-gram ranges, vectorizer configs, random seeds, split sizes.
-- **Tracked Metrics:** `val_accuracy`, `val_macro_f1`, `test_accuracy`, `test_macro_f1`, per-class `f1_FR`, `f1_NFR`.
-- **Tracked Artifacts:** Serialized `.joblib` model bundles, confusion matrix PNGs, error analysis CSVs (`phase3_test_errors.csv`), and validation summaries.
-
----
-
-## 📋 Academic Constraints & Principles
-
-1. **Local-First & Privacy:** All NLP components run locally without third-party paid API requirements.
-2. **Provenance & Non-Destructive Editing:** Raw source text, original offsets, model suggestions, and human corrections are strictly preserved.
-3. **Conservative Normalization:** Negations (`not`, `never`), requirement modals (`shall`, `must`), numbers, and units are preserved.
-4. **No Unwarranted Certainty:** Contradiction indicators and similarity scores are treated as decision-support signals, not formal mathematical proofs.
+1. **Tab 1: Ingestion & Input:** Paste raw requirements, upload `.txt`/`.md` files, or load preset engineering scenarios.
+2. **Tab 2: Requirements Table:** Filterable inventory showing IDs, character offsets, predicted labels, confidence scores, and review statuses.
+3. **Tab 3: Ambiguity Inspector:** Inline yellow span highlights for IEEE 830 defects with actionable remediation guidance and false-positive dismissal.
+4. **Tab 4: Semantic Duplicates:** Dense vector similarity ranking with side-by-side comparison cards and automated Negation & SLA Numeric Conflict Guards.
+5. **Tab 5: Human Review Workbench:** Adjudicate labels (`reviewer_label`), record engineering rationale, and update review statuses (`APPROVED`, `EDITED`, `REJECTED`).
+6. **Tab 6: Traceable Export:** Download lossless JSON (with automated round-trip validation), tabular CSV, Markdown briefings, or executive PDF reports.
+7. **Tab 7: Milestone Benchmarks:** Historical inspection of Phase 3 baselines, Step 2 calibration curves, and DeBERTa-v3 training loss curves.
+8. **Tab 8: Model Evaluation:** Upload annotated datasets, run single/multi-model benchmarks, view interactive Altair confusion matrices, and inspect inter-model disagreements.
 
 ---
 
-## 📚 References & Companion Documents
-- `Base docs/ReqMind_AI_Implementation_Roadmap.md`
-- `Base docs/ReqMind_AI_Cahier_des_Charges.pdf`
-- `docs/scope.md`
-- `docs/architecture.md`
+## 📊 Measured Model Performance (60-Sample Human Benchmark)
+
+| Model | Accuracy | Macro-F1 | FR-F1 | NFR-F1 | Total Errors | CPU Latency / Req |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Original TF-IDF + SVM** | 76.7% | 76.6% | 77.4% | 75.9% | 14 / 60 | **0.46 ms** |
+| **Optimized Calibrated SVM** | 80.0% | 79.8% | 81.8% | 77.8% | 12 / 60 | **0.35 ms** |
+| **Fine-Tuned DeBERTa-v3-small** | **96.7%** | **96.7%** | **96.7%** | **96.7%** | **2 / 60** | 14.66 ms |
+
+---
+
+## 📚 Complete Project Documentation
+
+- [System Architecture Specification](docs/architecture.md)
+- [Installation & Environment Manual](docs/installation.md)
+- [User Guide & Tab Walkthrough](docs/user_guide.md)
+- [Comprehensive Model Comparison Report](docs/model_comparison.md)
+- [Automated Testing & QA Report](docs/testing_report.md)
+- [Scientific Limitations & Boundary Conditions](docs/limitations.md)
+- [Final Academic Project Report](docs/final_project_report.md)
+- [Phase 8 Milestone Report](reports/phases/phase_8.md)
